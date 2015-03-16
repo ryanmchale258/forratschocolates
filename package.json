@@ -1,0 +1,10 @@
+{
+  "name": "forratschocolates",
+  "version": "0.0.1",
+  "description": "A candidate website for Marc Forrat of Forrat's Chocolates",
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  },
+  "author": "Ryan McHale"
+}

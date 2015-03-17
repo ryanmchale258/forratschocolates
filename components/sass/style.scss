@@ -1,14 +1,27 @@
+// style.scss
+// ================= 
+
+// Font List
+@import url(http://fonts.googleapis.com/css?family=ABeeZee|Great+Vibes|Jacques+Francois|Jacques+Francois+Shadow);
+
+// Compass imports
+@import "compass";
+@import "compass/reset";
+@import "compass/CSS3/text-shadow";
+@import "compass/CSS3/box-shadow";
+@import "compass/CSS3/transition";
+@import "compass/CSS3/transform";
+
+// External Libraries
 @import "breakpoint";
+@import "susy";
 
+// Core partials
+@import "variables";
+@import "mixins";
+@import "base";
+@import "layout";
 
-body {
-	background: yellow;
-	@include breakpoint(500px){
-		background: blue;
-	}
-	h1 {
-		color: #000;
-		font-weight: bold;
-		font-size: 20px;
-	}
-}
+// Module imports
+@import "modules/home";
+@import "modules/nav";

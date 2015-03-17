@@ -1,13 +1,227 @@
-body {
-  background: yellow;
+@import url(http://fonts.googleapis.com/css?family=ABeeZee|Great+Vibes|Jacques+Francois|Jacques+Francois+Shadow);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
 }
-@media (min-width: 500px) {
-  body {
-    background: blue;
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("../images/headerbg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-top: 5px solid #c53037;
+}
+
+.sideNav {
+  height: 1000px;
+  position: fixed;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  -moz-transform: translateX(-500px);
+  -ms-transform: translateX(-500px);
+  -webkit-transform: translateX(-500px);
+  transform: translateX(-500px);
+}
+@media (min-width: 650px) {
+  .sideNav {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 25%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
   }
 }
-body h1 {
-  color: #000;
-  font-weight: bold;
-  font-size: 20px;
+@media (min-width: 960px) {
+  .sideNav {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 16.66667%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+  }
+}
+
+.pgcontent {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+}
+@media (min-width: 650px) {
+  .pgcontent {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 75%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+    margin-left: 25%;
+  }
+}
+@media (min-width: 960px) {
+  .pgcontent {
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 83.33333%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+    margin-left: 16.66667%;
+  }
+}
+.pgcontent .contentinner {
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pgcontent .contentinner:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.homepg .logopanel {
+  background: #fff;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 66.66667%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  margin-left: 16.66667%;
+}
+.homepg .logopanel:before, .homepg .logopanel:after {
+  content: '';
+  display: table;
+}
+.homepg .logopanel:after {
+  clear: both;
+}
+@media (min-width: 650px) {
+  .homepg .logopanel {
+    margin-top: 200px;
+    padding: 50px;
+    border: 10px solid #dba44f;
+    background-color: rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 6px 6px 10px rgba(9, 9, 9, 0.5);
+    -webkit-box-shadow: 6px 6px 10px rgba(9, 9, 9, 0.5);
+    box-shadow: 6px 6px 10px rgba(9, 9, 9, 0.5);
+  }
+}
+
+.sideNav {
+  background: rgba(255, 255, 255, 0.7);
+  -moz-transition: all 0.5s 0;
+  -o-transition: all 0.5s 0;
+  -webkit-transition: all 0.5s 0;
+  transition: all 0.5s 0;
+}
+.sideNav:hover {
+  background: white;
+}
+
+.side-nav {
+  margin-top: 200px;
+  font-family: "Jacques Francois", serif;
+}
+.side-nav li {
+  width: 100%;
+}
+.side-nav li a {
+  width: 100%;
+  line-height: 400%;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px dotted #090909;
+  color: #090909;
+  -moz-transition: all 0.3s 0;
+  -o-transition: all 0.3s 0;
+  -webkit-transition: all 0.3s 0;
+  transition: all 0.3s 0;
+}
+.side-nav li a:hover {
+  background: #731c20;
+  color: #fff;
+}
+.side-nav li:last-child a {
+  border-bottom: none;
 }

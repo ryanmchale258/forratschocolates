@@ -57,7 +57,7 @@ gulp.task('watch', function(){
 	livereload.listen();
 	gulp.watch(markupSources, ['markup']);
 	gulp.watch(jsSources, ['js']);
-	gulp.watch('components/sass/*.scss', ['compass']);
+	gulp.watch(['components/sass/*.scss', 'components/sass/modules/*.scss'], ['compass']);
 })
 
 gulp.task('default', ['markup', 'js', 'compass', 'watch']);

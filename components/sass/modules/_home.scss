@@ -1,0 +1,18 @@
+.homepg {
+	.logopanel {
+		background: $light;
+		@include clearfix;
+		@include breakpoint($small){
+			margin-top: 200px;
+			padding: 50px;
+			border: 10px solid $gold;
+			background-color: rgba(darken($chocolate, 20), .8);
+			@include box-shadow(6px 6px 10px rgba($dark, .5));
+		} // breakpoint
+		@include span(8);
+		@include pre(2);
+		.mainlogo {
+			
+		} // mainlogo
+	} // logopanel
+} // homepg

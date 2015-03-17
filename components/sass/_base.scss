@@ -1,0 +1,7 @@
+// _base.scss
+// ================= 
+
+body {
+	@include bgImage('../images/headerbg.jpg');
+	border-top: 5px solid lighten($darkred, 20);
+}

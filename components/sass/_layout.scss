@@ -1,0 +1,33 @@
+// layout.scss
+// ================= 
+
+.sideNav {
+	height: 1000px;
+	position: fixed;
+	@include span(6);
+	@include translateX(-500px);
+	@include breakpoint($small){
+		@include span(3);
+		@include translateX(0px);
+	} // breakpoint/small
+	@include breakpoint($medium){
+		@include span(2);
+	} // breakpoint/medium
+
+}
+
+.pgcontent {
+	@include span(12);
+	@include breakpoint($small){
+		@include span(9);
+		@include pre(3);
+	} // breakpoint/small
+	@include breakpoint($medium){
+		position: relative;
+		@include span(10);
+		@include pre(2);
+	} // breakpoint/medium
+	.contentinner {
+		@include container;
+	} // contentinner
+} // pgcontent

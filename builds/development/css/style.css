@@ -1,7 +1,13 @@
 body {
-  background: blue;
+  background: red;
+}
+@media (min-width: 500px) {
+  body {
+    background: blue;
+  }
 }
 body h1 {
   color: #000;
   font-weight: bold;
+  font-size: 20px;
 }

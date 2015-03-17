@@ -1,7 +1,14 @@
+@import "breakpoint";
+
+
 body {
-	background: blue;
+	background: red;
+	@include breakpoint(500px){
+		background: blue;
+	}
 	h1 {
 		color: #000;
 		font-weight: bold;
+		font-size: 20px;
 	}
 }

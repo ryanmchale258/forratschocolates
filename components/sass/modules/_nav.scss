@@ -1,6 +1,7 @@
 .sideNav {
 	background: rgba($light, .7);
-	@include single-transition(all, .5s, ease-in, 0);
+	@include single-transition(all, .3s, ease-in);
+	@include box-shadow($dark 0px 8px 12px);
 	&:hover {
 		background: rgba($light, 1);
 	}
@@ -19,7 +20,7 @@
 			text-decoration: none;
 			border-bottom: 1px dotted $dark;
 			color: $dark;
-			@include single-transition(all, .3s, ease-in, 0);
+			@include single-transition(all, .2s, ease-in);
 			&:hover {
 				background: $darkred;
 				color: $light;

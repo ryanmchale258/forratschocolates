@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=ABeeZee|Great+Vibes|Jacques+Francois|Jacques+Francois+Shadow);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -70,13 +71,17 @@ body {
   border-top: 5px solid #c53037;
 }
 
+span.icon {
+  font-family: FontAwesome;
+}
+
 .sideNav {
   height: 1000px;
   position: fixed;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  width: 50%;
+  width: 66.66667%;
   float: left;
   padding-left: 0.83333%;
   padding-right: 0.83333%;
@@ -84,6 +89,7 @@ body {
   -ms-transform: translateX(-500px);
   -webkit-transform: translateX(-500px);
   transform: translateX(-500px);
+  visibility: hidden;
 }
 @media (min-width: 650px) {
   .sideNav {
@@ -98,6 +104,7 @@ body {
     -ms-transform: translateX(0px);
     -webkit-transform: translateX(0px);
     transform: translateX(0px);
+    visibility: visible;
   }
 }
 @media (min-width: 960px) {
@@ -157,16 +164,20 @@ body {
   clear: both;
 }
 
+.homepg {
+  position: relative;
+}
 .homepg .logopanel {
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
   background: #fff;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 66.66667%;
-  float: left;
-  padding-left: 0.83333%;
-  padding-right: 0.83333%;
-  margin-left: 16.66667%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 10px solid #dba44f;
+  -moz-box-shadow: 6px 6px 10px rgba(9, 9, 9, 0.5);
+  -webkit-box-shadow: 6px 6px 10px rgba(9, 9, 9, 0.5);
+  box-shadow: 6px 6px 10px rgba(9, 9, 9, 0.5);
 }
 .homepg .logopanel:before, .homepg .logopanel:after {
   content: '';
@@ -184,15 +195,105 @@ body {
     -moz-box-shadow: 6px 6px 10px rgba(9, 9, 9, 0.5);
     -webkit-box-shadow: 6px 6px 10px rgba(9, 9, 9, 0.5);
     box-shadow: 6px 6px 10px rgba(9, 9, 9, 0.5);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 66.66667%;
+    float: left;
+    padding-left: 0.83333%;
+    padding-right: 0.83333%;
+    margin-left: 16.66667%;
   }
+}
+.homepg .logopanel .mainlogo {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+@media (min-width: 650px) {
+  .homepg .logopanel .mainlogo {
+    width: 100%;
+  }
+}
+.homepg .homemenu {
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  height: 500px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 66.66667%;
+  float: left;
+  padding-left: 0.83333%;
+  padding-right: 0.83333%;
+  margin-left: 16.66667%;
+}
+.homepg .homemenu:before, .homepg .homemenu:after {
+  content: '';
+  display: table;
+}
+.homepg .homemenu:after {
+  clear: both;
+}
+.homepg .homemenu .menuitem {
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+.homepg .homemenu .menuitem span.icon {
+  color: #fff;
+  font-size: 20rem;
+}
+.homepg .homemenu .menuitem .infogroup {
+  border: 10px solid #dba44f;
+  padding: 50px 10px;
+  padding-top: 140px;
+  margin-top: -130px;
+  background-color: rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 6px 6px 10px rgba(9, 9, 9, 0.5);
+  -webkit-box-shadow: 6px 6px 10px rgba(9, 9, 9, 0.5);
+  box-shadow: 6px 6px 10px rgba(9, 9, 9, 0.5);
+}
+.homepg .homemenu .menuitem .infogroup h2 {
+  font-family: "Jacques Francois Shadow", cursive;
+  color: #fff;
+  font-size: 5rem;
+  line-height: 140%;
+}
+.homepg .homemenu .menuitem .infogroup p {
+  color: #fff;
+  margin-top: 10px;
+  font-family: "ABeeZee", sans-serif;
+  font-size: .9rem;
+  line-height: 140%;
+}
+.homepg .hideme {
+  opacity: 0;
+  z-index: auto;
+}
+.homepg .showme {
+  opacity: 1;
+  z-index: 50;
 }
 
 .sideNav {
   background: rgba(255, 255, 255, 0.7);
-  -moz-transition: all 0.5s 0;
-  -o-transition: all 0.5s 0;
-  -webkit-transition: all 0.5s 0;
-  transition: all 0.5s 0;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  -moz-box-shadow: #090909 0px 8px 12px;
+  -webkit-box-shadow: #090909 0px 8px 12px;
+  box-shadow: #090909 0px 8px 12px;
 }
 .sideNav:hover {
   background: white;
@@ -213,10 +314,10 @@ body {
   text-decoration: none;
   border-bottom: 1px dotted #090909;
   color: #090909;
-  -moz-transition: all 0.3s 0;
-  -o-transition: all 0.3s 0;
-  -webkit-transition: all 0.3s 0;
-  transition: all 0.3s 0;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 .side-nav li a:hover {
   background: #731c20;

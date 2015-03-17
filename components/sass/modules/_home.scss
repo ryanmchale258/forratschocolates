@@ -1,6 +1,11 @@
 .homepg {
+	position: relative;
 	.logopanel {
+		@include single-transition(all, .2s, ease-in);
 		background: $light;
+		background-color: rgba(darken($chocolate, 20), .8);
+		border-bottom: 10px solid $gold;
+		@include box-shadow(6px 6px 10px rgba($dark, .5));
 		@include clearfix;
 		@include breakpoint($small){
 			margin-top: 200px;
@@ -8,11 +13,68 @@
 			border: 10px solid $gold;
 			background-color: rgba(darken($chocolate, 20), .8);
 			@include box-shadow(6px 6px 10px rgba($dark, .5));
+			@include span(8);
+			@include pre(2);
 		} // breakpoint
-		@include span(8);
-		@include pre(2);
 		.mainlogo {
-			
+			width: 60%;
+			@include breakpoint($small){
+				width: 100%;
+			} // breakpoint
+			display: block;
+			margin: 0 auto;
 		} // mainlogo
 	} // logopanel
+	.homemenu {
+		@include clearfix;
+		position: absolute;
+		top: 200px;
+		width: 100%;
+		height: 500px;
+		@include span(8);
+		@include pre(2);
+		.menuitem {
+			@include single-transition(all, .2s, ease-in);
+			position: absolute;
+			width: 100%;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			text-align: center;
+			span.icon {
+				color: #fff;
+				font-size: 20rem;
+			} // span.icon
+			.infogroup {
+				border: 10px solid $gold;
+				padding: 50px 10px;
+				padding-top: 140px;
+				margin-top: -130px;
+				background-color: rgba(darken($chocolate, 20), .8);
+				@include box-shadow(6px 6px 10px rgba($dark, .5));
+				h2 {
+					font-family: $shadowserif;
+					color: #fff;
+					font-size: 5rem;
+					line-height: 140%;
+				} // h2
+				p {
+					color: #fff;
+					margin-top: 10px;
+					font-family: $paragraph;
+					font-size: .9rem;
+					line-height: 140%;
+				} // p
+			} // infogroup
+		} // menuitem
+	} // homemenu
+	.hideme {
+		opacity: 0;
+		z-index: auto;
+	}
+	.showme {
+		opacity: 1;
+		z-index: 50;
+	}
 } // homepg

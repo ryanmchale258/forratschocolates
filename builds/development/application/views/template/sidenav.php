@@ -9,10 +9,10 @@
             </div>
         <?php endif; ?>
         <ul class="side-nav">
-            <li><a href="index.html">HOME</a></li> 
-            <li><a href="about.html">ABOUT</a></li> 
-            <li><a href="#">CHOCOLATE</a></li> 
-            <li><a href="#">CONTACT</a></li> 
+            <li><a id="home" href="index.html">HOME</a></li> 
+            <li><a id="about" href="about.html">ABOUT</a></li> 
+            <li><a id="chocolate" href="#">CHOCOLATE</a></li> 
+            <li><a id="contact" href="#">CONTACT</a></li> 
         </ul>
     </div>
 </section>

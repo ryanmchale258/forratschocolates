@@ -5,3 +5,7 @@ body {
 	@include bgImage('../images/headerbg.jpg');
 	border-top: 5px solid lighten($darkred, 20);
 }
+
+span.icon {
+	font-family: $fontawesome;
+}

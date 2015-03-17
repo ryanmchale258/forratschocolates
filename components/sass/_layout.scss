@@ -4,11 +4,13 @@
 .sideNav {
 	height: 1000px;
 	position: fixed;
-	@include span(6);
+	@include span(8);
 	@include translateX(-500px);
+	visibility: hidden;
 	@include breakpoint($small){
 		@include span(3);
 		@include translateX(0px);
+		visibility: visible;
 	} // breakpoint/small
 	@include breakpoint($medium){
 		@include span(2);

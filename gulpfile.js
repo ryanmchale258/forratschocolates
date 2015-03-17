@@ -5,10 +5,24 @@ var gulp = require('gulp'),
 	compass = require('gulp-compass'),
 	livereload = require('gulp-livereload');
 
-var jsSources = ['components/scripts/jqloader.js',
+var env,
+	jsSources,
+	sassSources,
+	markupSources,
+	outputDir;
+
+env = process.env.NODE_ENV || 'development';
+
+if(env === 'production') {
+	outputDir = 'builds/production/';
+}else{
+	outputDir = 'builds/development/';
+}
+
+jsSources = ['components/scripts/jqloader.js',
 					'components/scripts/custom/*.js'];
-var sassSources = ['components/sass/style.scss'];
-var markupSources = ['builds/development/application/controllers/**',
+sassSources = ['components/sass/style.scss'];
+markupSources = ['builds/development/application/controllers/**',
 					'builds/development/application/models/**',
 						'builds/development/application/views/**',
 							'builds/development/index.php'];
@@ -22,7 +36,7 @@ gulp.task('js', function(){
 	gulp.src(jsSources)
 		.pipe(concat('script.js'))
 		.pipe(browserify())
-		.pipe(gulp.dest('builds/development/js'))
+		.pipe(gulp.dest(outputDir + 'js'))
 		.pipe(livereload());
 });
 
@@ -30,12 +44,12 @@ gulp.task('compass', function(){
 	gulp.src(sassSources)
 		.pipe(compass({
 			sass: 'components/sass',
-			image: 'builds/development/images',
+			css: outputDir + 'css',
+			image: outputDir + 'images',
 			style: 'expanded',
 			require: ['susy', 'breakpoint']
-		}))
-		.on('error', gutil.log)
-		.pipe(gulp.dest('builds/development/css'))
+		})
+		.on('error', gutil.log))
 		.pipe(livereload());
 });
 

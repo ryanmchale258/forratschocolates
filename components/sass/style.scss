@@ -2,7 +2,7 @@
 
 
 body {
-	background: red;
+	background: yellow;
 	@include breakpoint(500px){
 		background: blue;
 	}

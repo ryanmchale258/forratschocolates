@@ -5,7 +5,7 @@
     <div class="navinner">
         <?php if((isset($sidenavlogo)) && $sidenavlogo == true): ?>
             <div class="logoarea">
-                logo go here
+                <a href="<?php echo base_url() . index_page() ?>"><img class="mainlogo" src="<?php echo base_url() ?>/images/forratslogo.svg" onerror="this.onerror=null; this.src='<?php echo base_url() ?>/images/forratslogo.png'"></a>
             </div>
         <?php endif; ?>
         <div id="navscroll">

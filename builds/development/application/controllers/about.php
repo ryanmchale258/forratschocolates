@@ -1,22 +1,21 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class About extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('navigation_model');
-		$this->load->model('pages_model');
 	}
 
 	public function index(){
 		$data['sidenav'] = $this->navigation_model->getNav();
-		$data['pages'] = $this->pages_model->getAllPages();
-		$data['pgTitle'] = "Home";
-		$data['initialize'] = "homeScript();";
+		$data['sidenavlogo'] = true;
+		$data['pgTitle'] = "About";
+		$data['initialize'] = "aboutScript();";
 		$this->load->view('template/head', $data);
 		$this->load->view('template/sidenav');
 
-		$this->load->view('home/content');
+		$this->load->view('about/content');
 		$this->load->view('template/close');
 	}
 

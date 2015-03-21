@@ -1,0 +1,9 @@
+.locationspg {
+	#hook{
+		height: 100px;
+		width: 200px;
+	}
+	img[src*="gstatic.com/"], img[src*="googleapis.com/"] {
+		max-width: none;
+	}
+}

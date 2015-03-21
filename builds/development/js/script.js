@@ -1,4 +1,27 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+
+
+window.google = window.google || {};
+google.maps = google.maps || {};
+(function() {
+  
+  function getScript(src) {
+    document.write('<' + 'script src="' + src + '"><' + '/script>');
+  }
+  
+  var modules = google.maps.modules = {};
+  google.maps.__gjsload__ = function(name, text) {
+    modules[name] = text;
+  };
+  
+  google.maps.Load = function(apiLoad) {
+    delete google.maps.Load;
+    apiLoad([0.009999999776482582,[[["https://mts0.googleapis.com/vt?lyrs=m@295000000\u0026src=api\u0026hl=en-US\u0026","https://mts1.googleapis.com/vt?lyrs=m@295000000\u0026src=api\u0026hl=en-US\u0026"],null,null,null,null,"m@295000000",["https://mts0.google.com/vt?lyrs=m@295000000\u0026src=api\u0026hl=en-US\u0026","https://mts1.google.com/vt?lyrs=m@295000000\u0026src=api\u0026hl=en-US\u0026"]],[["https://khms0.googleapis.com/kh?v=167\u0026hl=en-US\u0026","https://khms1.googleapis.com/kh?v=167\u0026hl=en-US\u0026"],null,null,null,1,"167",["https://khms0.google.com/kh?v=167\u0026hl=en-US\u0026","https://khms1.google.com/kh?v=167\u0026hl=en-US\u0026"]],[["https://mts0.googleapis.com/vt?lyrs=h@295000000\u0026src=api\u0026hl=en-US\u0026","https://mts1.googleapis.com/vt?lyrs=h@295000000\u0026src=api\u0026hl=en-US\u0026"],null,null,null,null,"h@295000000",["https://mts0.google.com/vt?lyrs=h@295000000\u0026src=api\u0026hl=en-US\u0026","https://mts1.google.com/vt?lyrs=h@295000000\u0026src=api\u0026hl=en-US\u0026"]],[["https://mts0.googleapis.com/vt?lyrs=t@132,r@295000000\u0026src=api\u0026hl=en-US\u0026","https://mts1.googleapis.com/vt?lyrs=t@132,r@295000000\u0026src=api\u0026hl=en-US\u0026"],null,null,null,null,"t@132,r@295000000",["https://mts0.google.com/vt?lyrs=t@132,r@295000000\u0026src=api\u0026hl=en-US\u0026","https://mts1.google.com/vt?lyrs=t@132,r@295000000\u0026src=api\u0026hl=en-US\u0026"]],null,null,[["https://cbks0.googleapis.com/cbk?","https://cbks1.googleapis.com/cbk?"]],[["https://khms0.googleapis.com/kh?v=85\u0026hl=en-US\u0026","https://khms1.googleapis.com/kh?v=85\u0026hl=en-US\u0026"],null,null,null,null,"85",["https://khms0.google.com/kh?v=85\u0026hl=en-US\u0026","https://khms1.google.com/kh?v=85\u0026hl=en-US\u0026"]],[["https://mts0.googleapis.com/mapslt?hl=en-US\u0026","https://mts1.googleapis.com/mapslt?hl=en-US\u0026"]],[["https://mts0.googleapis.com/mapslt/ft?hl=en-US\u0026","https://mts1.googleapis.com/mapslt/ft?hl=en-US\u0026"]],[["https://mts0.googleapis.com/vt?hl=en-US\u0026","https://mts1.googleapis.com/vt?hl=en-US\u0026"]],[["https://mts0.googleapis.com/mapslt/loom?hl=en-US\u0026","https://mts1.googleapis.com/mapslt/loom?hl=en-US\u0026"]],[["https://mts0.googleapis.com/mapslt?hl=en-US\u0026","https://mts1.googleapis.com/mapslt?hl=en-US\u0026"]],[["https://mts0.googleapis.com/mapslt/ft?hl=en-US\u0026","https://mts1.googleapis.com/mapslt/ft?hl=en-US\u0026"]],[["https://mts0.googleapis.com/mapslt/loom?hl=en-US\u0026","https://mts1.googleapis.com/mapslt/loom?hl=en-US\u0026"]]],["en-US","US",null,0,null,null,"https://maps.gstatic.com/mapfiles/","https://csi.gstatic.com","https://maps.googleapis.com","https://maps.googleapis.com",null,"https://maps.google.com","https://gg.google.com","https://maps.gstatic.com/maps-api-v3/api/images/","https://www.google.com/maps"],["https://maps.gstatic.com/maps-api-v3/api/js/20/4","3.20.4"],[133529007],1,null,null,null,null,null,"",null,null,1,"https://khms.googleapis.com/mz?v=167\u0026",null,"https://earthbuilder.googleapis.com","https://earthbuilder.googleapis.com",null,"https://mts.googleapis.com/vt/icon",[["https://mts0.googleapis.com/vt","https://mts1.googleapis.com/vt"],["https://mts0.googleapis.com/vt","https://mts1.googleapis.com/vt"],null,null,null,null,null,null,null,null,null,null,["https://mts0.google.com/vt","https://mts1.google.com/vt"],"/maps/vt",295000000,132],2,500,[null,"https://g0.gstatic.com/landmark/tour","https://g0.gstatic.com/landmark/config","","https://www.google.com/maps/preview/log204","","https://static.panoramio.com.storage.googleapis.com/photos/",["https://geo0.ggpht.com/cbk","https://geo1.ggpht.com/cbk","https://geo2.ggpht.com/cbk","https://geo3.ggpht.com/cbk"]],["https://www.google.com/maps/api/js/master?pb=!1m2!1u20!2s4!2sen-US!3sUS!4s20/4","https://www.google.com/maps/api/js/widget?pb=!1m2!1u20!2s4!2sen-US"],null,0,0,"/maps/api/js/ApplicationService.GetEntityDetails"], loadScriptTime);
+  };
+  var loadScriptTime = (new Date).getTime();
+  getScript("https://maps.gstatic.com/maps-api-v3/api/js/20/4/main.js");
+})();
+
 var $ = require('jquery');
 var jQuery = $;
 /*! Copyright (c) 2011 Piotr Rochala (http://rocha.la)
@@ -466,11 +489,30 @@ var jQuery = $;
 
 })(jQuery);
 
+var base_url = 'http://localhost/forratschocolates/builds/development/';
+
 var navScrollable = $(function(){
     $('#navscroll').slimScroll({
         height: '350px'
     });
 });
+
+var navsWithKids = function(){
+
+	$('.has-submenu a').each(function(){
+		$(this).on("click", function(){
+			var thesubmenu = $($(this).attr('href'));
+			thesubmenu.css('visibility', 'visible');
+			thesubmenu.addClass('subout');
+			$('.sideNav').addClass('subvisible');
+		});
+	});
+
+	$('.back a').on("click", function(){
+		$('.subout').removeClass('subout');
+		$('.sideNav').removeClass('subvisible');
+	});
+}();
 var homeScript = function(){
 
 	$('.side-nav a').mouseenter(function(){
@@ -500,6 +542,71 @@ var homeScript = function(){
 
 }();
 
+var locationsScript = function(){
+
+  var map;
+
+  var json = $.ajax({
+      url: base_url + 'index.php/locations/mapdata',
+      type: 'GET',
+      dataType: 'json',
+      success: function (data){
+      initialize(data);
+          }
+    });
+
+  function initialize(data) {
+    
+    // Giving the map some options
+    var mapOptions = {
+      //zoom 9 is nicer for desktop sizes, zoom 8 works better on mobile
+      zoom: 9,
+      center: new google.maps.LatLng(43.112736, -80.704723),
+      styles: [{"featureType":"administrative","elementType":"labels.text","stylers":[{"color":"#b72025"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"saturation":"-100"},{"lightness":"100"},{"weight":"10.00"},{"visibility":"on"},{"hue":"#ff0000"},{"gamma":"0.00"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#cac1c1"},{"lightness":33},{"visibility":"off"}]},{"featureType":"landscape.natural.landcover","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":"-100"},{"lightness":"-2"},{"hue":"#ff0000"},{"gamma":"5.72"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#ebe1e1"},{"visibility":"simplified"}]},{"featureType":"poi.sports_complex","elementType":"geometry","stylers":[{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"poi.sports_complex","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#b72025"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"on"},{"saturation":-100}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"lightness":-100},{"visibility":"on"},{"color":"#f3eaea"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#b72025"},{"visibility":"on"}]},{"featureType":"road.highway","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels.text.stroke","stylers":[{"weight":0.1},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels.icon","stylers":[{"invert_lightness":true},{"lightness":-4},{"saturation":-90},{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"saturation":-100},{"lightness":-14}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"},{"saturation":-100},{"lightness":13}]},{"featureType":"road.local","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"labels.icon","stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#b72025"}]},{"featureType":"water","elementType":"geometry.stroke","stylers":[{"saturation":-100},{"lightness":-100},{"weight":0.2}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"saturation":-100},{"lightness":-100}]}]
+      };
+
+      // Creating the map
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    
+    // Looping through all the entries from the JSON data
+    for(var i = 0; i < data.length; i++) {
+      
+      // Current object
+      var obj = data[i];
+      console.log(obj);
+
+      // Adding a new marker for the object
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(obj.locations_lat,obj.locations_long),
+        map: map,
+        title: obj.locations_title, // this works, giving the marker a title with the correct title
+        icon: base_url + 'images/f_map.png',
+      });
+      
+      // Adding a new info window for the object
+      var clicker = addClicker(marker, obj.locations_title);
+      
+   
+    } // end loop
+    var infowindow = new google.maps.InfoWindow();
+    
+    // Adding a new click event listener for the object
+    function addClicker(marker, content) {
+      google.maps.event.addListener(marker, 'click', function() {
+        
+        if (infowindow) {infowindow.close();}
+        //the content property can be filled using inline html and css, feel free to change this
+        infowindow = new google.maps.InfoWindow({content:'<p id="hook">'+ content + '</p> <style></style>'});
+        infowindow.open(map, marker);
+        //THIS CODE MAKES THE MAP ZOOM AND FOCUS ON THE CLICKED MARKER
+        map.setZoom(16);
+        map.setCenter(marker.getPosition());
+        
+      });
+    }
+  }
+
+}();
 },{"jquery":2}],2:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.3

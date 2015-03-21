@@ -1,32 +1,10 @@
 .homepg {
 	position: relative;
 	.logopanel {
-		@include single-transition(all, .2s, ease-in);
-		background: $light;
-		background-color: rgba($light, .8);
-		border-bottom: 10px solid $darkred;
-		@include box-shadow(6px 6px 10px rgba($dark, .5));
-		@include clearfix;
 		@include breakpoint($medium){
-			margin-top: 200px;
-			padding: 50px;
-			border: 10px solid $darkred;
-			@include box-shadow(6px 6px 10px rgba($dark, .5));
-			@include span(8);
-			@include pre(2);
-		} // breakpoint
-		.mainlogo {
-			width: 60%;
-			@include breakpoint($small){
-				width: 30%;
-			} // breakpoint/medium
-			@include breakpoint($medium){
-				width: 100%;
-			} // breakpoint/large
 			display: block;
-			margin: 0 auto;
-		} // mainlogo
-	} // logopanel
+		}
+	}
 	.homemenu {
 		@include with-layout(12 .25 split){
 			@include span(12);
@@ -41,6 +19,7 @@
 			@include pre(2);
 		}
 		.menuitem {
+			text-decoration: none;
 			@include with-layout(12 .25 split){
 				@include span(6);
 			}

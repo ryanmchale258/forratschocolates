@@ -10,7 +10,7 @@
 		margin: 0 auto;
 	}
 	@include breakpoint($medium){
-		background: rgba($light, .7);
+		background: rgba($light, .8);
 	}
 	.slimScrollDiv{
 		margin-top: 200px;
@@ -35,7 +35,29 @@
 				&:last-child a {
 					border-bottom: none;
 				} // a:last-child
+				.submenu {
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+					background: $light;
+					z-index: 10;
+					width: 100%;
+					@include translateX(-500px);
+					visibility: hidden;
+					@include single-transition(all, .2s, ease-in);
+				}
+				.subout {
+					@include translateX(-10px);
+					@include box-shadow(3px 0 12px rgba($dark, .8));
+				}
 			} // li
 		} // side-nav
+	}
+}
+.subvisible {
+	background: $light;
+	.side-nav li a {
+		border-color: transparent;
 	}
 }

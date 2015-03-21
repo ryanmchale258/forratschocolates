@@ -5,13 +5,18 @@
 		</div>
 		<section class="homemenu">
 			<?php foreach($pages as $row): ?>
-			<div class="menuitem hideme <?php echo $row->pages_slug; ?>">
+			<?php if($row->pages_hascontroller == 0){
+					echo '<a href="' . base_url() . index_page() . '/page/' . $row->pages_slug . '" class="menuitem hideme ' . $row->pages_slug . '">';
+				}else{
+					echo '<a href="' . base_url() . index_page() . '/' . $row->pages_slug . '" class="menuitem hideme ' . $row->pages_slug . '">';
+				}
+			 ?>
 				<span class="icon"><?php echo $row->pages_icon; ?></span>
 				<article class="infogroup">
 					<h2><?php echo $row->pages_title; ?></h2>
 					<p><?php echo $row->pages_brief; ?></p>
 				</article>
-			</div>
+			</a>
 			<?php endforeach; ?>
 			<!-- <div class="menuitem hideme about">
 				<span class="icon">&#xf059;</span>

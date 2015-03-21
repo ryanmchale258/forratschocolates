@@ -4,6 +4,9 @@
 .sideNav {
 	height: 1000px;
 	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
 	@include span(8);
 	@include translateX(-500px);
 	visibility: hidden;
@@ -12,6 +15,7 @@
 		@include span(2);
 		@include translateX(0px);
 		visibility: visible;
+		z-index: auto;
 	} // breakpoint/medium
 
 }

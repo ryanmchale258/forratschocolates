@@ -32,14 +32,14 @@ class Navigation_model extends CI_Model {
 					}
 				}
 			if($row->pages_haskids == 1){
-				if($row->pages_hascontroller == 0){
-					$menu .= '<li class="has-submenu"><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . '/page/' . $row->pages_slug . '">';
-				}else{
-					$menu .= '<li class="has-submenu"><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . '/' . $row->pages_slug . '">';
-				}
+				$menu .= '<li class="has-submenu"><a id="' . $row->pages_slug . '" href="#menu-' . $row->pages_slug . '">';
 				$menu .= $row->pages_title . '</a>';
-				$menu .= '<ul class="right-submenu">';
-					$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . '/page/' . $row->pages_slug . '">';
+				$menu .= '<ul id="menu-' . $row->pages_slug . '" class="submenu">';
+					if($row->pages_hascontroller == 1){
+						$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . '/' . $row->pages_slug . '">';
+					}else{
+						$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . '/page/' . $row->pages_slug . '">';
+					}
 					$menu .= $row->pages_title . '</a></li>';
 
 
@@ -50,7 +50,7 @@ class Navigation_model extends CI_Model {
 							$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . '/page/' . $kids['childlink'] . '">' . $kids['childname'] . '</a></li>';
 						}
 					}
-					$menu .= '<li class="back"><a href="#">Back</a></li>';
+					$menu .= '<li class="back"><a href="#back">Back</a></li>';
 
 				$menu .= '</ul>';
 				$menu .= '</li>';

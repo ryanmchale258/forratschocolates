@@ -1,0 +1,29 @@
+.aboutpg {
+	#aboutoverlay{
+		background: $dark;
+		color: $cream;
+		font-family: $paragraph;
+		@include breakpoint($medium){
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			z-index: 10;
+			@include span(2);
+			@include pre(2);
+		}
+		.overlayinner{
+			@include container(85%);
+			h3{
+				font-size: 1.6875rem;
+				line-height: 140%;
+				font-style: italic;
+				margin-bottom: 20px;
+			}
+			p{
+				margin-bottom: 20px;
+				line-height: 140%;
+			}
+		}
+	}
+}

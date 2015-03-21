@@ -11,8 +11,8 @@ class Pages_model extends CI_Model {
 		return $page;
 	}
 
-	public function getAllPages($level){
-		$this->db->where('pages_navlvl', $level);
+	public function getAllPages(){
+		//$this->db->where('pages_navlvl', $level);
 		$pages = $this->db->get('tbl_pages', 999999, 1);
 		return $pages->result();
 	}

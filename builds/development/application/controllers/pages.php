@@ -6,7 +6,6 @@ class Pages extends CI_Controller {
 		parent::__construct();
 		$this->load->model('pages_model');
 		$this->load->model('navigation_model');
-		$this->load->model('staffbio_model');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('pagename', 'Page Title', 'trim|required');
@@ -16,17 +15,16 @@ class Pages extends CI_Controller {
 	}
 
 	public function display_page($slug) {	
-		$data['navmenu'] = $this->navigation_model->getTopNav();
-		$data['mobmenu'] = $this->navigation_model->getMobNav();
+		$data['sidenav'] = $this->navigation_model->getNav();
+		$data['sidenavlogo'] = true;
 		$data['pgdata'] = $this->pages_model->getPage($slug)->row();
+		$data['pgTitle'] = $data['pgdata']->pages_title;
 		
 		$data['bodyclass'] = 'page';
 		$this->load->view('template/head', $data);
-		$this->load->view('template/header');
+		$this->load->view('template/sidenav');
 		$this->load->view('template/content');
-		$this->load->view('template/footer');
 
-		$this->load->view('template/scripts');
 		$this->load->view('template/close');
 	}
 

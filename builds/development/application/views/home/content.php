@@ -1,10 +1,19 @@
 <section class="pgcontent">
 	<section class="homepg contentinner">
 		<div class="logopanel">
-			<a href="<?php echo base_url() . index_page() ?>"><img class="mainlogo" src="<?php echo base_url() ?>/images/forratslogo_white.svg" onerror="this.onerror=null; this.src='<?php echo base_url() ?>/images/forratslogo_white.png'"></a>
+			<a href="<?php echo base_url() . index_page() ?>"><img class="mainlogo" src="<?php echo base_url() ?>/images/forratslogo.svg" onerror="this.onerror=null; this.src='<?php echo base_url() ?>/images/forratslogo.png'"></a>
 		</div>
 		<section class="homemenu">
-			<div id="about" class="menuitem hideme about">
+			<?php foreach($pages as $row): ?>
+			<div class="menuitem hideme <?php echo $row->pages_slug; ?>">
+				<span class="icon"><?php echo $row->pages_icon; ?></span>
+				<article class="infogroup">
+					<h2><?php echo $row->pages_title; ?></h2>
+					<p><?php echo $row->pages_brief; ?></p>
+				</article>
+			</div>
+			<?php endforeach; ?>
+			<!-- <div class="menuitem hideme about">
 				<span class="icon">&#xf059;</span>
 				<article class="infogroup">
 					<h2>About</h2>
@@ -35,7 +44,7 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 				</article>
-			</div>
+			</div> -->
 		</section>
 	</section>
 </section>

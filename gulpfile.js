@@ -19,7 +19,7 @@ if(env === 'production') {
 	outputDir = 'builds/development/';
 }
 
-jsSources = ['components/scripts/jqloader.js',
+jsSources = ['components/scripts/*.js',
 					'components/scripts/custom/*.js'];
 sassSources = ['components/sass/style.scss'];
 markupSources = ['builds/development/application/controllers/**',

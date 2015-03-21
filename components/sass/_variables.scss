@@ -7,7 +7,7 @@
 $susy: (
 	columns         : 12,
 	container       : 60em,
-	gutters         : .25,
+	gutters         : 0,
 	gutter-position : inside
 );
 
@@ -15,6 +15,7 @@ $susy: (
 $narrow   : 400px;
 $small    : 650px;
 $medium   : 960px;
+$large   : 1140px;
 $wide     : 1200px;
 
 // Fonts

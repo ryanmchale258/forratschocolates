@@ -8,11 +8,14 @@
                 logo go here
             </div>
         <?php endif; ?>
-        <ul class="side-nav">
-            <li><a id="home" href="index.html">HOME</a></li> 
-            <li><a id="about" href="about.html">ABOUT</a></li> 
-            <li><a id="chocolate" href="#">CHOCOLATE</a></li> 
-            <li><a id="contact" href="#">CONTACT</a></li> 
-        </ul>
+        <div id="navscroll">
+            <ul class="side-nav">
+                <!-- <li><a id="home" href="index.html">HOME</a></li> 
+                <li><a id="about" href="about.html">ABOUT</a></li> 
+                <li><a id="chocolate" href="#">CHOCOLATE</a></li> 
+                <li><a id="contact" href="#">CONTACT</a></li>  -->
+                <?php echo $sidenav; ?>
+            </ul>
+        </div>
     </div>
 </section>

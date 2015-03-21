@@ -7,23 +7,17 @@
 	@include span(8);
 	@include translateX(-500px);
 	visibility: hidden;
-	@include breakpoint($small){
-		@include span(3);
-		@include translateX(0px);
-		visibility: visible;
-	} // breakpoint/small
+	z-index: 999;
 	@include breakpoint($medium){
 		@include span(2);
+		@include translateX(0px);
+		visibility: visible;
 	} // breakpoint/medium
 
 }
 
 .pgcontent {
 	@include span(12);
-	@include breakpoint($small){
-		@include span(9);
-		@include pre(3);
-	} // breakpoint/small
 	@include breakpoint($medium){
 		position: relative;
 		@include span(10);

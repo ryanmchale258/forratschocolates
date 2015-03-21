@@ -3,15 +3,14 @@
 	.logopanel {
 		@include single-transition(all, .2s, ease-in);
 		background: $light;
-		background-color: rgba(darken($chocolate, 20), .8);
-		border-bottom: 10px solid $gold;
+		background-color: rgba($light, .8);
+		border-bottom: 10px solid $darkred;
 		@include box-shadow(6px 6px 10px rgba($dark, .5));
 		@include clearfix;
-		@include breakpoint($small){
+		@include breakpoint($medium){
 			margin-top: 200px;
 			padding: 50px;
-			border: 10px solid $gold;
-			background-color: rgba(darken($chocolate, 20), .8);
+			border: 10px solid $darkred;
 			@include box-shadow(6px 6px 10px rgba($dark, .5));
 			@include span(8);
 			@include pre(2);
@@ -19,52 +18,110 @@
 		.mainlogo {
 			width: 60%;
 			@include breakpoint($small){
+				width: 30%;
+			} // breakpoint/medium
+			@include breakpoint($medium){
 				width: 100%;
-			} // breakpoint
+			} // breakpoint/large
 			display: block;
 			margin: 0 auto;
 		} // mainlogo
 	} // logopanel
 	.homemenu {
-		@include clearfix;
-		position: absolute;
-		top: 200px;
-		width: 100%;
-		height: 500px;
-		@include span(8);
-		@include pre(2);
-		.menuitem {
-			@include single-transition(all, .2s, ease-in);
+		@include with-layout(12 .25 split){
+			@include span(12);
+		}
+		@include breakpoint($medium){
+			@include clearfix;
 			position: absolute;
+			top: 200px;
 			width: 100%;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
+			height: 450px;
+			@include span(8);
+			@include pre(2);
+		}
+		.menuitem {
+			@include with-layout(12 .25 split){
+				@include span(6);
+			}
+			&:last-child:nth-child(odd){
+				@include with-layout(12 .25 split){
+					@include span(12);
+				}
+			}
+			@include single-transition(all, .2s, ease-in);
+			@include box-shadow(6px 6px 10px rgba($dark, .5));
+			position: relative;
+			border-bottom: 8px solid $darkred;
+			background-color: rgba($light, .8);
 			text-align: center;
+			padding: 30px 20px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			@include breakpoint(0 $medium){
+				opacity: 1;
+				z-index: auto;
+			}
+			@include breakpoint($small $medium){
+				@include span(12);
+				margin: 5px 0;
+				text-align: left;
+			}
+			@include breakpoint($medium){
+				border: 8px solid $darkred;
+				position: absolute;
+				width: 100%;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
 			span.icon {
-				color: #fff;
-				font-size: 20rem;
+				font-size: 3rem;
+				color: $chocolate;
+				@include breakpoint($small $medium){
+					@include span(2);
+					float: left;
+					font-size: 6rem;
+				}
+				@include breakpoint($medium){
+					float: none;
+					font-size: 20rem;
+					margin-top: -150px;
+					display: block;
+					color: $darkred;
+					@include text-shadow(3px 3px 5px #000);
+				} // breakpoint/medium
 			} // span.icon
 			.infogroup {
-				border: 10px solid $gold;
-				padding: 50px 10px;
-				padding-top: 140px;
-				margin-top: -130px;
-				background-color: rgba(darken($chocolate, 20), .8);
-				@include box-shadow(6px 6px 10px rgba($dark, .5));
+				margin-top: 10px;
+				@include breakpoint($small $medium){
+					@include span(10);
+					float: right;
+				}
+				@include breakpoint($medium){
+					float: none;
+				} // breakpoint/medium
 				h2 {
-					font-family: $shadowserif;
-					color: #fff;
-					font-size: 5rem;
+					font-family: $serif;
+					color: $chocolate;
+					font-size: 1.3rem;
 					line-height: 140%;
+					@include breakpoint($medium){
+						font-family: $shadowserif;
+						font-size: 4rem;
+					}
 				} // h2
 				p {
-					color: #fff;
-					margin-top: 10px;
-					font-family: $paragraph;
-					font-size: .9rem;
-					line-height: 140%;
+					display: none;
+					@include breakpoint($small){
+						display: block;
+						color: $chocolate;
+						margin-top: 10px;
+						font-family: $paragraph;
+						font-size: .9rem;
+						line-height: 140%;
+					}
 				} // p
 			} // infogroup
 		} // menuitem

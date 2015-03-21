@@ -3,7 +3,7 @@
 
 body {
 	@include bgImage('../images/headerbg.jpg');
-	border-top: 5px solid lighten($darkred, 20);
+	border-top: 5px solid $darkred;
 }
 
 span.icon {

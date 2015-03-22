@@ -1,4 +1,5 @@
 var base_url = 'http://localhost/forratschocolates/builds/development/';
+//var base_url = 'http://www.ryanmchale.ca/staging/forrats/';
 
 var navScrollable = $(function(){
     $('#navscroll').slimScroll({

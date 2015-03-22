@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
 
 class Locations extends CI_Controller {
 
@@ -14,7 +14,8 @@ class Locations extends CI_Controller {
 		$data['maps'] = $this->map_model->getAll();
 
 		$data['pgTitle'] = "Locations";
-		$data['initialize'] = "locationsScript();";
+		$data['bodyclass'] = 'locations-page';
+		$data['initialize'] = "locationsScript";
 		$this->load->view('template/head', $data);
 		$this->load->view('template/sidenav');
 

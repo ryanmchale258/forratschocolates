@@ -14,6 +14,9 @@ class Login extends CI_Controller {
 
 	public function index() {
 		$data['sidenav'] = $this->navigation_model->getNav();
+		$data['pgTitle'] = 'Login';
+		$data['sidenavlogo'] = true;
+		$data['bodyclass'] = 'login-page';
 		$data['formstart'] = form_open('login/submit', array(
 						'method' => 'POST',
 						'id' => 'loginform'

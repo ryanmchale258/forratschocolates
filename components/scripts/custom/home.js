@@ -1,4 +1,4 @@
-var homeScript = function(){
+homeScript = function(){
 
 	$('.side-nav a').mouseenter(function(){
 		$('.logopanel').addClass('hideme');
@@ -25,4 +25,4 @@ var homeScript = function(){
 		$('.logopanel').addClass('showme');
 	});
 
-}();
+};

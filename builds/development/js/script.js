@@ -490,6 +490,7 @@ var jQuery = $;
 })(jQuery);
 
 var base_url = 'http://localhost/forratschocolates/builds/development/';
+//var base_url = 'http://www.ryanmchale.ca/staging/forrats/';
 
 var navScrollable = $(function(){
     $('#navscroll').slimScroll({
@@ -513,7 +514,7 @@ var navsWithKids = function(){
 		$('.sideNav').removeClass('subvisible');
 	});
 }();
-var homeScript = function(){
+homeScript = function(){
 
 	$('.side-nav a').mouseenter(function(){
 		$('.logopanel').addClass('hideme');
@@ -540,9 +541,9 @@ var homeScript = function(){
 		$('.logopanel').addClass('showme');
 	});
 
-}();
+};
 
-var locationsScript = function(){
+locationsScript = function(){
 
   var map;
 
@@ -606,7 +607,7 @@ var locationsScript = function(){
     }
   }
 
-}();
+};
 },{"jquery":2}],2:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.3

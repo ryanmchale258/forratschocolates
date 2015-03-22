@@ -19,6 +19,7 @@ class Pages extends CI_Controller {
 		$data['sidenavlogo'] = true;
 		$data['pgdata'] = $this->pages_model->getPage($slug)->row();
 		$data['pgTitle'] = $data['pgdata']->pages_title;
+		$data['bodyclass'] = 'template-page';
 		
 		$data['bodyclass'] = 'page';
 		$this->load->view('template/head', $data);

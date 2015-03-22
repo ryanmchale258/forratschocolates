@@ -1,4 +1,4 @@
-var locationsScript = function(){
+locationsScript = function(){
 
   var map;
 
@@ -62,4 +62,4 @@ var locationsScript = function(){
     }
   }
 
-}();
+};

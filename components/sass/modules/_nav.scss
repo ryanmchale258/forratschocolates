@@ -45,7 +45,7 @@
 					width: 100%;
 					@include translateX(-500px);
 					visibility: hidden;
-					@include single-transition(all, .2s, ease-in);
+					@include single-transition(all, .5s, ease-in);
 				}
 				.subout {
 					@include translateX(-10px);

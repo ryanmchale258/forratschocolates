@@ -1,0 +1,95 @@
+.detailspg {
+	@include breakpoint($medium){
+		@include span(10);
+		@include pre(2);
+	}
+	#detailsoverlay{
+		background: $dark;
+		color: $cream;
+		font-family: $paragraph;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		@include breakpoint($medium){
+			background: rgba($dark, .8);
+			position: fixed;
+			min-height: 100vh;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			z-index: 10;
+			@include span(3);
+			@include pre(2);
+		}
+		@include breakpoint($large){
+			@include span(2);
+		}
+		.overlayinner{
+			@include container(85%);
+			h1{
+				font-size: 2rem;
+				line-height: 140%;
+				font-family: $cursive;
+				margin-bottom: 20px;
+			}
+			img {
+				margin-bottom: 20px;
+			}
+			p{
+				margin-bottom: 20px;
+				line-height: 140%;
+			}
+		}
+	}
+	.optionslist {
+		@include breakpoint($medium){
+			width: 68%;
+			margin-left: 31%;
+		}
+		@include breakpoint($large){
+			width: 77.8%;
+			margin-left: 21%;
+		}
+		.prod-option {
+			background: $dark;
+			padding: 10px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			color: $cream;
+			h3{
+				font-family: $serif;
+				font-size: 1.5rem;
+				line-height: 150%;
+			}
+			p {
+				font-family: $paragraph;
+				line-height: 120%;
+				font-size: 1.1rem;
+			}
+			img {
+				width: auto;
+				max-width: 200px;
+				display: block;
+				margin: 10px auto;
+			}
+			@include breakpoint($small){
+				@include clearfix();
+				background: rgba($dark, .8);
+				h3{
+					font-family: $serif;
+					font-size: 1.5rem;
+					line-height: 150%;
+				}
+				p {
+					font-family: $paragraph;
+					line-height: 120%;
+					font-size: 1.1rem;
+				}
+				img {
+					width: auto;
+					float: left;
+					margin: 10px;
+				}
+			}
+		}
+	}
+}

@@ -1,9 +1,29 @@
 .sideNav {
 	background: $light;
+	z-index: 9999;
 	@include single-transition(all, .3s, ease-in);
 	@include box-shadow($dark 0px 8px 12px);
 	&:hover {
 		background: rgba($light, 1);
+	}
+	#navIcon{
+		width: 50px;
+		height: 50px;
+		background: $light;
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		right: -50px;
+		line-height: 50px;
+		text-decoration: none;
+		text-align: center;
+		a{
+			text-decoration: none;
+			font-size: 2rem;
+		}
+		@include breakpoint($medium){
+			display: none;
+		}
 	}
 	.navinner {
 		width: 95%;
@@ -11,9 +31,14 @@
 	}
 	@include breakpoint($medium){
 		background: rgba($light, .8);
+		-webkit-transform: translateX(0px) !important;
+		-moz-transform: translateX(0px) !important;
+		-ms-transform: translateX(0px) !important;
+		transform: translateX(0px) !important;
+		-webkit-transform: translateX(0px) !important;
 	}
 	.slimScrollDiv{
-		margin-top: 200px;
+		margin-top: 150px;
 		.side-nav {
 			font-family: $serif;
 			li {
@@ -53,6 +78,26 @@
 				}
 			} // li
 		} // side-nav
+	}
+	&.navout {
+		-webkit-transform: translateX(0px) !important;
+		-moz-transform: translateX(0px) !important;
+		-ms-transform: translateX(0px) !important;
+		transform: translateX(0px) !important;
+		-webkit-transform: translateX(0px) !important;
+	}
+	.social {
+		font-family: $fontawesome;
+		margin-top: 50px;
+		width: 100%;
+		text-align: center;
+		a{
+			text-decoration: none;
+			color: $darkred;
+			font-size: 2.2rem;
+			display: inline-block;
+			padding: 5px;
+		}
 	}
 }
 .subvisible {

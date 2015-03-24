@@ -7,8 +7,12 @@ class Dashboard extends CI_Controller {
 	}	
 
 	public function index() {
-		$data;
+		$data['pgTitle'] = 'Dashboard';
+		$data['bodyclass'] = 'dashboard-page';
+		$data['initialize'] = 'cmsScript';
 		$this->load->view('template/head', $data);
+		$this->load->view('cms/logoandmenu');
+		$this->load->view('cms/dashboard');
 
 		$this->load->view('template/close');
 	}

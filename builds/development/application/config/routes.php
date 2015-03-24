@@ -40,7 +40,8 @@
 
 $route['default_controller'] = "home";
 $route['404_override'] = '';
-$route['page/(:any)'] = 'pages/display_page/$1'; 
+$route['page/(:any)'] = 'pages/display_page/$1';
+$route['products/(:any)'] = 'products/display_product/$1'; 
 
 
 /* End of file routes.php */

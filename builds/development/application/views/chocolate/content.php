@@ -9,7 +9,7 @@
 	<?php endforeach; ?> -->
 
 	<?php foreach($categories as $row): ?>
-	<a href="#" class="product">
+	<a href="<?php echo base_url() . index_page() . 'products/' . $row->categories_slug; ?>" class="product">
         <div class="iteminner" style="background-image: url('<?php echo base_url() ?>images/uploads/<?php echo $row->categories_img; ?>');">
             <div class="overlay">
                 <div class="tilecontent">

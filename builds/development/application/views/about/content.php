@@ -3,7 +3,7 @@
 		<a href="<?php echo base_url() . index_page() ?>"><img class="mainlogo" src="<?php echo base_url() ?>/images/forratslogo.svg" onerror="this.onerror=null; this.src='<?php echo base_url() ?>/images/forratslogo.png'"></a>
 	</div>
 	<div class="marcpicture">
-		<img src="<?php echo base_url(); ?>/images/marclarge.jpg" alt="Marc Forrat">
+		<img src="<?php echo base_url() ?>/images/marclarge.jpg" alt="Marc Forrat">
 	</div>
 	<div id="aboutoverlay">
 	    <div class="overlayinner">

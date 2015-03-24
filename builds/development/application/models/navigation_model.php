@@ -36,18 +36,18 @@ class Navigation_model extends CI_Model {
 				$menu .= $row->pages_title . '</a>';
 				$menu .= '<ul id="menu-' . $row->pages_slug . '" class="submenu">';
 					if($row->pages_hascontroller == 1){
-						$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . '/' . $row->pages_slug . '">';
+						$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . $row->pages_slug . '">';
 					}else{
-						$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . '/page/' . $row->pages_slug . '">';
+						$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . 'page/' . $row->pages_slug . '">';
 					}
 					$menu .= $row->pages_title . '</a></li>';
 
 
 					foreach($children as $kids){
 						if($kids['controller'] == 1){
-							$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . '/' . $kids['childlink'] . '">' . $kids['childname'] . '</a></li>';
+							$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . $kids['childlink'] . '">' . $kids['childname'] . '</a></li>';
 						}else{
-							$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . '/page/' . $kids['childlink'] . '">' . $kids['childname'] . '</a></li>';
+							$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . 'page/' . $kids['childlink'] . '">' . $kids['childname'] . '</a></li>';
 						}
 					}
 					$menu .= '<li class="back"><a href="#back">Back</a></li>';
@@ -56,9 +56,9 @@ class Navigation_model extends CI_Model {
 				$menu .= '</li>';
 			}else{
 				if($row->pages_hascontroller == 0){
-					$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . '/page/' . $row->pages_slug . '">';
+					$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . 'page/' . $row->pages_slug . '">';
 				}else{
-					$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . '/' . $row->pages_slug . '">';
+					$menu .= '<li><a id="' . $row->pages_slug . '" href="' . base_url() . index_page() . $row->pages_slug . '">';
 				}
 				$menu .= $row->pages_title;
 				$menu .= '</a></li>';

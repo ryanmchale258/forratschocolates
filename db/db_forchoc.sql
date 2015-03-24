@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2015 at 11:04 PM
+-- Generation Time: Mar 24, 2015 at 12:19 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -70,7 +70,40 @@ CREATE TABLE IF NOT EXISTS tbl_admin (
 --
 
 INSERT INTO tbl_admin (admin_id, admin_username, admin_password, admin_firstname, admin_lastname, admin_email, admin_level, admin_lastsession) VALUES
-(1, 'ryanmchale', 'd66fcc742cc640480ace083585445fd5cb3ea224', 'Ryan', 'McHale', '', 0, '59e1b05f3ec184081dd3b270ba372553');
+(1, 'ryanmchale', 'd66fcc742cc640480ace083585445fd5cb3ea224', 'Ryan', 'McHale', '', 0, 'ff3594eca49df838077316f4a6e9eb01');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'tbl_categories'
+--
+
+CREATE TABLE IF NOT EXISTS tbl_categories (
+  categories_id tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  categories_name varchar(75) NOT NULL,
+  categories_slug varchar(15) NOT NULL,
+  categories_img varchar(75) NOT NULL,
+  categories_desc text NOT NULL,
+  categories_longdesc text NOT NULL,
+  categories_createdby varchar(75) NOT NULL,
+  categories_createddate varchar(15) NOT NULL,
+  PRIMARY KEY (categories_id)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table 'tbl_categories'
+--
+
+INSERT INTO tbl_categories (categories_id, categories_name, categories_slug, categories_img, categories_desc, categories_longdesc, categories_createdby, categories_createddate) VALUES
+(1, 'Truffles', 'truffles', 'truffles.jpg', 'Savor the delightful rich chocolate sensation that has made Forrat''s famous.', 'What we pride ourselves on at Forrat''s Chocolates is our impeccable quality, and nowhere is that more evident than in our signature Truffles. Made with a variety of unique ingredients and flavors, once you try them you''ll be hooked.', 'Ryan', '20-03-15'),
+(2, 'Bars', 'bars', 'bars.jpg', 'Try the Forrat''s spin on a regular chocolate bar.', 'Made with the freshest ingredients and the most luxurious chocolate, these gourmet chocolate bars are sure to have you coming back for more.', 'Ryan', '20-03-15'),
+(3, 'Caramels', 'caramels', 'caramels.jpg', 'Our caramels are becoming one of our most popular creations. Try one and find out why.', 'These unique caramels are flavored with a variety of toppings and coatings and are sure to be a great pairing for any of our other signature products.', 'Ryan', '20-03-15'),
+(4, 'Clusters', 'clusters', 'clusters.jpg', 'Fresh ingredients coated in rich luxurious chocolate.', 'We take the freshest local ingredients we can find and cover them with chocolate. What more could you ask for? These chocolate coated clusters are sure to please with their delightful crunch and silky chocolate taste.', 'Ryan', '20-03-15'),
+(5, 'Dipped Yummies', 'dipped-yummies', 'dippedyummies.jpg', 'What in this world isn''t improved by being dipped in chocolate?', 'We are so confident in our chocolate, we think it can improve anything we coat it in! Try this unique selection of dipped yummies. These interesting flavour combinations are something you have to try to believe!', 'Ryan', '20-03-15'),
+(6, 'Baskets', 'baskets', 'baskets.jpg', 'A box of delights awaits!', 'Try a selection of our signature treats for yourself with one of our basket collections. We offer a variety of packing options to fit any occasion. Great for gifts!', 'Ryan', '20-03-15'),
+(248, 'Gift Cards', 'giftcards', 'giftcards.jpg', 'Share the love with a Forrat''s Gift Card', 'These gift cards can be preloaded with any amount of money to ensure your special someone never has to go without their fix of Forrat''s delicious chocolates.', '', ''),
+(249, 'Bliss Box', 'blissbox', 'blissbox.jpg', 'A mystery box delivered to your door every month.', 'Can''t get enough Forrat''s? Try signing up for our monthly subscription box service. Every month we''ll send a grab bag of signature goodies and merchandise to your door. It''s different every month, and might just contain some exclusive treats not sold in store!', '', ''),
+(250, 'Bouquet', 'bouquet', 'bouquet.jpg', 'Flowers and chocolate for your loved one.', 'An oldie but a goodie, flowers and chocolate are an unbeatable combination when you need to show that special someone you care. We take the headaches out of the process by becoming your one stop shop. We''ve partnered with 1-800-FLOWERS so you can order some of our treats and a bouquet of flowers for delivery in one go.', '', '');
 
 -- --------------------------------------------------------
 
@@ -80,9 +113,14 @@ INSERT INTO tbl_admin (admin_id, admin_username, admin_password, admin_firstname
 
 CREATE TABLE IF NOT EXISTS tbl_locations (
   locations_id tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  locations_telephone varchar(15) NOT NULL,
   locations_title varchar(75) NOT NULL,
   locations_lat varchar(75) NOT NULL,
   locations_long varchar(75) NOT NULL,
+  locations_streetaddress varchar(75) NOT NULL,
+  locations_city varchar(25) NOT NULL,
+  locations_prov varchar(2) NOT NULL,
+  locations_postal varchar(9) NOT NULL,
   PRIMARY KEY (locations_id)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
@@ -90,10 +128,10 @@ CREATE TABLE IF NOT EXISTS tbl_locations (
 -- Dumping data for table 'tbl_locations'
 --
 
-INSERT INTO tbl_locations (locations_id, locations_title, locations_lat, locations_long) VALUES
-(1, 'Covent Garden Market - 130 King Street, London', '42.982367', '-81.250959'),
-(2, '1304 Commissioners Road West Unit 3, Byron', '42.960983', '-81.336608'),
-(3, '184 Locke Street South, Hamilton', '43.255485', '-79.885753');
+INSERT INTO tbl_locations (locations_id, locations_telephone, locations_title, locations_lat, locations_long, locations_streetaddress, locations_city, locations_prov, locations_postal) VALUES
+(1, '519-455-2285', 'Forrat''s Chocolates at Covent Garden Market', '42.982367', '-81.250959', '130 King Street', 'London', 'ON', 'N6A 1C5'),
+(2, '519-204-7904', 'Forrat''s Chocolates and Lounge', '42.960983', '-81.336608', '1304 Commissioners Road West, Unit 3', 'London', 'ON', 'N6K 1E1'),
+(3, '289-389-5700', 'Forrat''s Chocolates on Locke', '43.255485', '-79.885753', '184 Locke Street South', 'Hamilton', 'ON', 'L8P 4B3');
 
 -- --------------------------------------------------------
 
@@ -114,6 +152,8 @@ CREATE TABLE IF NOT EXISTS tbl_pages (
   pages_navprnt varchar(50) DEFAULT NULL,
   pages_hascontroller tinyint(1) NOT NULL DEFAULT '0',
   pages_weight tinyint(1) NOT NULL DEFAULT '0',
+  pages_createdby varchar(25) NOT NULL,
+  pages_createddate varchar(25) NOT NULL,
   PRIMARY KEY (pages_id)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
 
@@ -121,14 +161,55 @@ CREATE TABLE IF NOT EXISTS tbl_pages (
 -- Dumping data for table 'tbl_pages'
 --
 
-INSERT INTO tbl_pages (pages_id, pages_slug, pages_icon, pages_title, pages_meta, pages_brief, pages_content, pages_navlvl, pages_haskids, pages_navprnt, pages_hascontroller, pages_weight) VALUES
-(1, 'home', '', 'Home', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'Fed by controller', 1, 0, NULL, 1, 99),
-(2, 'about', '&#xf059;', 'About', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'Fed by controller', 1, 0, NULL, 1, 85),
-(3, 'chocolate', '&#xf042;', 'Chocolate', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'Fed by controller', 1, 0, NULL, 1, 60),
-(4, 'locations', '&#xf041;', 'Locations', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'Fed by controller', 1, 0, NULL, 1, 45),
-(6, 'contact', '&#xf003;', 'Contact', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'Fed by controller', 1, 0, NULL, 1, 30),
-(15, 'newpage', '&#xf0f6;', 'New Page', '', 'A New Page', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mollis tellus vitae dolor faucibus, nec rhoncus risus scelerisque. Nulla consequat ligula ut sapien suscipit sollicitudin. Vivamus lacinia gravida sollicitudin. Nulla sed turpis et dolor iaculis sagittis ut a justo. Cras eleifend elit tortor. In eget gravida diam. Aliquam ut porta justo. Fusce tincidunt, dui eu varius congue, nunc erat tincidunt risus, eget ultricies mauris lacus ut urna. Ut a arcu facilisis, luctus velit sit amet, placerat metus. Sed velit tortor, maximus a consequat id, rutrum sed elit. Nullam mattis interdum orci, eget bibendum eros laoreet vitae. Fusce rhoncus nisl lectus, ut varius diam venenatis quis. Nam volutpat, lorem non ultrices bibendum, sapien mi convallis dui, vel rutrum nulla mauris vel odio. Ut condimentum faucibus enim a feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>\n\n<p>Cras ac viverra neque. Cras aliquam ultrices lobortis. Quisque ut ex id mauris accumsan sodales. Quisque vestibulum eget magna sit amet tempor. Nam quis mattis tellus. Praesent fringilla dui ac metus luctus, eget tempor ante cursus. Morbi eget diam vehicula, placerat nibh nec, rutrum nisl. Pellentesque lobortis mollis elementum. Nam rutrum purus nec eros pharetra iaculis. Mauris vitae tellus vitae turpis blandit tincidunt sed vel nisi. Vestibulum ultrices nec metus non ornare. Vestibulum sapien nulla, viverra in magna in, luctus pellentesque felis. Praesent posuere sem a tortor dictum, vel laoreet enim aliquet. Maecenas nec tortor urna. Proin malesuada eros felis, nec fringilla justo rhoncus vel. Nulla ut felis in nunc cursus ultrices ac scelerisque augue.</p>\n\n<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ullamcorper nulla vel felis sollicitudin maximus. Morbi nec ipsum lectus. Suspendisse gravida sagittis dui, vel blandit magna porttitor a. Aliquam vulputate egestas enim, lacinia vehicula est efficitur ultrices. Aenean feugiat ornare feugiat. Proin eros nunc, tincidunt eget mauris ut, rhoncus vestibulum ante.</p>\n\n<p>Vestibulum pretium nunc erat, non tempus sem cursus vel. Nunc tristique felis sed ante ullamcorper, tempus imperdiet purus venenatis. Nunc lobortis elit vitae augue convallis, id fermentum tellus cursus. Quisque at arcu et tortor lobortis dictum vitae et ligula. Mauris feugiat laoreet ullamcorper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque non leo vel quam tempus ornare id id leo. Nullam dapibus odio diam, id dignissim ipsum volutpat eu. Nullam quis turpis at enim consectetur finibus sit amet non ligula.</p>\n\n<p>Curabitur arcu massa, ultrices non leo et, interdum accumsan felis. Phasellus non eros vehicula, pharetra mauris vulputate, suscipit erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec eget mi eget turpis finibus congue. Integer interdum velit eu ipsum rutrum, eleifend laoreet enim ultrices. Phasellus volutpat ornare lacus et vestibulum. Vivamus sed nibh eget elit suscipit euismod. Suspendisse potenti. Nam vestibulum mauris magna, id tempor dui sagittis at. Integer blandit nisl vel sapien imperdiet ultrices.</p>\nCras ac viverra neque. Cras aliquam ultrices lobortis. Quisque ut ex id mauris accumsan sodales. Quisque vestibulum eget magna sit amet tempor. Nam quis mattis tellus. Praesent fringilla dui ac metus luctus, eget tempor ante cursus. Morbi eget diam vehicula, placerat nibh nec, rutrum nisl. Pellentesque lobortis mollis elementum. Nam rutrum purus nec eros pharetra iaculis. Mauris vitae tellus vitae turpis blandit tincidunt sed vel nisi. Vestibulum ultrices nec metus non ornare. Vestibulum sapien nulla, viverra in magna in, luctus pellentesque felis. Praesent posuere sem a tortor dictum, vel laoreet enim aliquet. Maecenas nec tortor urna. Proin malesuada eros felis, nec fringilla justo rhoncus vel. Nulla ut felis in nunc cursus ultrices ac scelerisque augue.</p>\n\n<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ullamcorper nulla vel felis sollicitudin maximus. Morbi nec ipsum lectus. Suspendisse gravida sagittis dui, vel blandit magna porttitor a. Aliquam vulputate egestas enim, lacinia vehicula est efficitur ultrices. Aenean feugiat ornare feugiat. Proin eros nunc, tincidunt eget mauris ut, rhoncus vestibulum ante.\n\nVestibulum pretium nunc erat, non tempus sem cursus vel. Nunc tristique felis sed ante ullamcorper, tempus imperdiet purus venenatis. Nunc lobortis elit vitae augue convallis, id fermentum tellus cursus. Quisque at arcu et tortor lobortis dictum vitae et ligula. Mauris feugiat laoreet ullamcorper. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque non leo vel quam tempus ornare id id leo. Nullam dapibus odio diam, id dignissim ipsum volutpat eu. Nullam quis turpis at enim consectetur finibus sit amet non ligula.</p>\n\n<p>Curabitur arcu massa, ultrices non leo et, interdum accumsan felis. Phasellus non eros vehicula, pharetra mauris vulputate, suscipit erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec eget mi eget turpis finibus congue. Integer interdum velit eu ipsum rutrum, eleifend laoreet enim ultrices. Phasellus volutpat ornare lacus et vestibulum. Vivamus sed nibh eget elit suscipit euismod. Suspendisse potenti. Nam vestibulum mauris magna, id tempor dui sagittis at. Integer blandit nisl vel sapien imperdiet ultrices.</p>', 2, 0, 'about', 0, 0),
-(16, 'secondpage', '&#xf0f6;', 'Second Page', 'a page', 'Second page to test', 'New Page', 0, 0, NULL, 0, 35);
+INSERT INTO tbl_pages (pages_id, pages_slug, pages_icon, pages_title, pages_meta, pages_brief, pages_content, pages_navlvl, pages_haskids, pages_navprnt, pages_hascontroller, pages_weight, pages_createdby, pages_createddate) VALUES
+(1, 'home', '', 'Home', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'Fed by controller', 1, 0, NULL, 1, 99, '', ''),
+(2, 'about', '&#xf059;', 'About', '', 'Learn about Forrat''s Chocolate and Marc Forrat himself.', 'Fed by controller', 1, 0, NULL, 1, 85, '', ''),
+(3, 'chocolate', '&#xf042;', 'Chocolate', '', 'Browse our selection of delicious treats and bundles.', 'Fed by controller', 1, 0, NULL, 1, 60, '', ''),
+(4, 'locations', '&#xf041;', 'Locations', '', 'Find a Forrat''s Chocolates location near you.', 'Fed by controller', 1, 0, NULL, 1, 45, '', ''),
+(70, 'contact', '&#xf0e0;', 'Contact Us', '', 'Drop us a line or let us know what you think of our products. We''re always happy to chat to fellow chocolate lovers.', '', 1, 0, NULL, 1, 20, 'Ryan', '20-03-15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'tbl_products'
+--
+
+CREATE TABLE IF NOT EXISTS tbl_products (
+  products_id smallint(4) unsigned NOT NULL AUTO_INCREMENT,
+  products_category smallint(3) NOT NULL,
+  products_name varchar(75) NOT NULL,
+  products_desc text NOT NULL,
+  products_image varchar(50) NOT NULL,
+  PRIMARY KEY (products_id)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table 'tbl_products'
+--
+
+INSERT INTO tbl_products (products_id, products_category, products_name, products_desc, products_image) VALUES
+(1, 1, 'Butterscotch', 'A bestseller - the sweetness of butterscotch in a milk chocolate ganache - it''s a beautiful mélange.', 'butterscotch_chocolate_truffle_145x145.jpg'),
+(2, 1, 'Dark Champagne', 'Everybody celebrate! This is a festive truffle, good for any location. It doesn''t bubble, but it does satisfy.', 'champagne_chocolate_truffle_145x145.jpg'),
+(3, 1, 'Chili', 'By popular demand, Chili has been a best seller since its introduction. Imagine sweetness with a little kick - not too hot - available in milk or dark chocolate.', 'chili_chocolate_truffle_145x145.jpg'),
+(4, 1, 'Mint', 'Take those other mint chocolates you''ve had before and multiply the experience by 10. Now add ''creamy'' into the mix (available in milk or dark).', 'mint_chocolate_truffle_145x145.jpg'),
+(5, 1, 'Peanut Butter', 'Those other buttercups have nothing on the freshness of a Peanut Butter truffle. Once you try one, you won''t go back!', 'penutbutter_chocolate_truffle_145x145.jpg'),
+(6, 1, 'Raspberry Wine', 'Combines a sweet, yet savory raspberry wine with chocolate (available in milk or dark).', 'raspberry_chocolate_truffle_145x145.jpg'),
+(7, 3, 'Sea Salt', 'Luxurious chocolate coated with coarse sea salt. Comes in light, milk, and dark chocolate.', 'caramels.jpg'),
+(8, 3, 'Hazelnut', 'Luxurious chocolate topped with crunchy hazelnut. Comes in light, milk, and dark chocolate.', 'caramels.jpg'),
+(9, 3, 'Mini Pretzel Bites', 'Luxurious chocolate topped with cruncy pretzel pieces. Comes in light, milk, and dark chocolate.', 'caramels.jpg'),
+(10, 3, 'Pecan', 'Luxurious chocolate studded with pecans. Comes in light, milk, and dark chocolate.', 'caramels.jpg'),
+(11, 3, 'Almond', 'Luxurious chocolate topped with almond shavings. Comes in light, milk, and dark chocolate.', 'caramels.jpg'),
+(12, 3, 'Coconut', 'Luxurious chocolate with a light flaking of coconut. Comes in light, milk, and dark chocolate.', 'caramels.jpg'),
+(13, 2, 'Plain Chocolate Bars', 'Rich smooth chocolate available in plain, milk, or dark chocolate.', 'plain.jpg'),
+(14, 2, 'Gourmet Chocolate Bars', 'Creamy rich chocolate studded with a variety of unique fresh ingredients and made to order by your selection.', 'gourmet.jpg'),
+(15, 2, 'Meltaway Bars', 'A great selection of melting chocolate for your baking and cooking needs.', 'meltaway.jpg'),
+(16, 4, 'Salted Pretzels', 'Cruncy salted pretzel clusters clusters covered in either dark chocolate, milk chocolate, or white chocolate.', 'clusters.jpg'),
+(18, 4, 'Almond', 'Cruncy almond clusters covered in either dark chocolate, milk chocolate, or white chocolate.', 'clusters.jpg'),
+(19, 4, 'Coconut', 'Flaked coconut clusters covered in either dark chocolate, milk chocolate, or white chocolate.', 'clusters.jpg'),
+(20, 4, 'Berries', 'Fresh berry clusters covered in either dark chocolate, milk chocolate, or white chocolate.', 'clusters.jpg'),
+(21, 4, 'Cherries', 'Fresh cherry clusters covered in either dark chocolate, milk chocolate, or white chocolate.', 'clusters.jpg'),
+(22, 4, 'Marc''s (graham cookies, oats and nuts)', 'Try Marc''s favourite cluster combination of crunchy graham cookies, rolled oats, and fresh nuts.', 'clusters.jpg'),
+(23, 4, 'Honey Roasted Peanuts', 'Delicious and sweet clusters of honey roasted peanuts covered in chocolate.', 'clusters.jpg');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

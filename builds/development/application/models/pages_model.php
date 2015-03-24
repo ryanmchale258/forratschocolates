@@ -24,7 +24,6 @@ class Pages_model extends CI_Model {
 
 	public function getEditList($tbl){
 		$this->db->where('pages_hascontroller', 0);
-		$this->db->where("pages_navlvl = 2 OR pages_navlvl = 0");
 		$items = $this->db->get($tbl);
 		return $items->result();
 	}

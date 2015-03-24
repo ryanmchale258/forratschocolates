@@ -14,6 +14,10 @@ class Pages extends CI_Controller {
 		$this->form_validation->set_rules('content', 'Page Content', 'trim|required');
 	}
 
+	public function index(){
+		$this->edit();
+	}
+
 	public function display_page($slug) {	
 		$data['sidenav'] = $this->navigation_model->getNav();
 		$data['sidenavlogo'] = true;
@@ -35,8 +39,9 @@ class Pages extends CI_Controller {
 		}
 
 		if($this->form_validation->run() == FALSE){
-			$data['bodyclass'] = "addpage";
-			$data['header'] = "Add a New Page";
+			$data['pgTitle'] = 'Add Page';
+			$data['bodyclass'] = 'addpage-page';
+			$data['initialize'] = 'cmsScript';
 			$navparents = $this->navigation_model->getParents();
 			$data['formstart'] = form_open('pages/insert_record/pages');
 			$data['pagename'] = form_input(array(
@@ -51,6 +56,13 @@ class Pages extends CI_Controller {
 				            'placeholder' => 'URL Segment',
 				            'value' => set_value('slug')
 	        ));
+	        $data['icon'] = form_input(array(
+				            'name' => 'icon',
+				            'type' => 'text',
+				            'readonly' => true,
+				            'value' => set_value('icon')
+	        ));
+	        $data['hiddenicon'] = form_hidden('icontext');
 	        $data['metadesc'] = form_textarea(array(
 				            'name' => 'metadesc',
 				            'id' => 'metadesc',
@@ -58,7 +70,10 @@ class Pages extends CI_Controller {
 				            'placeholder' => 'Meta Description',
 				            'value' => set_value('metadesc')
 	        ));
-	        $navoptions = array('null' => 'Orphan');
+	        $navoptions = array(
+	        			'null' => 'Orphan',
+	        			'toplevel' => 'Top Level Page'
+	        );
 	        foreach($navparents as $row){
 	        	$navoptions[$row->pages_slug] = $row->pages_title;
 	        }
@@ -78,25 +93,23 @@ class Pages extends CI_Controller {
 				            'class' => 'richtext',
 				            'value' => set_value('content')
 	        ));
-			$this->load->view('cms/head', $data);
-			$this->load->view('cms/header');
+			$this->load->view('template/head', $data);
+			$this->load->view('cms/logoandmenu');
 			$this->load->view('cms/pagesform');
-			$this->load->view('template/footer');
 
-			$this->load->view('template/scripts');
 			$this->load->view('cms/tinymce-init');
 			$this->load->view('template/close');
 		}else{
+			$data['pgTitle'] = 'Add Page';
+			$data['bodyclass'] = 'addpage-page';
+			$data['initialize'] = 'cmsScript';
 			$data['success'] = true;
 			$data['items'] = $this->pages_model->getEditList('tbl_pages');
-			$data['header'] = "Add a New Page";
-			$this->load->view('cms/head', $data);
-			$this->load->view('cms/header');
+			$this->load->view('template/head', $data);
+			$this->load->view('cms/logoandmenu');
 			$this->load->view('cms/delete_overlay');
 			$this->load->view('cms/editlist');
-			$this->load->view('template/footer');
 
-			$this->load->view('template/scripts');
 			$this->load->view('cms/deletescript');
 			$this->load->view('template/close');
 		}
@@ -113,12 +126,14 @@ class Pages extends CI_Controller {
 					$id = $pagedata->pages_id;
 					$title = $pagedata->pages_title;
 					$slug = $pagedata->pages_slug;
+					$icon = $pagedata->pages_icon;
 					$meta = $pagedata->pages_meta;
 					$body = $pagedata->pages_content;
 					$parent = $pagedata->pages_navprnt;
 					$weight = $pagedata->pages_weight;
-				$data['bodyclass'] = "addpage";
-				$data['header'] = "Add a New Page";
+				$data['pgTitle'] = 'Edit Page';
+				$data['bodyclass'] = 'editpage-page';
+				$data['initialize'] = 'cmsScript';
 				$navparents = $this->navigation_model->getParents();
 				$data['formstart'] = form_open('pages/update_record/pages/' . $id);
 				$data['pagename'] = form_input(array(
@@ -133,6 +148,13 @@ class Pages extends CI_Controller {
 					            'placeholder' => 'URL Segment',
 					            'value' => $slug
 		        ));
+		        $data['icon'] = form_input(array(
+					            'name' => 'icon',
+					            'type' => 'text',
+					            'readonly' => true,
+					            'value' => $icon
+		        ));
+		        $data['hiddenicon'] = form_hidden('icontext', $icon);
 		        $data['metadesc'] = form_textarea(array(
 					            'name' => 'metadesc',
 					            'id' => 'metadesc',
@@ -140,7 +162,10 @@ class Pages extends CI_Controller {
 					            'placeholder' => 'Meta Description',
 					            'value' => $meta
 		        ));
-		        $navoptions = array('null' => 'Orphan');
+		        $navoptions = array(
+		        			'null' => 'Orphan',
+		        			'toplevel' => 'Top Level Page'
+		        );
 		        foreach($navparents as $row){
 		        	$navoptions[$row->pages_slug] = $row->pages_title;
 		        }
@@ -161,17 +186,16 @@ class Pages extends CI_Controller {
 					            'value' => $body
 		        ));
 		        $data['id'] = form_hidden('id', $id);
-				$this->load->view('cms/head', $data);
-				$this->load->view('cms/header');
+				$this->load->view('template/head', $data);
+				$this->load->view('cms/logoandmenu');
 				$this->load->view('cms/pagesform');
-				$this->load->view('template/footer');
 
-				$this->load->view('template/scripts');
 				$this->load->view('cms/tinymce-init');
 				$this->load->view('template/close');
 			}else{
-				$data['bodyclass'] = "addpage";
-				$data['header'] = "Add a New Page";
+				$data['pgTitle'] = 'Edit Page';
+				$data['bodyclass'] = 'editpage-page';
+				$data['initialize'] = 'cmsScript';
 				$navparents = $this->navigation_model->getParents();
 				$data['formstart'] = form_open('pages/update_record/pages' . $id);
 				$data['pagename'] = form_input(array(
@@ -186,6 +210,13 @@ class Pages extends CI_Controller {
 					            'placeholder' => 'URL Segment',
 					            'value' => set_value('slug')
 		        ));
+		        $data['icon'] = form_input(array(
+					            'name' => 'icon',
+					            'type' => 'text',
+					            'readonly' => true,
+					            'value' => set_value('icon')
+		        ));
+		        $data['hiddenicon'] = form_hidden('icontext');
 		        $data['metadesc'] = form_textarea(array(
 					            'name' => 'metadesc',
 					            'id' => 'metadesc',
@@ -193,7 +224,10 @@ class Pages extends CI_Controller {
 					            'placeholder' => 'Meta Description',
 					            'value' => set_value('metadesc')
 		        ));
-		        $navoptions = array('null' => 'Orphan');
+		        $navoptions = array(
+		        			'null' => 'Orphan',
+		        			'toplevel' => 'Top Level Page'
+		        );
 		        foreach($navparents as $row){
 		        	$navoptions[$row->pages_slug] = $row->pages_title;
 		        }
@@ -214,25 +248,22 @@ class Pages extends CI_Controller {
 					            'value' => set_value('content')
 		        ));
 		        $data['id'] = form_hidden('id', $id);
-				$this->load->view('cms/head', $data);
-				$this->load->view('cms/header');
+				$this->load->view('template/head', $data);
+				$this->load->view('cms/logoandmenu');
 				$this->load->view('cms/pagesform');
-				$this->load->view('template/footer');
 
-				$this->load->view('template/scripts');
 				$this->load->view('cms/tinymce-init');
 				$this->load->view('template/close');
 			}
 		}else{
+			$data['pgTitle'] = 'Edit Page';
+			$data['bodyclass'] = 'editpage-page';
 			$data['items'] = $this->pages_model->getEditList('tbl_pages');
-			$data['header'] = "Add a New Page";
-			$this->load->view('cms/head', $data);
-			$this->load->view('cms/header');
+			$this->load->view('template/head', $data);
+			$this->load->view('cms/logoandmenu');
 			$this->load->view('cms/delete_overlay');
 			$this->load->view('cms/editlist');
-			$this->load->view('template/footer');
 
-			$this->load->view('template/scripts');
 			$this->load->view('cms/deletescript');
 			$this->load->view('template/close');
 		}
@@ -245,16 +276,19 @@ class Pages extends CI_Controller {
 			$this->insert_model->$function();
 		}
 		
-		$this->add();
+		//$this->add();
+		redirect(base_url() . index_page() . 'pages/add');
 	}
 
 	public function update_record($function, $record){
 		$this->load->model('update_model');
 		if($this->form_validation->run() != FALSE){
 			$this->update_model->$function();
-			$this->edit();
+			//$this->edit();
+			redirect(base_url() . index_page() . 'pages');
 		}else{
-			$this->edit($record);
+			//$this->edit($record);
+			redirect(base_url() . index_page() . 'pages/' . $record);
 		}
 
 	}
@@ -263,7 +297,8 @@ class Pages extends CI_Controller {
 		$this->load->model('delete_model');
 		$this->delete_model->$function($record);
 
-		$this->edit();
+		//$this->edit();
+		redirect(base_url() . index_page() . 'pages');
 	}
 
 }

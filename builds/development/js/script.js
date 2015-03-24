@@ -489,8 +489,51 @@ var jQuery = $;
 
 })(jQuery);
 
+cmsScript = function(){
+	$('.menubutton').on("click", function(e){
+		e.preventDefault();
+		if($('.edible-menu').hasClass('open')){
+			$('.edible-menu').removeClass('open');
+		}else{
+			$('.edible-menu').addClass('open');
+		}
+
+	});
+
+	$('#metadesc').keyup(function(){
+		$('#wordcount').html(150 - $(this).val().length);
+	});
+
+	$('.formset.icons input').val($(this).attr('value'));
+
+	$('.grid-icon').on('click', function(){
+		var text = escape(this.innerHTML);
+		$('.grid-icon.selected').removeClass('selected');
+		$(this).addClass('selected');
+		$('.formset.icons input').val($(this).html());
+		$('.pageform input[name="icontext"').attr('value', text);
+	});
+
+$('.calc').on('click', function(e){
+	e.preventDefault();
+	var address = $("input[name='streetaddress'").val() + ', ' + $("input[name='city'").val() + ', ' + $("input[name='prov'").val() + ', ' + $("input[name='postal'").val();
+	var geocoder = new google.maps.Geocoder();//defines geocoder
+	geocoder.geocode( { 'address': address}, function(results, status) {//calls the geocode function
+		if(status == google.maps.GeocoderStatus.OK){//if the passed address is valid as defined by the GMaps API
+			var latitude = results[0].geometry.location.lat();//defines latitude as the resulting latitude
+			var longitude = results[0].geometry.location.lng();//defines longitude as the resulting longitude
+
+			$("input[name='lat']").val(latitude);
+			$("input[name='long']").val(longitude);
+		}
+	});
+})
+
+
+}
+
 var base_url = 'http://localhost/forratschocolates/builds/development/';
-//var base_url = 'http://www.ryanmchale.ca/staging/forrats/';
+//var base_url = 'http://www.ryanmchale.ca/staging/forrats5/';
 
 var navScrollable = $(function(){
     $('#navscroll').slimScroll({
@@ -512,6 +555,45 @@ var navsWithKids = function(){
 	$('.back a').on("click", function(){
 		$('.subout').removeClass('subout');
 		$('.sideNav').removeClass('subvisible');
+	});
+
+	$(window).resize(function(){
+		if($(window).width() < 960){
+			var thewidth = '-' +  $('.sideNav').width();
+			$('.sideNav').css({
+				'visibility' : 'visible',
+				'-webkit-transform' : 'translateX(' + thewidth + 'px)',
+				'-moz-transform' : 'translateX(' + thewidth + 'px)',
+				'-ms-transform' : 'translateX(' + thewidth + 'px)',
+				'transform' : 'translateX(' + thewidth + 'px)',
+				'-webkit-transform' : 'translateX(' + thewidth + 'px)'
+			});
+		}
+	})
+
+	if($(window).width() < 960){
+		var thewidth = '-' +  $('.sideNav').width();
+		$('.sideNav').css({
+			'visibility' : 'visible',
+			'-webkit-transform' : 'translateX(' + thewidth + 'px)',
+			'-moz-transform' : 'translateX(' + thewidth + 'px)',
+			'-ms-transform' : 'translateX(' + thewidth + 'px)',
+			'transform' : 'translateX(' + thewidth + 'px)',
+			'-webkit-transform' : 'translateX(' + thewidth + 'px)'
+		});
+	}else{
+		$('.sideNav').css({
+			'visibility' : '',
+			'-webkit-transform' : '',
+			'-moz-transform' : '',
+			'-ms-transform' : '',
+			'transform' : '',
+			'-webkit-transform' : ''
+		});
+	}
+
+	$('#navIcon').on('click', function(){
+		$('.sideNav').toggleClass('navout');
 	});
 }();
 homeScript = function(){
@@ -563,6 +645,15 @@ locationsScript = function(){
       //zoom 9 is nicer for desktop sizes, zoom 8 works better on mobile
       zoom: 9,
       center: new google.maps.LatLng(43.112736, -80.704723),
+      panControlOptions: {
+          position: google.maps.ControlPosition.RIGHT_TOP
+      },
+      zoomControlOptions: {
+          position: google.maps.ControlPosition.RIGHT_TOP
+      },
+      streetViewControlOptions: {
+          position: google.maps.ControlPosition.RIGHT_TOP
+      },
       styles: [{"featureType":"administrative","elementType":"labels.text","stylers":[{"color":"#b72025"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"saturation":"-100"},{"lightness":"100"},{"weight":"10.00"},{"visibility":"on"},{"hue":"#ff0000"},{"gamma":"0.00"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#cac1c1"},{"lightness":33},{"visibility":"off"}]},{"featureType":"landscape.natural.landcover","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":"-100"},{"lightness":"-2"},{"hue":"#ff0000"},{"gamma":"5.72"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#ebe1e1"},{"visibility":"simplified"}]},{"featureType":"poi.sports_complex","elementType":"geometry","stylers":[{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"poi.sports_complex","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#b72025"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"on"},{"saturation":-100}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"lightness":-100},{"visibility":"on"},{"color":"#f3eaea"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#b72025"},{"visibility":"on"}]},{"featureType":"road.highway","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels.text.stroke","stylers":[{"weight":0.1},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels.icon","stylers":[{"invert_lightness":true},{"lightness":-4},{"saturation":-90},{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"saturation":-100},{"lightness":-14}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"},{"saturation":-100},{"lightness":13}]},{"featureType":"road.local","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"labels.icon","stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#b72025"}]},{"featureType":"water","elementType":"geometry.stroke","stylers":[{"saturation":-100},{"lightness":-100},{"weight":0.2}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"saturation":-100},{"lightness":-100}]}]
       };
 

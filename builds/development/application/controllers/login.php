@@ -60,7 +60,7 @@ class Login extends CI_Controller {
 				redirect('login/first/' . $userResult->admin_id);
 			}else{
 				$this->update_model->admin_login($userResult->admin_id);
-				redirect('dashboard');
+				redirect('pages');
 			}
 		}else{
 			$data['sidenav'] = $this->navigation_model->getNav();
@@ -128,7 +128,7 @@ class Login extends CI_Controller {
 			$this->update_model->$function($id, $newpass);
 		}
 
-		redirect('dashboard');
+		redirect('pages');
 	}
 	
 }

@@ -11,4 +11,14 @@ class Map_model extends CI_Model {
 		return $mapdata->result();
 	}
 
+	public function getToEdit($record){
+		$page = $this->db->get_where('tbl_locations', array('locations_id' => $record));
+		return $page->row();
+	}
+
+	public function getEditList($tbl){
+		$items = $this->db->get($tbl);
+		return $items->result();
+	}
+
 }

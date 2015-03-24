@@ -12,7 +12,7 @@ var deleteButtons = document.querySelectorAll('.del'),
 
 function throwDelete(evt){
 	evt.preventDefault();
-	delModal.classList.add("modalup");
+	delModal.classList.add("modaldown");
 	recordId = evt.target.dataset.record;
 	returnCont = evt.target.dataset.controller;
 	deleteName.innerHTML = evt.target.dataset.title;
@@ -22,7 +22,7 @@ function throwDelete(evt){
 
 delCancel.addEventListener("click", function(e){
 	e.preventDefault();
-	delModal.classList.remove("modalup");
+	delModal.classList.remove("modaldown");
 }, false);
 
 (function(){

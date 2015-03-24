@@ -45,3 +45,10 @@ img {
 		} // mainlogo
 	} // logopanel
 }
+
+.burger {
+	font-family: $fontawesome !important;
+	@include breakpoint($medium){
+		display: none !important;
+	}
+}

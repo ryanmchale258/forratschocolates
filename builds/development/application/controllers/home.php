@@ -10,6 +10,7 @@ class Home extends CI_Controller {
 
 	public function index(){
 		$data['sidenav'] = $this->navigation_model->getNav();
+		$data['sidenavlogo'] = true;
 		$data['pages'] = $this->pages_model->getAllPages();
 		$data['pgTitle'] = "Home";
 		$data['bodyclass'] = 'home-page';

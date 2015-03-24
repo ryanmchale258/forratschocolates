@@ -1,0 +1,492 @@
+.loginpg {
+	#loginbox {
+		background: rgba($light, .8);
+		@include container(90%);
+		max-width: 400px;
+		margin-top: 20px;
+		padding: 20px;
+		h2 {
+			font-family: $paragraph;
+			color: $darkred;
+			font-size: 1.3rem;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		.loginset{
+			margin-bottom: 20px;
+			label{
+				display: block;
+				font-family: $serif;
+				color: $darkred;
+				font-size: 1.15rem;
+			}
+			input[type="text"],
+			input[type="password"]{
+				outline: none;
+				border: none;
+				background: $darkred;
+				color: $cream;
+				font-family: $paragraph;
+				line-height: 150%;
+				font-size: 1.3rem;
+				padding-left: 10px;
+				padding-right: 10px;
+				display: block;
+				width: 100%;
+			}
+			textarea {
+				background: $darkred;
+				font-family: $paragraph;
+				color: $cream;
+				font-size: 1.1rem;
+				line-height: 120%;
+				padding: 10px;
+				resize: none;
+				display: block;
+				outline: none;
+				border: none;
+				width: 100%;
+			}
+		}
+		input[type="submit"]{
+			outline: none;
+			border: $light;
+			background: $darkred;
+			color: $cream;
+			font-family: $paragraph;
+			padding: 10px 20px;
+			font-size: 1.12rem;
+			text-transform: uppercase;
+			margin: 0 auto;
+			cursor: pointer;
+			display: block;
+		}
+	}
+}
+
+.edible-logoarea {
+	@include container();
+	position: relative;
+	a img{
+		@include span(6);
+		@include breakpoint($medium){
+			@include span(4);
+		}
+	}
+	.menubutton{
+		@include breakpoint($medium){
+			display: none;
+		}
+	}
+	.edible-menu {
+		@include single-transition(all, .5s, ease-in);
+		border-top: 5px solid $light;
+		@include span(12);
+		background: $light;
+		font-family: $paragraph;
+		max-height: 0;
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+		ul{
+			li {
+				width: 100%;
+				text-align: center;
+				border-bottom: 1px dotted $darkred;
+				&:last-child{
+					border-bottom: none;
+				}
+				a{
+					@include single-transition(all, .2s, ease-in);
+					line-height: 250%;
+					width: 100%;
+					text-decoration: none;
+					color: $darkred;
+					font-weight: bold;
+					display: block;
+					&:hover {
+						background: $darkred;
+						color: $cream;
+					}
+				}
+			}
+		}
+		&.open{
+			max-height: 250px;
+		}
+		@include breakpoint($medium){
+			@include span(8);
+			@include pre(4);
+			position: absolute;
+			bottom: 0;
+			max-height: none;
+			ul{
+				li{
+					float: left;
+					width: 20%;
+					border: none;
+					a{
+						border-right: 1px dotted $darkred;
+					}
+					&:last-child a{
+						border-right: none;
+					}
+				}
+			}
+		}
+	}
+	.usermenu {
+		position: absolute;
+		top: 0;
+		right: 0;
+		ul{
+			li{
+				float: left;
+				background: $light;
+				a{
+					@include single-transition(all, .2s, ease-in);
+					text-decoration: none;
+					font-family: $paragraph;
+					color: $darkred;
+					line-height: 250%;
+					padding-left: 20px;
+					padding-right: 20px;
+					display: block;
+					&:hover {
+						background: $darkred;
+						color: $cream;
+					}
+				}
+			}
+		}
+	}
+}
+
+.cmspg {
+	min-height: 80vh;
+	position: relative;
+	z-index: 5;
+	background: $darkred;
+	@include breakpoint($medium){
+		background: rgba($darkred, .8);
+	}
+	border-top: 5px solid $light;
+	@include container();
+	h2 {
+		font-size: 2.5rem;
+		color: $cream;
+		font-family: $paragraph;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.addbutton {
+	@include span(8);
+	@include pre(2);
+	background: $light;
+	font-family: $paragraph;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	@include breakpoint($medium){
+		@include span(4);
+		@include pre(4);
+		@include post(4);
+	}
+	a{
+		@include single-transition(all, .2s, ease-in);
+		color: $darkred;
+		padding: 20px;
+		display: block;
+		text-decoration: none;
+		border: 1px dotted transparent;
+		&:hover {
+			background: $darkred;
+			color: $cream;
+			border-color: $light;
+		}
+	}
+}
+
+#popup {
+	@include single-transition(all, .3s, ease-out);
+	@include span(12);
+	position: absolute;
+	top: 200px;
+	left: 0;
+	background: white;
+	z-index: 99;
+	font-family: $paragraph;
+	padding: 20px;
+	visibility: hidden;
+	opacity: 0;
+	@include translateY(-300px);
+	@include breakpoint($small){
+		@include span(8);
+		@include pre(2);
+	}
+	@include breakpoint($medium){
+		@include span(6);
+		@include pre(3);
+	}
+	.optionholder{
+		overflow: hidden;
+		text-align: center;
+		#deleteOpt {
+			margin-top: 30px;
+			margin-bottom: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			li {
+				display: inline-block;
+				a {
+					padding: 20px;
+					background: $darkred;
+					color: $cream;
+				}
+			}
+		}
+	}
+	&.modaldown {
+		visibility: visible;
+		opacity: 1;
+		@include translateY(0);
+	}
+}
+
+.itemlist {
+	@include clearfix();
+	display: block;
+	@include span(10);
+	@include pre(1);
+	li {
+		@include clearfix();
+		color: $darkred;
+		background: $light;
+		margin-bottom: 10px;
+		&:last-child {
+			border-bottom: none;
+		}
+		h3 {
+			float: left;
+			width: 70%;
+			line-height: 250%;
+			text-align: center;
+			font-family: $paragraph;
+			color: $darkred;
+			padding: 5px 0;
+		}
+		a {
+			@include single-transition(all, .2s, ease-in);
+			font-family: $fontawesome;
+			display: block;
+			width: 15%;
+			line-height: 250%;
+			padding: 5px;
+			text-align: center;
+			text-decoration: none;
+			color: $darkred;
+			&:hover {
+				background: $darkred;
+				color: $cream;
+			}
+			&:first-child {
+				float: left;
+				border-right: 1px dotted $darkred;
+			}
+			&:last-child {
+				float: right;
+				border-left: 1px dotted $darkred;
+			}
+		}
+	}
+}
+
+.cmspg.pageform {
+	padding: 20px;
+	font-family: $paragraph;
+	.intro {
+		color: $cream;
+		line-height: 130%;
+		font-size: .875rem;
+		margin-bottom: 20px;
+	}
+	input[type="text"]{
+		outline: none;
+		border: none;
+		background: $light;
+		color: $darkred;
+		line-height: 150%;
+		padding: 10px;
+		display: block;
+		width: 100%;
+		font-family: $paragraph;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	textarea {
+		width: 100%;
+		padding: 10px;
+		font-family: $paragraph;
+		color: $darkred;
+		background: $light;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		resize: none;
+	}
+	label {
+		font-family: $serif;
+		font-size: 1.1rem;
+		color: $cream;
+		line-height: 150%;
+		display: block;
+	}
+	.cmslabel {
+		color: $cream;
+		font-size: .875rem;
+		line-height: 130%;
+	}
+	.formset {
+		margin-bottom: 20px;
+		&.nav {
+			@include clearfix();
+			select {
+				font-family: $paragraph;
+				line-height: 150%;
+				padding: 5px;
+				background: $light;
+				color: $darkred;
+				border: none;
+				outline: none;
+				&:first-of-type {
+					@include span(6);
+				}
+				&:last-of-type {
+					@include span(3);
+				}
+			}
+			label:last-of-type {
+				font-family: $paragraph;
+				text-align: right;
+				padding-right: 5px;
+				font-size: .875rem;
+				@include span(3);
+			}
+		}
+	}
+	input[type="submit"]{
+		@include single-transition(all, .2s, ease-in);
+		border: none;
+		outline: none;
+		background: $light;
+		border: 1px dotted transparent;
+		color: $darkred;
+		display: block;
+		cursor: pointer;
+		width: 100%;
+		padding: 10px;
+		font-family: $paragraph;
+		margin-top: 10px;
+		@include breakpoint($medium){
+			@include span(4);
+			@include pre(4);
+		}
+		&:hover {
+			background: $darkred;
+			color: $cream;
+			border-color: $light;
+		}
+	}
+	.formerror {
+		background: $cream;
+		color: $darkred;
+		padding: 5px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		display: block;
+	}
+	.icons{
+		@include clearfix();
+		.preview{
+			@include span(6);
+			input[type="text"] {
+				display: block;
+				margin: 0 auto;
+				width: 100px;
+				line-height: 50px;
+				padding: 5px;
+				font-size: 4rem;
+				background: none;
+				color: $light;
+				font-family: $fontawesome;
+			}
+		}
+		.cmslabel {
+			@include span(6);
+		}
+		.icongrid {
+			font-family: $fontawesome;
+			@include span(10);
+			@include pre(1);
+			height: 200px;
+			overflow-y: scroll;
+			@include clearfix();
+			margin-top: 10px;
+			margin-bottom: 10px;
+			.grid-icon {
+				display: block;
+				float: left;
+				width: 40px;
+				cursor: pointer;
+				text-align: center;
+				line-height: 40px;
+				font-size: 1.1rem;
+				color: $light;
+				border: 1px solid $light;
+				&.selected {
+					color: $darkred;
+					background: $light;
+				}
+			}
+		}
+	}
+}
+
+.imguploadcontainer {
+	max-width: 250px;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+	input{
+		position: absolute;
+		cursor: pointer;
+		opacity: 0;
+		width: 250px;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+.addOptions-page {
+	.formset{
+		@include clearfix();
+		select {
+			font-family: $paragraph;
+			line-height: 150%;
+			padding: 5px;
+			background: $light;
+			color: $darkred;
+			border: none;
+			outline: none;
+			&:first-of-type {
+				@include span(6);
+			}
+			&:last-of-type {
+				@include span(3);
+			}
+		}
+	}
+}

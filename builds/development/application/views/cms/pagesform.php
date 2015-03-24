@@ -1,62 +1,661 @@
-<div id="addpage" class="bodycontent">
-	<h1><?php echo $header; ?></h1>
-	<p>You can add new pages with this form. If you'd like the pages to appear in the menu, choose a parent menu item from the dropdown list. If no parent item is selected, the page will not be visible in any navigation menus. Choosing a higher weight from the Weight selection menu will inforce what placement the new menu item takes in the dropdown. Higher values for weight will cause the menu item to appear closer to the top.</p>
+<section class="cmspg contentinner pageform">
+		<p class="intro">You can add new pages with this form. If you'd like the pages to appear in the menu, choose a parent menu item from the dropdown list. If no parent item is selected, the page will not be visible in any navigation menus. Choosing a higher weight from the Weight selection menu will inforce what placement the new menu item takes in the dropdown. Higher values for weight will cause the menu item to appear closer to the top.</p>
 
-	<?php echo $formstart; ?>
-	<div class="row">
-		<label>Page Name *</label>
-		<div class="small-12 medium-12 large-6 large-push-6 columns">
-			<p class="cmslabel">Will appear at the top of each page. It should be short/succinct.</p>
+		<?php echo $formstart; ?>
+		<div class="formset">
+			<label>Page Name *</label>
+			<div>
+				<p class="cmslabel">Will appear at the top of each page. It should be short/succinct.</p>
+			</div>
+			<div>
+				<?php if(form_error('pagename')){ echo '<span class="formerror">' . form_error('pagename') . '</span>'; } ?>
+				<?php echo $pagename; ?>
+			</div>
 		</div>
-		<div class="small-12 medium-12 large-6 large-pull-6 columns">
-			<span class="formerror"><?php echo form_error('pagename'); ?></span>
-			<?php echo $pagename; ?>
+		<div class="formset">
+			<label>URL Segment</label>
+			<div>
+				<p class="cmslabel">This will be the url segment used in the browser address bar to access this page. If you do not specify one it will be automatically generated based on the page title.</p>
+			</div>
+			<div>
+				<?php echo $slug; ?>
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<label>URL Segment</label>
-		<div class="small-12 medium-12 large-6 large-push-6 columns">
-			<p class="cmslabel">This will be the url segment used in the browser address bar to access this page. If you do not specify one it will be automatically generated based on the page title.</p>
+		<div class="formset icons">
+			<label>Icon</label>
+			<p class="cmslabel">This is the icon that will be displayed on the created page as well as on the home page on a hover event.</p>
+			<div class="preview">
+				<?php echo $icon; ?>
+			</div>
+			<div class="icongrid">
+				<span class="grid-icon">&#xf042;</span>
+				<span class="grid-icon">&#xf170;</span>
+				<span class="grid-icon">&#xf037;</span>
+				<span class="grid-icon">&#xf039;</span>
+				<span class="grid-icon">&#xf036;</span>
+				<span class="grid-icon">&#xf038;</span>
+				<span class="grid-icon">&#xf0f9;</span>
+				<span class="grid-icon">&#xf13d;</span>
+				<span class="grid-icon">&#xf17b;</span>
+				<span class="grid-icon">&#xf209;</span>
+				<span class="grid-icon">&#xf103;</span>
+				<span class="grid-icon">&#xf100;</span>
+				<span class="grid-icon">&#xf101;</span>
+				<span class="grid-icon">&#xf102;</span>
+				<span class="grid-icon">&#xf107;</span>
+				<span class="grid-icon">&#xf104;</span>
+				<span class="grid-icon">&#xf105;</span>
+				<span class="grid-icon">&#xf106;</span>
+				<span class="grid-icon">&#xf179;</span>
+				<span class="grid-icon">&#xf187;</span>
+				<span class="grid-icon">&#xf1fe;</span>
+				<span class="grid-icon">&#xf0ab;</span>
+				<span class="grid-icon">&#xf0a8;</span>
+				<span class="grid-icon">&#xf01a;</span>
+				<span class="grid-icon">&#xf190;</span>
+				<span class="grid-icon">&#xf18e;</span>
+				<span class="grid-icon">&#xf01b;</span>
+				<span class="grid-icon">&#xf0a9;</span>
+				<span class="grid-icon">&#xf0aa;</span>
+				<span class="grid-icon">&#xf063;</span>
+				<span class="grid-icon">&#xf060;</span>
+				<span class="grid-icon">&#xf061;</span>
+				<span class="grid-icon">&#xf062;</span>
+				<span class="grid-icon">&#xf047;</span>
+				<span class="grid-icon">&#xf0b2;</span>
+				<span class="grid-icon">&#xf07e;</span>
+				<span class="grid-icon">&#xf07d;</span>
+				<span class="grid-icon">&#xf069;</span>
+				<span class="grid-icon">&#xf1fa;</span>
+				<span class="grid-icon">&#xf1b9;</span>
+				<span class="grid-icon">&#xf04a;</span>
+				<span class="grid-icon">&#xf05e;</span>
+				<span class="grid-icon">&#xf19c;</span>
+				<span class="grid-icon">&#xf080;</span>
+				<span class="grid-icon">&#xf080;</span>
+				<span class="grid-icon">&#xf02a;</span>
+				<span class="grid-icon">&#xf0c9;</span>
+				<span class="grid-icon">&#xf236;</span>
+				<span class="grid-icon">&#xf0fc;</span>
+				<span class="grid-icon">&#xf1b4;</span>
+				<span class="grid-icon">&#xf1b5;</span>
+				<span class="grid-icon">&#xf0f3;</span>
+				<span class="grid-icon">&#xf0a2;</span>
+				<span class="grid-icon">&#xf1f6;</span>
+				<span class="grid-icon">&#xf1f7;</span>
+				<span class="grid-icon">&#xf206;</span>
+				<span class="grid-icon">&#xf1e5;</span>
+				<span class="grid-icon">&#xf1fd;</span>
+				<span class="grid-icon">&#xf171;</span>
+				<span class="grid-icon">&#xf172;</span>
+				<span class="grid-icon">&#xf15a;</span>
+				<span class="grid-icon">&#xf032;</span>
+				<span class="grid-icon">&#xf0e7;</span>
+				<span class="grid-icon">&#xf1e2;</span>
+				<span class="grid-icon">&#xf02d;</span>
+				<span class="grid-icon">&#xf02e;</span>
+				<span class="grid-icon">&#xf097;</span>
+				<span class="grid-icon">&#xf0b1;</span>
+				<span class="grid-icon">&#xf15a;</span>
+				<span class="grid-icon">&#xf188;</span>
+				<span class="grid-icon">&#xf1ad;</span>
+				<span class="grid-icon">&#xf0f7;</span>
+				<span class="grid-icon">&#xf0a1;</span>
+				<span class="grid-icon">&#xf140;</span>
+				<span class="grid-icon">&#xf207;</span>
+				<span class="grid-icon">&#xf20d;</span>
+				<span class="grid-icon">&#xf1ba;</span>
+				<span class="grid-icon">&#xf1ec;</span>
+				<span class="grid-icon">&#xf073;</span>
+				<span class="grid-icon">&#xf133;</span>
+				<span class="grid-icon">&#xf030;</span>
+				<span class="grid-icon">&#xf083;</span>
+				<span class="grid-icon">&#xf1b9;</span>
+				<span class="grid-icon">&#xf0d7;</span>
+				<span class="grid-icon">&#xf0d9;</span>
+				<span class="grid-icon">&#xf0da;</span>
+				<span class="grid-icon">&#xf150;</span>
+				<span class="grid-icon">&#xf191;</span>
+				<span class="grid-icon">&#xf152;</span>
+				<span class="grid-icon">&#xf151;</span>
+				<span class="grid-icon">&#xf0d8;</span>
+				<span class="grid-icon">&#xf218;</span>
+				<span class="grid-icon">&#xf217;</span>
+				<span class="grid-icon">&#xf20a;</span>
+				<span class="grid-icon">&#xf1f3;</span>
+				<span class="grid-icon">&#xf1f2;</span>
+				<span class="grid-icon">&#xf1f1;</span>
+				<span class="grid-icon">&#xf1f4;</span>
+				<span class="grid-icon">&#xf1f5;</span>
+				<span class="grid-icon">&#xf1f0;</span>
+				<span class="grid-icon">&#xf0a3;</span>
+				<span class="grid-icon">&#xf0c1;</span>
+				<span class="grid-icon">&#xf127;</span>
+				<span class="grid-icon">&#xf00c;</span>
+				<span class="grid-icon">&#xf058;</span>
+				<span class="grid-icon">&#xf05d;</span>
+				<span class="grid-icon">&#xf14a;</span>
+				<span class="grid-icon">&#xf046;</span>
+				<span class="grid-icon">&#xf13a;</span>
+				<span class="grid-icon">&#xf137;</span>
+				<span class="grid-icon">&#xf138;</span>
+				<span class="grid-icon">&#xf139;</span>
+				<span class="grid-icon">&#xf078;</span>
+				<span class="grid-icon">&#xf053;</span>
+				<span class="grid-icon">&#xf054;</span>
+				<span class="grid-icon">&#xf077;</span>
+				<span class="grid-icon">&#xf1ae;</span>
+				<span class="grid-icon">&#xf111;</span>
+				<span class="grid-icon">&#xf10c;</span>
+				<span class="grid-icon">&#xf1ce;</span>
+				<span class="grid-icon">&#xf1db;</span>
+				<span class="grid-icon">&#xf0ea;</span>
+				<span class="grid-icon">&#xf017;</span>
+				<span class="grid-icon">&#xf00d;</span>
+				<span class="grid-icon">&#xf0c2;</span>
+				<span class="grid-icon">&#xf0ed;</span>
+				<span class="grid-icon">&#xf0ee;</span>
+				<span class="grid-icon">&#xf157;</span>
+				<span class="grid-icon">&#xf121;</span>
+				<span class="grid-icon">&#xf126;</span>
+				<span class="grid-icon">&#xf1cb;</span>
+				<span class="grid-icon">&#xf0f4;</span>
+				<span class="grid-icon">&#xf013;</span>
+				<span class="grid-icon">&#xf085;</span>
+				<span class="grid-icon">&#xf0db;</span>
+				<span class="grid-icon">&#xf075;</span>
+				<span class="grid-icon">&#xf0e5;</span>
+				<span class="grid-icon">&#xf086;</span>
+				<span class="grid-icon">&#xf0e6;</span>
+				<span class="grid-icon">&#xf14e;</span>
+				<span class="grid-icon">&#xf066;</span>
+				<span class="grid-icon">&#xf20e;</span>
+				<span class="grid-icon">&#xf0c5;</span>
+				<span class="grid-icon">&#xf1f9;</span>
+				<span class="grid-icon">&#xf09d;</span>
+				<span class="grid-icon">&#xf125;</span>
+				<span class="grid-icon">&#xf05b;</span>
+				<span class="grid-icon">&#xf13c;</span>
+				<span class="grid-icon">&#xf1b2;</span>
+				<span class="grid-icon">&#xf1b3;</span>
+				<span class="grid-icon">&#xf0c4;</span>
+				<span class="grid-icon">&#xf0f5;</span>
+				<span class="grid-icon">&#xf0e4;</span>
+				<span class="grid-icon">&#xf210;</span>
+				<span class="grid-icon">&#xf1c0;</span>
+				<span class="grid-icon">&#xf03b;</span>
+				<span class="grid-icon">&#xf1a5;</span>
+				<span class="grid-icon">&#xf108;</span>
+				<span class="grid-icon">&#xf1bd;</span>
+				<span class="grid-icon">&#xf219;</span>
+				<span class="grid-icon">&#xf1a6;</span>
+				<span class="grid-icon">&#xf155;</span>
+				<span class="grid-icon">&#xf192;</span>
+				<span class="grid-icon">&#xf019;</span>
+				<span class="grid-icon">&#xf17d;</span>
+				<span class="grid-icon">&#xf16b;</span>
+				<span class="grid-icon">&#xf1a9;</span>
+				<span class="grid-icon">&#xf044;</span>
+				<span class="grid-icon">&#xf052;</span>
+				<span class="grid-icon">&#xf141;</span>
+				<span class="grid-icon">&#xf142;</span>
+				<span class="grid-icon">&#xf1d1;</span>
+				<span class="grid-icon">&#xf0e0;</span>
+				<span class="grid-icon">&#xf003;</span>
+				<span class="grid-icon">&#xf199;</span>
+				<span class="grid-icon">&#xf12d;</span>
+				<span class="grid-icon">&#xf153;</span>
+				<span class="grid-icon">&#xf153;</span>
+				<span class="grid-icon">&#xf0ec;</span>
+				<span class="grid-icon">&#xf12a;</span>
+				<span class="grid-icon">&#xf06a;</span>
+				<span class="grid-icon">&#xf071;</span>
+				<span class="grid-icon">&#xf065;</span>
+				<span class="grid-icon">&#xf08e;</span>
+				<span class="grid-icon">&#xf14c;</span>
+				<span class="grid-icon">&#xf06e;</span>
+				<span class="grid-icon">&#xf070;</span>
+				<span class="grid-icon">&#xf1fb;</span>
+				<span class="grid-icon">&#xf09a;</span>
+				<span class="grid-icon">&#xf09a;</span>
+				<span class="grid-icon">&#xf230;</span>
+				<span class="grid-icon">&#xf082;</span>
+				<span class="grid-icon">&#xf049;</span>
+				<span class="grid-icon">&#xf050;</span>
+				<span class="grid-icon">&#xf1ac;</span>
+				<span class="grid-icon">&#xf182;</span>
+				<span class="grid-icon">&#xf0fb;</span>
+				<span class="grid-icon">&#xf15b;</span>
+				<span class="grid-icon">&#xf1c6;</span>
+				<span class="grid-icon">&#xf1c7;</span>
+				<span class="grid-icon">&#xf1c9;</span>
+				<span class="grid-icon">&#xf1c3;</span>
+				<span class="grid-icon">&#xf1c5;</span>
+				<span class="grid-icon">&#xf1c8;</span>
+				<span class="grid-icon">&#xf016;</span>
+				<span class="grid-icon">&#xf1c1;</span>
+				<span class="grid-icon">&#xf1c5;</span>
+				<span class="grid-icon">&#xf1c5;</span>
+				<span class="grid-icon">&#xf1c4;</span>
+				<span class="grid-icon">&#xf1c7;</span>
+				<span class="grid-icon">&#xf15c;</span>
+				<span class="grid-icon">&#xf0f6;</span>
+				<span class="grid-icon">&#xf1c8;</span>
+				<span class="grid-icon">&#xf1c2;</span>
+				<span class="grid-icon">&#xf1c6;</span>
+				<span class="grid-icon">&#xf0c5;</span>
+				<span class="grid-icon">&#xf008;</span>
+				<span class="grid-icon">&#xf0b0;</span>
+				<span class="grid-icon">&#xf06d;</span>
+				<span class="grid-icon">&#xf134;</span>
+				<span class="grid-icon">&#xf024;</span>
+				<span class="grid-icon">&#xf11e;</span>
+				<span class="grid-icon">&#xf11d;</span>
+				<span class="grid-icon">&#xf0e7;</span>
+				<span class="grid-icon">&#xf0c3;</span>
+				<span class="grid-icon">&#xf16e;</span>
+				<span class="grid-icon">&#xf0c7;</span>
+				<span class="grid-icon">&#xf07b;</span>
+				<span class="grid-icon">&#xf114;</span>
+				<span class="grid-icon">&#xf07c;</span>
+				<span class="grid-icon">&#xf115;</span>
+				<span class="grid-icon">&#xf031;</span>
+				<span class="grid-icon">&#xf211;</span>
+				<span class="grid-icon">&#xf04e;</span>
+				<span class="grid-icon">&#xf180;</span>
+				<span class="grid-icon">&#xf119;</span>
+				<span class="grid-icon">&#xf1e3;</span>
+				<span class="grid-icon">&#xf11b;</span>
+				<span class="grid-icon">&#xf0e3;</span>
+				<span class="grid-icon">&#xf154;</span>
+				<span class="grid-icon">&#xf1d1;</span>
+				<span class="grid-icon">&#xf013;</span>
+				<span class="grid-icon">&#xf085;</span>
+				<span class="grid-icon">&#xf1db;</span>
+				<span class="grid-icon">&#xf06b;</span>
+				<span class="grid-icon">&#xf1d3;</span>
+				<span class="grid-icon">&#xf1d2;</span>
+				<span class="grid-icon">&#xf09b;</span>
+				<span class="grid-icon">&#xf113;</span>
+				<span class="grid-icon">&#xf092;</span>
+				<span class="grid-icon">&#xf184;</span>
+				<span class="grid-icon">&#xf000;</span>
+				<span class="grid-icon">&#xf0ac;</span>
+				<span class="grid-icon">&#xf1a0;</span>
+				<span class="grid-icon">&#xf0d5;</span>
+				<span class="grid-icon">&#xf0d4;</span>
+				<span class="grid-icon">&#xf1ee;</span>
+				<span class="grid-icon">&#xf19d;</span>
+				<span class="grid-icon">&#xf184;</span>
+				<span class="grid-icon">&#xf0c0;</span>
+				<span class="grid-icon">&#xf0fd;</span>
+				<span class="grid-icon">&#xf1d4;</span>
+				<span class="grid-icon">&#xf0a7;</span>
+				<span class="grid-icon">&#xf0a5;</span>
+				<span class="grid-icon">&#xf0a4;</span>
+				<span class="grid-icon">&#xf0a6;</span>
+				<span class="grid-icon">&#xf0a0;</span>
+				<span class="grid-icon">&#xf1dc;</span>
+				<span class="grid-icon">&#xf025;</span>
+				<span class="grid-icon">&#xf004;</span>
+				<span class="grid-icon">&#xf08a;</span>
+				<span class="grid-icon">&#xf21e;</span>
+				<span class="grid-icon">&#xf1da;</span>
+				<span class="grid-icon">&#xf015;</span>
+				<span class="grid-icon">&#xf0f8;</span>
+				<span class="grid-icon">&#xf236;</span>
+				<span class="grid-icon">&#xf13b;</span>
+				<span class="grid-icon">&#xf20b;</span>
+				<span class="grid-icon">&#xf03e;</span>
+				<span class="grid-icon">&#xf01c;</span>
+				<span class="grid-icon">&#xf03c;</span>
+				<span class="grid-icon">&#xf129;</span>
+				<span class="grid-icon">&#xf05a;</span>
+				<span class="grid-icon">&#xf156;</span>
+				<span class="grid-icon">&#xf16d;</span>
+				<span class="grid-icon">&#xf19c;</span>
+				<span class="grid-icon">&#xf208;</span>
+				<span class="grid-icon">&#xf033;</span>
+				<span class="grid-icon">&#xf1aa;</span>
+				<span class="grid-icon">&#xf157;</span>
+				<span class="grid-icon">&#xf1cc;</span>
+				<span class="grid-icon">&#xf084;</span>
+				<span class="grid-icon">&#xf11c;</span>
+				<span class="grid-icon">&#xf159;</span>
+				<span class="grid-icon">&#xf1ab;</span>
+				<span class="grid-icon">&#xf109;</span>
+				<span class="grid-icon">&#xf202;</span>
+				<span class="grid-icon">&#xf203;</span>
+				<span class="grid-icon">&#xf06c;</span>
+				<span class="grid-icon">&#xf212;</span>
+				<span class="grid-icon">&#xf0e3;</span>
+				<span class="grid-icon">&#xf094;</span>
+				<span class="grid-icon">&#xf149;</span>
+				<span class="grid-icon">&#xf148;</span>
+				<span class="grid-icon">&#xf1cd;</span>
+				<span class="grid-icon">&#xf1cd;</span>
+				<span class="grid-icon">&#xf1cd;</span>
+				<span class="grid-icon">&#xf1cd;</span>
+				<span class="grid-icon">&#xf0eb;</span>
+				<span class="grid-icon">&#xf201;</span>
+				<span class="grid-icon">&#xf0c1;</span>
+				<span class="grid-icon">&#xf0e1;</span>
+				<span class="grid-icon">&#xf08c;</span>
+				<span class="grid-icon">&#xf17c;</span>
+				<span class="grid-icon">&#xf03a;</span>
+				<span class="grid-icon">&#xf022;</span>
+				<span class="grid-icon">&#xf0cb;</span>
+				<span class="grid-icon">&#xf0ca;</span>
+				<span class="grid-icon">&#xf124;</span>
+				<span class="grid-icon">&#xf023;</span>
+				<span class="grid-icon">&#xf175;</span>
+				<span class="grid-icon">&#xf177;</span>
+				<span class="grid-icon">&#xf178;</span>
+				<span class="grid-icon">&#xf176;</span>
+				<span class="grid-icon">&#xf0d0;</span>
+				<span class="grid-icon">&#xf076;</span>
+				<span class="grid-icon">&#xf064;</span>
+				<span class="grid-icon">&#xf112;</span>
+				<span class="grid-icon">&#xf122;</span>
+				<span class="grid-icon">&#xf183;</span>
+				<span class="grid-icon">&#xf041;</span>
+				<span class="grid-icon">&#xf222;</span>
+				<span class="grid-icon">&#xf227;</span>
+				<span class="grid-icon">&#xf229;</span>
+				<span class="grid-icon">&#xf22b;</span>
+				<span class="grid-icon">&#xf22a;</span>
+				<span class="grid-icon">&#xf136;</span>
+				<span class="grid-icon">&#xf20c;</span>
+				<span class="grid-icon">&#xf23a;</span>
+				<span class="grid-icon">&#xf0fa;</span>
+				<span class="grid-icon">&#xf11a;</span>
+				<span class="grid-icon">&#xf223;</span>
+				<span class="grid-icon">&#xf130;</span>
+				<span class="grid-icon">&#xf131;</span>
+				<span class="grid-icon">&#xf068;</span>
+				<span class="grid-icon">&#xf056;</span>
+				<span class="grid-icon">&#xf146;</span>
+				<span class="grid-icon">&#xf147;</span>
+				<span class="grid-icon">&#xf10b;</span>
+				<span class="grid-icon">&#xf10b;</span>
+				<span class="grid-icon">&#xf0d6;</span>
+				<span class="grid-icon">&#xf186;</span>
+				<span class="grid-icon">&#xf19d;</span>
+				<span class="grid-icon">&#xf21c;</span>
+				<span class="grid-icon">&#xf001;</span>
+				<span class="grid-icon">&#xf0c9;</span>
+				<span class="grid-icon">&#xf22c;</span>
+				<span class="grid-icon">&#xf1ea;</span>
+				<span class="grid-icon">&#xf19b;</span>
+				<span class="grid-icon">&#xf03b;</span>
+				<span class="grid-icon">&#xf18c;</span>
+				<span class="grid-icon">&#xf1fc;</span>
+				<span class="grid-icon">&#xf1d8;</span>
+				<span class="grid-icon">&#xf1d9;</span>
+				<span class="grid-icon">&#xf0c6;</span>
+				<span class="grid-icon">&#xf1dd;</span>
+				<span class="grid-icon">&#xf0ea;</span>
+				<span class="grid-icon">&#xf04c;</span>
+				<span class="grid-icon">&#xf1b0;</span>
+				<span class="grid-icon">&#xf1ed;</span>
+				<span class="grid-icon">&#xf040;</span>
+				<span class="grid-icon">&#xf14b;</span>
+				<span class="grid-icon">&#xf044;</span>
+				<span class="grid-icon">&#xf095;</span>
+				<span class="grid-icon">&#xf098;</span>
+				<span class="grid-icon">&#xf03e;</span>
+				<span class="grid-icon">&#xf03e;</span>
+				<span class="grid-icon">&#xf200;</span>
+				<span class="grid-icon">&#xf1a7;</span>
+				<span class="grid-icon">&#xf1a8;</span>
+				<span class="grid-icon">&#xf0d2;</span>
+				<span class="grid-icon">&#xf231;</span>
+				<span class="grid-icon">&#xf0d3;</span>
+				<span class="grid-icon">&#xf072;</span>
+				<span class="grid-icon">&#xf04b;</span>
+				<span class="grid-icon">&#xf144;</span>
+				<span class="grid-icon">&#xf01d;</span>
+				<span class="grid-icon">&#xf1e6;</span>
+				<span class="grid-icon">&#xf067;</span>
+				<span class="grid-icon">&#xf055;</span>
+				<span class="grid-icon">&#xf0fe;</span>
+				<span class="grid-icon">&#xf196;</span>
+				<span class="grid-icon">&#xf011;</span>
+				<span class="grid-icon">&#xf02f;</span>
+				<span class="grid-icon">&#xf12e;</span>
+				<span class="grid-icon">&#xf1d6;</span>
+				<span class="grid-icon">&#xf029;</span>
+				<span class="grid-icon">&#xf128;</span>
+				<span class="grid-icon">&#xf059;</span>
+				<span class="grid-icon">&#xf10d;</span>
+				<span class="grid-icon">&#xf10e;</span>
+				<span class="grid-icon">&#xf1d0;</span>
+				<span class="grid-icon">&#xf074;</span>
+				<span class="grid-icon">&#xf1d0;</span>
+				<span class="grid-icon">&#xf1b8;</span>
+				<span class="grid-icon">&#xf1a1;</span>
+				<span class="grid-icon">&#xf1a2;</span>
+				<span class="grid-icon">&#xf021;</span>
+				<span class="grid-icon">&#xf00d;</span>
+				<span class="grid-icon">&#xf18b;</span>
+				<span class="grid-icon">&#xf0c9;</span>
+				<span class="grid-icon">&#xf01e;</span>
+				<span class="grid-icon">&#xf112;</span>
+				<span class="grid-icon">&#xf122;</span>
+				<span class="grid-icon">&#xf079;</span>
+				<span class="grid-icon">&#xf157;</span>
+				<span class="grid-icon">&#xf018;</span>
+				<span class="grid-icon">&#xf135;</span>
+				<span class="grid-icon">&#xf0e2;</span>
+				<span class="grid-icon">&#xf01e;</span>
+				<span class="grid-icon">&#xf158;</span>
+				<span class="grid-icon">&#xf09e;</span>
+				<span class="grid-icon">&#xf143;</span>
+				<span class="grid-icon">&#xf158;</span>
+				<span class="grid-icon">&#xf158;</span>
+				<span class="grid-icon">&#xf156;</span>
+				<span class="grid-icon">&#xf0c7;</span>
+				<span class="grid-icon">&#xf0c4;</span>
+				<span class="grid-icon">&#xf002;</span>
+				<span class="grid-icon">&#xf010;</span>
+				<span class="grid-icon">&#xf00e;</span>
+				<span class="grid-icon">&#xf213;</span>
+				<span class="grid-icon">&#xf1d8;</span>
+				<span class="grid-icon">&#xf1d9;</span>
+				<span class="grid-icon">&#xf233;</span>
+				<span class="grid-icon">&#xf064;</span>
+				<span class="grid-icon">&#xf1e0;</span>
+				<span class="grid-icon">&#xf1e1;</span>
+				<span class="grid-icon">&#xf14d;</span>
+				<span class="grid-icon">&#xf045;</span>
+				<span class="grid-icon">&#xf20b;</span>
+				<span class="grid-icon">&#xf20b;</span>
+				<span class="grid-icon">&#xf132;</span>
+				<span class="grid-icon">&#xf21a;</span>
+				<span class="grid-icon">&#xf214;</span>
+				<span class="grid-icon">&#xf07a;</span>
+				<span class="grid-icon">&#xf090;</span>
+				<span class="grid-icon">&#xf08b;</span>
+				<span class="grid-icon">&#xf012;</span>
+				<span class="grid-icon">&#xf215;</span>
+				<span class="grid-icon">&#xf0e8;</span>
+				<span class="grid-icon">&#xf216;</span>
+				<span class="grid-icon">&#xf17e;</span>
+				<span class="grid-icon">&#xf198;</span>
+				<span class="grid-icon">&#xf1de;</span>
+				<span class="grid-icon">&#xf1e7;</span>
+				<span class="grid-icon">&#xf118;</span>
+				<span class="grid-icon">&#xf1e3;</span>
+				<span class="grid-icon">&#xf0dc;</span>
+				<span class="grid-icon">&#xf15d;</span>
+				<span class="grid-icon">&#xf15e;</span>
+				<span class="grid-icon">&#xf160;</span>
+				<span class="grid-icon">&#xf161;</span>
+				<span class="grid-icon">&#xf0de;</span>
+				<span class="grid-icon">&#xf0dd;</span>
+				<span class="grid-icon">&#xf0dd;</span>
+				<span class="grid-icon">&#xf162;</span>
+				<span class="grid-icon">&#xf163;</span>
+				<span class="grid-icon">&#xf0de;</span>
+				<span class="grid-icon">&#xf1be;</span>
+				<span class="grid-icon">&#xf197;</span>
+				<span class="grid-icon">&#xf110;</span>
+				<span class="grid-icon">&#xf1b1;</span>
+				<span class="grid-icon">&#xf1bc;</span>
+				<span class="grid-icon">&#xf0c8;</span>
+				<span class="grid-icon">&#xf096;</span>
+				<span class="grid-icon">&#xf18d;</span>
+				<span class="grid-icon">&#xf16c;</span>
+				<span class="grid-icon">&#xf005;</span>
+				<span class="grid-icon">&#xf089;</span>
+				<span class="grid-icon">&#xf123;</span>
+				<span class="grid-icon">&#xf123;</span>
+				<span class="grid-icon">&#xf123;</span>
+				<span class="grid-icon">&#xf006;</span>
+				<span class="grid-icon">&#xf1b6;</span>
+				<span class="grid-icon">&#xf1b7;</span>
+				<span class="grid-icon">&#xf048;</span>
+				<span class="grid-icon">&#xf051;</span>
+				<span class="grid-icon">&#xf0f1;</span>
+				<span class="grid-icon">&#xf04d;</span>
+				<span class="grid-icon">&#xf21d;</span>
+				<span class="grid-icon">&#xf0cc;</span>
+				<span class="grid-icon">&#xf1a4;</span>
+				<span class="grid-icon">&#xf1a3;</span>
+				<span class="grid-icon">&#xf12c;</span>
+				<span class="grid-icon">&#xf239;</span>
+				<span class="grid-icon">&#xf0f2;</span>
+				<span class="grid-icon">&#xf185;</span>
+				<span class="grid-icon">&#xf12b;</span>
+				<span class="grid-icon">&#xf1cd;</span>
+				<span class="grid-icon">&#xf0ce;</span>
+				<span class="grid-icon">&#xf10a;</span>
+				<span class="grid-icon">&#xf0e4;</span>
+				<span class="grid-icon">&#xf02b;</span>
+				<span class="grid-icon">&#xf02c;</span>
+				<span class="grid-icon">&#xf0ae;</span>
+				<span class="grid-icon">&#xf1ba;</span>
+				<span class="grid-icon">&#xf1d5;</span>
+				<span class="grid-icon">&#xf120;</span>
+				<span class="grid-icon">&#xf034;</span>
+				<span class="grid-icon">&#xf035;</span>
+				<span class="grid-icon">&#xf00a;</span>
+				<span class="grid-icon">&#xf009;</span>
+				<span class="grid-icon">&#xf00b;</span>
+				<span class="grid-icon">&#xf08d;</span>
+				<span class="grid-icon">&#xf165;</span>
+				<span class="grid-icon">&#xf088;</span>
+				<span class="grid-icon">&#xf087;</span>
+				<span class="grid-icon">&#xf164;</span>
+				<span class="grid-icon">&#xf145;</span>
+				<span class="grid-icon">&#xf00d;</span>
+				<span class="grid-icon">&#xf057;</span>
+				<span class="grid-icon">&#xf05c;</span>
+				<span class="grid-icon">&#xf043;</span>
+				<span class="grid-icon">&#xf150;</span>
+				<span class="grid-icon">&#xf191;</span>
+				<span class="grid-icon">&#xf204;</span>
+				<span class="grid-icon">&#xf205;</span>
+				<span class="grid-icon">&#xf152;</span>
+				<span class="grid-icon">&#xf151;</span>
+				<span class="grid-icon">&#xf238;</span>
+				<span class="grid-icon">&#xf224;</span>
+				<span class="grid-icon">&#xf225;</span>
+				<span class="grid-icon">&#xf1f8;</span>
+				<span class="grid-icon">&#xf014;</span>
+				<span class="grid-icon">&#xf1bb;</span>
+				<span class="grid-icon">&#xf181;</span>
+				<span class="grid-icon">&#xf091;</span>
+				<span class="grid-icon">&#xf0d1;</span>
+				<span class="grid-icon">&#xf195;</span>
+				<span class="grid-icon">&#xf1e4;</span>
+				<span class="grid-icon">&#xf173;</span>
+				<span class="grid-icon">&#xf174;</span>
+				<span class="grid-icon">&#xf195;</span>
+				<span class="grid-icon">&#xf1e8;</span>
+				<span class="grid-icon">&#xf099;</span>
+				<span class="grid-icon">&#xf081;</span>
+				<span class="grid-icon">&#xf0e9;</span>
+				<span class="grid-icon">&#xf0cd;</span>
+				<span class="grid-icon">&#xf0e2;</span>
+				<span class="grid-icon">&#xf19c;</span>
+				<span class="grid-icon">&#xf127;</span>
+				<span class="grid-icon">&#xf09c;</span>
+				<span class="grid-icon">&#xf13e;</span>
+				<span class="grid-icon">&#xf0dc;</span>
+				<span class="grid-icon">&#xf093;</span>
+				<span class="grid-icon">&#xf155;</span>
+				<span class="grid-icon">&#xf007;</span>
+				<span class="grid-icon">&#xf0f0;</span>
+				<span class="grid-icon">&#xf234;</span>
+				<span class="grid-icon">&#xf21b;</span>
+				<span class="grid-icon">&#xf235;</span>
+				<span class="grid-icon">&#xf0c0;</span>
+				<span class="grid-icon">&#xf221;</span>
+				<span class="grid-icon">&#xf226;</span>
+				<span class="grid-icon">&#xf228;</span>
+				<span class="grid-icon">&#xf237;</span>
+				<span class="grid-icon">&#xf03d;</span>
+				<span class="grid-icon">&#xf194;</span>
+				<span class="grid-icon">&#xf1ca;</span>
+				<span class="grid-icon">&#xf189;</span>
+				<span class="grid-icon">&#xf027;</span>
+				<span class="grid-icon">&#xf026;</span>
+				<span class="grid-icon">&#xf028;</span>
+				<span class="grid-icon">&#xf071;</span>
+				<span class="grid-icon">&#xf1d7;</span>
+				<span class="grid-icon">&#xf18a;</span>
+				<span class="grid-icon">&#xf1d7;</span>
+				<span class="grid-icon">&#xf232;</span>
+				<span class="grid-icon">&#xf193;</span>
+				<span class="grid-icon">&#xf1eb;</span>
+				<span class="grid-icon">&#xf17a;</span>
+				<span class="grid-icon">&#xf159;</span>
+				<span class="grid-icon">&#xf19a;</span>
+				<span class="grid-icon">&#xf0ad;</span>
+				<span class="grid-icon">&#xf168;</span>
+				<span class="grid-icon">&#xf169;</span>
+				<span class="grid-icon">&#xf19e;</span>
+				<span class="grid-icon">&#xf1e9;</span>
+				<span class="grid-icon">&#xf157;</span>
+				<span class="grid-icon">&#xf167;</span>
+				<span class="grid-icon">&#xf16a;</span>
+				<span class="grid-icon">&#xf166;</span>
+			</div>
 		</div>
-		<div class="small-12 medium-12 large-6 large-pull-6 columns">
-			<?php echo $slug; ?>
+		<div class="formset">
+			<label>Meta Description. <span id="wordcount">150</span> characters remaining. *</label>
+			<div>
+				<p class="cmslabel">The meta description appear beneath the page title in search engine results. It should describe each page accurately with a strong focus on relevant keywords. Max length is approximately 150 characters.</p>
+			</div>
+			<div>
+				<?php if(form_error('metadesc')){ echo '<span class="formerror">' . form_error('metadesc') . '</span>'; } ?>
+				<?php echo $metadesc; ?>
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<label>Meta Description. <span id="wordcount">150</span> characters remaining. *</label>
-		<div class="small-12 medium-12 large-6 large-push-6 columns">
-			<p class="cmslabel">The meta description appear beneath the page title in search engine results. It should describe each page accurately with a strong focus on relevant keywords. Max length is approximately 150 characters.</p>
-		</div>
-		<div class="small-12 medium-12 large-6 large-pull-6 columns">
-			<span class="formerror"><?php echo form_error('metadesc'); ?></span>
-			<?php echo $metadesc; ?>
-		</div>
-	</div>
 
-	<div class="row">
-		<label>Navigation Parent</label>
-		<div class="small-12 medium-12 large-6 large-push-6 columns">
+		<div class="formset nav">
+			<label>Navigation Parent</label>
+
 			<p class="cmslabel">If a parent item is chosen, the new page title will appear in a dropdown menu when hovering over the parent menu item. If the value is left as Orphan Page, it will not be accessible in any menu item and should be linked to from page text somewhere.</p>
-		</div>
-		<div class="small-6 medium-6 large-3 large-pull-6 columns">
+
 			<?php echo $parent; ?>
-		</div>
-		<div class="small-3 medium-3 large-1 large-pull-6 columns">
+
 			<label>Weight:</label>
-		</div>
-		<div class="small-3 medium-3 large-2 small-pull-1 medium-pull-2 large-pull-6 columns">
+
 			<?php echo $weight; ?>
 		</div>
-	</div>
-	
-	<div class="row">
-		<label>Page Content *</label>
-		<div class="textareacont small-12 columns">
-			<span class="formerror"><?php echo form_error('content'); ?></span>
-			<?php echo $body; ?>
+		
+		<div class="formset">
+			<label>Page Content *</label>
+			<div class="textareacont small-12 columns">
+				<?php if(form_error('content')){ echo '<span class="formerror">' . form_error('content') . '</span>'; } ?>
+				<?php echo $body; ?>
+			</div>
+			<input type="submit" class="formsubmit" name="submit" value="Submit">
 		</div>
-		<input type="submit" class="formsubmit" name="submit" value="Submit">
-	</div>
 
-	<?php if(isset($id)){ echo $id; } ?>
-</form>
+		<?php if(isset($id)){ echo $id; } ?>
+		<?php echo $hiddenicon; ?>
+	</form>
+</section>

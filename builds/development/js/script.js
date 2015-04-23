@@ -874,8 +874,8 @@ geoScript = function(){
 		});
 	});
 }
-var base_url = 'http://localhost:3000/forrats/builds/development/';
-//var base_url = 'http://www.ryanmchale.ca/staging/forrats/';
+//var base_url = 'http://localhost:3000/forrats/builds/development/';
+var base_url = 'http://www.ryanmchale.ca/staging/forrats/';
 
 var navsWithKids = function(){
 

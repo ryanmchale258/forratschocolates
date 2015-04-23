@@ -84,7 +84,7 @@
   			$('.postText').text(current.postText);
         if(current.postPic != ''){
           if(!$('.postPicContainer').length){
-            $('.tweetContent').append(
+            $('.postContent').append(
                 '<div class="postPicContainer"><img class="postPic" src alt="postPic"></div>'
             );
           }

@@ -1,26 +1,26 @@
 [
     {
         "id": 1,
-        "facebookIcon": "img/f_icon1.png",
-        "f_username": "Pokemon",
+        "facebookIcon": "img/forratssocialicon.png",
+        "f_username": "Forrat's Chocolates",
         "f_postedTime": "7 hrs",
-        "postText": "Do you play Pokémon competitively?",
+        "postText": "Have you ever made truffles at home? We at Forrat's are true chocolate nuts, we can't get enough of it! We're always interested in hearing what concoctions other aspiring Chocolatiers have come up with. If you've got a great recipe or flavor combination, post it below!",
         "postPic": ""
     },
     {
         "id": 2,
-        "facebookIcon": "img/f_icon2.png",
-        "f_username": "Pokemon Games",
+        "facebookIcon": "img/forratssocialicon.png",
+        "f_username": "Forrat's Chocolates",
         "f_postedTime": "Yesterday at 11:46am",
-        "postText": "In your opinion, what's the best move set for Scrafty?",
-        "postPic": "img/post2.png"
+        "postText": "Planning a wedding soon? Or maybe you just can't stop thinking of your special day, whether it's around the corner or not. Forrat's Chocolates will be exhibiting at the London Winter Bridal Show next month! A bit late, we know. But please stop by and say hello! Even just to sample some of our tasty treats",
+        "postPic": "img/weddingshow.jpg"
     },
     {
         "id": 3,
-        "facebookIcon": "img/f_icon2.png",
-        "f_username": "Pokemon Games",
+        "facebookIcon": "img/forratssocialicon.png",
+        "f_username": "Forrat's Chocolates",
         "f_postedTime": "April 20 at 12:46pm",
-        "postText": "Have you been keeping up with the special events in Pokémon Shuffle? What's been the toughest stage so far? http://bit.ly/1EJ0wFo",
-        "postPic": "img/post3.png"
+        "postText": "A world without chocolate! Can you even imagine something so horrible? We prefer not to think about it. But sometimes you need to remember to enjoy the good things while they last! What would you do in a world without chocolate? Post below, and feel free to stop into Forrat's to pick up your emergency supply!",
+        "postPic": "img/withoutchocolate.jpeg"
     }
 ]

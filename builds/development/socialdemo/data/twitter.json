@@ -1,29 +1,29 @@
 [
     {
         "id": 1,
-        "icon": "img/icon1.jpeg",
-        "username": "Battlefield",
-        "postedTo": "Battlefield",
+        "icon": "img/forratssocialicon.png",
+        "username": "Forrat's Chocolates",
+        "postedTo": "Forrat's Chocolates",
         "postedTime": "- 2h",
-        "tweetText": "Pick the right tool for the job. Have you unlocked your favorite gun?",
+        "tweetText": "Show us some love. First to post a link to an unboxing vid of this month's #BlissBox gets a free special bundle of goodies and merch!",
         "tweetPic": ""
     },
     {
         "id": 2,
-        "icon": "img/icon2.jpeg",
-        "username": "EA_DICE",
-        "postedTo": "EA_DICE",
+        "icon": "img/forratssocialicon.png",
+        "username": "Forrat's Chocolates",
+        "postedTo": "Forrat's Chocolates",
         "postedTime": "- 6h",
-        "tweetText": "Star Wars Battlefront Reveal Trailer",
-        "tweetPic": "img/picture2.jpg"
+        "tweetText": "Time for another Forrat's Market Hunt!! First person to track down this spot in the market, take a selfie and show us gets a free 4 pack!",
+        "tweetPic": "img/market.jpg"
     },
     {
         "id": 3,
-        "icon": "img/icon3.jpeg",
-        "username": "Razer",
-        "postedTo": "Razer",
+        "icon": "img/forratssocialicon.png",
+        "username": "Forrat's Chocolates",
+        "postedTo": "Forrat's Chocolates",
         "postedTime": "- 22h",
-        "tweetText": "The BlackWidow TE Chroma's tenkeyless design makes it perfect for on-the-go",
-        "tweetPic": "img/picture3.jpg"
+        "tweetText": "Unveiling the first in our cross-over line with Little Red Roaster! Gotta figure out what to name it though. Dark chocolate truffle with Columbian Coffee whipped filling! #namethattruffle",
+        "tweetPic": "img/truffle.jpg"
     }
 ]

@@ -1,7 +1,7 @@
 <section class="sideNav">
-    <div id="navIcon">
-        <a class="burger" id="nav-toggle" href="#"><span>&#xf039;</span></a>
-    </div>
+
+        <button id="navIcon" class="menu-toggle lines-button" type="button" role="button"><span class="lines"></span></button>
+
     <div class="navinner">
         <?php if((isset($sidenavlogo)) && $sidenavlogo == true): ?>
             <div class="logoarea">
@@ -19,8 +19,8 @@
         </div>
     </div>
     <div class="social">
-        <a href="#">&#xf082;</a>
-        <a href="#">&#xf081;</a>
-        <a href="#">&#xf167;</a>
+        <a href="<?php echo base_url() ?>socialdemo">&#xf082;</a>
+        <a href="<?php echo base_url() ?>socialdemo">&#xf081;</a>
+        <a href="<?php echo base_url() ?>socialdemo">&#xf167;</a>
     </div>
 </section>

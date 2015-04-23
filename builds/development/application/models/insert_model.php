@@ -53,8 +53,8 @@ class Insert_model extends CI_Model {
 
 	public function addlocations() {
 		$record = array(
-					'locations_name' => $_POST['locationname'],
-					'locations_slug' => $_POST['telephone'],
+					'locations_title' => $_POST['locationname'],
+					'locations_telephone' => $_POST['telephone'],
 					'locations_streetaddress' => $_POST['streetaddress'],
 					'locations_city' => $_POST['city'],
 					'locations_prov' => $_POST['prov'],
@@ -66,38 +66,16 @@ class Insert_model extends CI_Model {
 		$this->db->insert('tbl_locations', $record);
 	}
 
-	public function inventory() {
-		$record = array(
-					'categories_name' => $_POST['name'],
-					'categories_slug' => $_POST['name'],
-					'categories_desc' => $_POST['desc'],
-					'categories_longdesc' => $_POST['longdesc']
-				);
+	public function slides($data) {
+		$this->db->insert('tbl_slide', $data);
+	}
 
-		$this->db->insert('tbl_categories', $record);
-		$this->db->trans_complete();
-    	$query = $this->db->query('SELECT LAST_INSERT_ID()');
-    	$row = $query->row_array();
-    	$prev_id = $row['LAST_INSERT_ID()'];
+	public function inventory($data) {
+		$this->db->insert('tbl_categories', $data);
+	}
 
-    	$file_name = rand(1,50000).'_category_image';
-        $config['file_name'] = $file_name;
-		$config['upload_path'] = base_url() . 'images/uploads/';
-		$config['allowed_types'] = 'gif|jpg|jpeg|png';
-		//$config['max_size']	= '100';
-		//$config['max_width']  = '1024';
-		//$config['max_height']  = '768';
-
-		$this->load->library('upload', $config);
-		$this->upload->do_upload();
-		$imagedata = $this->upload->data();
-
-		$secondary = array(
-			'categories_img' => $imagedata['file_name']
-		);
-
-		$this->db->where('categories_id', $prev_id);
-		$this->db->update('tbl_categories', $secondary);
+	public function options($data) {
+		$this->db->insert('tbl_products', $data);
 	}
 
 }

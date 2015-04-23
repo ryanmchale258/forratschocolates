@@ -7,11 +7,11 @@ class Products extends CI_Controller {
 		$this->load->model('products_model');
 		$this->load->model('navigation_model');
 		$this->load->helper('form');
-		$this->load->library('form_validation');
-		$this->form_validation->set_rules('pagename', 'Page Title', 'trim|required');
-		$this->form_validation->set_rules('slug', 'Slug', 'trim');
-		$this->form_validation->set_rules('metadesc', 'Meta Description', 'trim|required');
-		$this->form_validation->set_rules('content', 'Page Content', 'trim|required');
+//		$this->load->library('form_validation');
+//		$this->form_validation->set_rules('pagename', 'Page Title', 'trim|required');
+//		$this->form_validation->set_rules('slug', 'Slug', 'trim');
+//		$this->form_validation->set_rules('metadesc', 'Meta Description', 'trim|required');
+//		$this->form_validation->set_rules('content', 'Page Content', 'trim|required');
 	}
 
 	public function index(){
@@ -24,6 +24,7 @@ class Products extends CI_Controller {
 		$data['pgdata'] = $this->products_model->getSingle($slug)->row();
 		$data['options'] = $this->products_model->getOptions($data['pgdata']->categories_id);
 		$data['pgTitle'] = $data['pgdata']->categories_name;
+		$data['initialize'] = array('navScript', 'productsScript');
 		$data['bodyclass'] = 'product-page';
 		
 		$data['bodyclass'] = 'storepage';

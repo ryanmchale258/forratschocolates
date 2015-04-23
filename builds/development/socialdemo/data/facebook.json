@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "facebookIcon": "img/f_icon1.png",
+        "f_username": "Pokemon",
+        "f_postedTime": "7 hrs",
+        "postText": "Do you play Pokémon competitively?",
+        "postPic": ""
+    },
+    {
+        "id": 2,
+        "facebookIcon": "img/f_icon2.png",
+        "f_username": "Pokemon Games",
+        "f_postedTime": "Yesterday at 11:46am",
+        "postText": "In your opinion, what's the best move set for Scrafty?",
+        "postPic": "img/post2.png"
+    },
+    {
+        "id": 3,
+        "facebookIcon": "img/f_icon2.png",
+        "f_username": "Pokemon Games",
+        "f_postedTime": "April 20 at 12:46pm",
+        "postText": "Have you been keeping up with the special events in Pokémon Shuffle? What's been the toughest stage so far? http://bit.ly/1EJ0wFo",
+        "postPic": "img/post3.png"
+    }
+]

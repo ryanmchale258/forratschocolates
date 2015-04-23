@@ -21,6 +21,7 @@ class Admin extends CI_Controller {
 
 		if($this->form_validation->run() == FALSE){
 			$data['bodyclass'] = "createadmin";
+			$data['initialize'] = 'cmsScript';
 			$data['header'] = "Add a New Admin";
 			$data['formstart'] = form_open('admin/insert_record/admin');
 			$data['fname'] = form_input(array(
@@ -61,6 +62,7 @@ class Admin extends CI_Controller {
 			$this->load->view('template/close');
 		}else{
 			$data['success'] = true;
+			$data['initialize'] = 'cmsScript';
 			$data['header'] = "Add a New Page";
 			$this->load->view('cms/head', $data);
 			$this->load->view('cms/header');
@@ -91,6 +93,7 @@ class Admin extends CI_Controller {
 					$weight = $pagedata->pages_weight;
 				$data['bodyclass'] = "addpage";
 				$data['header'] = "Add a New Page";
+				$data['initialize'] = 'cmsScript';
 				$navparents = $this->navigation_model->getParents();
 				$data['formstart'] = form_open('pages/update_record/pages/' . $id);
 				$data['pagename'] = form_input(array(
@@ -110,6 +113,7 @@ class Admin extends CI_Controller {
 				$this->load->view('template/close');
 			}else{
 				$data['bodyclass'] = "addpage";
+				$data['initialize'] = 'cmsScript';
 				$data['header'] = "Add a New Page";
 				$navparents = $this->navigation_model->getParents();
 				$data['formstart'] = form_open('pages/update_record/pages' . $id);
@@ -164,6 +168,7 @@ class Admin extends CI_Controller {
 			}
 		}else{
 			$data['items'] = $this->pages_model->getEditList('tbl_pages');
+			$data['initialize'] = 'cmsScript';
 			$data['header'] = "Add a New Page";
 			$this->load->view('cms/head', $data);
 			$this->load->view('cms/header');

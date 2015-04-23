@@ -10,6 +10,7 @@
 
 		<div class="formset">
 			<label>Image</label>
+			<?php if($imgerror){ echo '<span class="formerror">' . $imgerror . '</span>'; } ?>
 			<div class="imguploadcontainer">
         	   <img src="<?php echo $imagesource; ?>" alt="Choose an Image" id="imageButton" type="file" name="image">
             <?php echo $img; ?>
@@ -19,16 +20,15 @@
 		<div class="formset">
 			<label>Category *</label>
 			<div>
-				<?php if(form_error('cat')){ echo '<span class="formerror">' . form_error('cat') . '</span>'; } ?>
 				<?php echo $cat; ?>
 			</div>
 		</div>
 
 		<div class="formset">
-			<label>Long Description *</label>
+			<label>Description *</label>
 			<div>
-				<?php if(form_error('longdesc')){ echo '<span class="formerror">' . form_error('longdesc') . '</span>'; } ?>
-				<?php echo $longdesc; ?>
+				<?php if(form_error('desc')){ echo '<span class="formerror">' . form_error('desc') . '</span>'; } ?>
+				<?php echo $desc; ?>
 			</div>
 		</div>
 		

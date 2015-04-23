@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "icon": "img/icon1.jpeg",
+        "username": "Battlefield",
+        "postedTo": "Battlefield",
+        "postedTime": "- 2h",
+        "tweetText": "Pick the right tool for the job. Have you unlocked your favorite gun?",
+        "tweetPic": ""
+    },
+    {
+        "id": 2,
+        "icon": "img/icon2.jpeg",
+        "username": "EA_DICE",
+        "postedTo": "EA_DICE",
+        "postedTime": "- 6h",
+        "tweetText": "Star Wars Battlefront Reveal Trailer",
+        "tweetPic": "img/picture2.jpg"
+    },
+    {
+        "id": 3,
+        "icon": "img/icon3.jpeg",
+        "username": "Razer",
+        "postedTo": "Razer",
+        "postedTime": "- 22h",
+        "tweetText": "The BlackWidow TE Chroma's tenkeyless design makes it perfect for on-the-go",
+        "tweetPic": "img/picture3.jpg"
+    }
+]

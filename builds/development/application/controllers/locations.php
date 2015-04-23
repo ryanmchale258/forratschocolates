@@ -15,7 +15,7 @@ class Locations extends CI_Controller {
 
 		$data['pgTitle'] = "Locations";
 		$data['bodyclass'] = 'locations-page';
-		$data['initialize'] = "locationsScript";
+		$data['initialize'] = array('locationsScript', 'navScript', 'productsScript');
 		$this->load->view('template/head', $data);
 		$this->load->view('template/sidenav');
 

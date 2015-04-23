@@ -21,9 +21,9 @@
 		.overlayinner{
 			@include container(85%);
 			h3{
-				font-size: 1.6875rem;
+				font-size: 2rem;
 				line-height: 140%;
-				font-style: italic;
+				font-family: $serif;
 				margin-bottom: 20px;
 			}
 			p{

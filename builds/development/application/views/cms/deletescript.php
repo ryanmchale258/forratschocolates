@@ -2,6 +2,7 @@
 
 var deleteButtons = document.querySelectorAll('.del'),
 	delModal = document.querySelector("#popup"),
+	delDarken = document.querySelector("#darkover"),
 	delCancel = document.querySelector("#cancelDel"),
 	delRecord = document.querySelector("#deleteMe"),
 	deleteName = document.querySelector("#deleteNot span"),
@@ -13,6 +14,7 @@ var deleteButtons = document.querySelectorAll('.del'),
 function throwDelete(evt){
 	evt.preventDefault();
 	delModal.classList.add("modaldown");
+	delDarken.classList.add("darken");
 	recordId = evt.target.dataset.record;
 	returnCont = evt.target.dataset.controller;
 	deleteName.innerHTML = evt.target.dataset.title;
@@ -22,6 +24,7 @@ function throwDelete(evt){
 
 delCancel.addEventListener("click", function(e){
 	e.preventDefault();
+	delDarken.classList.remove("darken");
 	delModal.classList.remove("modaldown");
 }, false);
 

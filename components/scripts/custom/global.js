@@ -1,11 +1,5 @@
-var base_url = 'http://localhost/forratschocolates/builds/development/';
-//var base_url = 'http://www.ryanmchale.ca/staging/forrats5/';
-
-var navScrollable = $(function(){
-    $('#navscroll').slimScroll({
-        height: '350px'
-    });
-});
+var base_url = 'http://localhost:3000/forrats/builds/development/';
+//var base_url = 'http://www.ryanmchale.ca/staging/forrats/';
 
 var navsWithKids = function(){
 
@@ -60,5 +54,6 @@ var navsWithKids = function(){
 
 	$('#navIcon').on('click', function(){
 		$('.sideNav').toggleClass('navout');
+		$('.menu-toggle').toggleClass('close');
 	});
 }();

@@ -3,7 +3,8 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	browserify = require('gulp-browserify'),
 	compass = require('gulp-compass'),
-	livereload = require('gulp-livereload');
+	browserSync = require('browser-sync').create(),
+	reload = browserSync.reload;
 
 var env,
 	jsSources,
@@ -11,7 +12,7 @@ var env,
 	markupSources,
 	outputDir;
 
-env = process.env.NODE_ENV || 'development';
+env = 'development';
 
 if(env === 'production') {
 	outputDir = 'builds/production/';
@@ -21,27 +22,21 @@ if(env === 'production') {
 
 jsSources = ['components/scripts/*.js',
 					'components/scripts/custom/*.js'];
-sassSources = ['components/sass/style.scss'];
+sassSources = ['components/sass/style.scss', 'components/sass/*.scss', 'components/sass/**/*.scss'];
 markupSources = ['builds/development/application/controllers/**',
 					'builds/development/application/models/**',
 						'builds/development/application/views/**',
 							'builds/development/index.php'];
 
-gulp.task('markup', function(){
-	gulp.src(markupSources)
-	.pipe(livereload());
-});
-
 gulp.task('js', function(){
 	gulp.src(jsSources)
 		.pipe(concat('script.js'))
 		.pipe(browserify())
-		.pipe(gulp.dest(outputDir + 'js'))
-		.pipe(livereload());
+		.pipe(gulp.dest(outputDir + 'js'));
 });
 
 gulp.task('compass', function(){
-	gulp.src(sassSources)
+	gulp.src('components/sass/style.scss')
 		.pipe(compass({
 			sass: 'components/sass',
 			css: outputDir + 'css',
@@ -49,15 +44,21 @@ gulp.task('compass', function(){
 			style: 'expanded',
 			require: ['susy', 'breakpoint']
 		})
-		.on('error', gutil.log))
-		.pipe(livereload());
+		.on('error', gutil.log));
 });
 
 gulp.task('watch', function(){
-	livereload.listen();
-	gulp.watch(markupSources, ['markup']);
-	gulp.watch(jsSources, ['js']);
-	gulp.watch(['components/sass/*.scss', 'components/sass/modules/*.scss'], ['compass']);
-})
+	gulp.watch(markupSources, ['serve']);
+});
 
-gulp.task('default', ['markup', 'js', 'compass', 'watch']);
+gulp.task('serve', function() {
+    browserSync.init({
+    	browser: "google chrome",
+        proxy: "localhost/forrats/builds/development"
+    });
+
+    gulp.watch([sassSources], ['compass']);
+    gulp.watch([jsSources], ['js']);
+});
+
+gulp.task('default', ['serve']);

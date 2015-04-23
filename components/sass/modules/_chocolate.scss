@@ -3,6 +3,37 @@
 		@include span(10);
 		@include pre(2);
 	}
+	.heading{
+		h1{
+			font-family: $serif;
+			font-size: 2rem;
+			color: $darkred;
+			margin-bottom: 1em;
+		}
+		p{
+			font-family: $paragraph;
+			font-size: 1em;
+			color: $darkred;
+			line-height: 160%;
+			margin-bottom: 1em;
+		}
+	}
+	.constrainpage {
+		background: rgba($light, .8);
+		@include single-transition(all, .2s, ease-in);
+		@include box-shadow(6px -6px 10px rgba($dark, .5));
+		font-size: 1rem;
+		line-height: 140%;
+		font-family: $paragraph;
+		position: relative;
+		@include breakpoint($medium){
+			padding-top: 40px;
+			margin-top: 40px;
+			border-top: 5px solid $darkred;
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+	}
 	.product{
 		@include breakpoint(0 $small){
 			@include with-layout(12 .5 split){

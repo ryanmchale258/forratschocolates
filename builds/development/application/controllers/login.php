@@ -17,6 +17,7 @@ class Login extends CI_Controller {
 		$data['pgTitle'] = 'Login';
 		$data['sidenavlogo'] = true;
 		$data['bodyclass'] = 'login-page';
+		$data['initialize'] = array('navScript', 'contactScript');
 		$data['formstart'] = form_open('login/submit', array(
 						'method' => 'POST',
 						'id' => 'loginform'
@@ -60,9 +61,13 @@ class Login extends CI_Controller {
 				redirect('login/first/' . $userResult->admin_id);
 			}else{
 				$this->update_model->admin_login($userResult->admin_id);
-				redirect('pages');
+				redirect('dashboard');
 			}
 		}else{
+			$data['pgTitle'] = 'Login';
+			$data['sidenavlogo'] = true;
+			$data['bodyclass'] = 'login-page';
+			$data['initialize'] = array('navScript', 'contactScript');
 			$data['sidenav'] = $this->navigation_model->getNav();
 
 			$data['formstart'] = form_open('login/submit', array(
@@ -89,6 +94,7 @@ class Login extends CI_Controller {
 	}
 
 	public function first($id){
+		
 		$data['formstart'] = form_open('login/update_record/first_login', array(
 						'method' => 'POST',
 						'id' => 'loginform'
@@ -128,7 +134,7 @@ class Login extends CI_Controller {
 			$this->update_model->$function($id, $newpass);
 		}
 
-		redirect('pages');
+		redirect('dashboard');
 	}
 	
 }

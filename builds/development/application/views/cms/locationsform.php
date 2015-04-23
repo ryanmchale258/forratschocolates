@@ -63,8 +63,8 @@
 		
 		
 		<div class="formset">
-			<input type="submit" class="formsubmit" name="submit" value="Submit">
 			<a class="calc" href="#">Calculate</a>
+			<input type="submit" class="formsubmit" name="submit" value="Submit">
 		</div>
 
 		<?php if(isset($id)){ echo $id; } ?>

@@ -1,8 +1,27 @@
 <section class="pgcontent">
-	<section class="homepg contentinner">
-		<div class="logopanel">
-			<a href="<?php echo base_url() . index_page() ?>"><img class="mainlogo" src="<?php echo base_url() ?>/images/forratslogo.svg" onerror="this.onerror=null; this.src='<?php echo base_url() ?>/images/forratslogo.png'"></a>
+	<section class="homepg">
+		<div class="contentinner">
+			<div class="logopanel">
+				<a href="<?php echo base_url() . index_page() ?>"><img class="mainlogo" src="<?php echo base_url() ?>/images/forratslogo.svg" onerror="this.onerror=null; this.src='<?php echo base_url() ?>/images/forratslogo.png'"></a>
+			</div>
 		</div>
+		
+		<div class="slideouter">
+			<section class="slider">
+				<?php foreach($slides as $row): ?>
+				<div class="slide" style="background-image: url('<?php echo base_url() ?>images/uploads/slider/<?php echo $row->slide_img; ?>');">
+					<div class="text">
+						<div class="textinner">
+							<h3><?php echo $row->slide_title; ?></h3>
+							<p><?php echo $row->slide_text; ?></p>
+						</div>
+					</div>
+				</div>
+				<?php endforeach; ?>
+			</section>
+		</div>
+
+
 		<section class="homemenu">
 			<?php foreach($pages as $row): ?>
 			<?php if($row->pages_hascontroller == 0){
@@ -18,38 +37,6 @@
 				</article>
 			</a>
 			<?php endforeach; ?>
-			<!-- <div class="menuitem hideme about">
-				<span class="icon">&#xf059;</span>
-				<article class="infogroup">
-					<h2>About</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-				</article>
-			</div>
-			<div class="menuitem hideme chocolate">
-				<span class="icon">&#xf042;</span>
-				<article class="infogroup">
-					<h2>Chocolate</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-				</article>
-			</div>
-			<div class="menuitem hideme contact">
-				<span class="icon">&#xf003;</span>
-				<article class="infogroup">
-					<h2>Contact</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-				</article>
-			</div>
-			<div class="menuitem hideme new">
-				<span class="icon">&#xf0f6;</span>
-				<article class="infogroup">
-					<h2>NewPage</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-				</article>
-			</div> -->
 		</section>
 	</section>
 </section>

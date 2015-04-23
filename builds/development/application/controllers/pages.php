@@ -23,8 +23,7 @@ class Pages extends CI_Controller {
 		$data['sidenavlogo'] = true;
 		$data['pgdata'] = $this->pages_model->getPage($slug)->row();
 		$data['pgTitle'] = $data['pgdata']->pages_title;
-		$data['bodyclass'] = 'template-page';
-		
+		$data['initialize'] = 'navScript';		
 		$data['bodyclass'] = 'page';
 		$this->load->view('template/head', $data);
 		$this->load->view('template/sidenav');
@@ -258,6 +257,7 @@ class Pages extends CI_Controller {
 		}else{
 			$data['pgTitle'] = 'Edit Page';
 			$data['bodyclass'] = 'editpage-page';
+			$data['initialize'] = 'cmsScript';
 			$data['items'] = $this->pages_model->getEditList('tbl_pages');
 			$this->load->view('template/head', $data);
 			$this->load->view('cms/logoandmenu');

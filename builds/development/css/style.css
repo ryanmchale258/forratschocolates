@@ -143,6 +143,7 @@ img {
 
 .sideNav {
   height: 1000px;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -219,14 +220,9 @@ img {
   background: white;
 }
 .sideNav #navIcon {
-  width: 50px;
-  height: 50px;
-  background: #fff;
   cursor: pointer;
   position: absolute;
   top: 0;
-  right: -50px;
-  line-height: 50px;
   text-decoration: none;
   text-align: center;
 }
@@ -253,16 +249,16 @@ img {
     -webkit-transform: translateX(0px) !important;
   }
 }
-.sideNav .slimScrollDiv {
+.sideNav #navscroll {
   margin-top: 150px;
 }
-.sideNav .slimScrollDiv .side-nav {
+.sideNav #navscroll .side-nav {
   font-family: "Jacques Francois", serif;
 }
-.sideNav .slimScrollDiv .side-nav li {
+.sideNav #navscroll .side-nav li {
   width: 100%;
 }
-.sideNav .slimScrollDiv .side-nav li a {
+.sideNav #navscroll .side-nav li a {
   width: 100%;
   line-height: 400%;
   text-align: center;
@@ -275,14 +271,14 @@ img {
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-.sideNav .slimScrollDiv .side-nav li a:hover {
+.sideNav #navscroll .side-nav li a:hover {
   background: #731c20;
   color: #fff;
 }
-.sideNav .slimScrollDiv .side-nav li:last-child a {
+.sideNav #navscroll .side-nav li:last-child a {
   border-bottom: none;
 }
-.sideNav .slimScrollDiv .side-nav li .submenu {
+.sideNav #navscroll .side-nav li .submenu {
   height: 100%;
   position: absolute;
   top: 0;
@@ -300,7 +296,7 @@ img {
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
 }
-.sideNav .slimScrollDiv .side-nav li .subout {
+.sideNav #navscroll .side-nav li .subout {
   -moz-transform: translateX(-10px);
   -ms-transform: translateX(-10px);
   -webkit-transform: translateX(-10px);
@@ -318,7 +314,8 @@ img {
 }
 .sideNav .social {
   font-family: FontAwesome;
-  margin-top: 50px;
+  position: absolute;
+  bottom: 20px;
   width: 100%;
   text-align: center;
 }
@@ -337,6 +334,84 @@ img {
   border-color: transparent;
 }
 
+.menu-toggle {
+  position: absolute;
+  top: 0;
+  right: -3.6rem;
+  text-align: center;
+}
+
+.lines-button {
+  float: right;
+  margin-top: 3px;
+  padding: 1.2rem 0.6rem 1.6rem;
+  transition: .3s;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.24rem;
+  background: rgba(9, 9, 9, 0.8);
+  box-shadow: none;
+  border: none;
+}
+.lines-button:hover {
+  opacity: 1;
+  background: rgba(9, 9, 9, 0.8);
+  box-shadow: none;
+  border: none;
+}
+.lines-button:active {
+  transition: 0;
+  background: rgba(9, 9, 9, 0.8);
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+.lines-button.close .lines {
+  /*hide the middle line*/
+  background: transparent;
+  /*overlay the lines by setting both their top values to 0*/
+}
+.lines-button.close .lines:before, .lines-button.close .lines:after {
+  transform-origin: 50% 50%;
+  top: 0;
+  width: 2.4rem;
+}
+.lines-button.close .lines:before {
+  transform: rotate3d(0, 0, 1, 45deg);
+}
+.lines-button.close .lines:after {
+  transform: rotate3d(0, 0, 1, -45deg);
+}
+
+.lines {
+  display: inline-block;
+  width: 2.4rem;
+  height: 0.24rem;
+  background: #fff;
+  border-radius: 0.17143rem;
+  transition: 0.3s;
+  position: relative;
+  /*create the upper and lower lines as pseudo-elements of the middle line*/
+}
+.lines:before, .lines:after {
+  display: inline-block;
+  width: 2.4rem;
+  height: 0.24rem;
+  background: #fff;
+  border-radius: 0.17143rem;
+  transition: 0.3s;
+  position: absolute;
+  left: 0;
+  content: '';
+  transform-origin: 0.17143rem center;
+}
+.lines:before {
+  top: 0.6rem;
+}
+.lines:after {
+  top: -0.6rem;
+}
+
 .home-page #navIcon {
   display: none !important;
 }
@@ -344,9 +419,108 @@ img {
 .homepg {
   position: relative;
 }
+.homepg:before, .homepg:after {
+  content: '';
+  display: table;
+}
+.homepg:after {
+  clear: both;
+}
+@media (min-width: 960px) {
+  .homepg {
+    height: 100vh;
+  }
+}
+.homepg .logopanel {
+  display: block;
+}
 @media (min-width: 960px) {
   .homepg .logopanel {
-    display: block;
+    display: none;
+  }
+}
+.homepg .slideouter {
+  height: 300px;
+  height: 30vh;
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 960px) {
+  .homepg .slideouter {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+.homepg .slideouter .slider {
+  -moz-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.homepg .slideouter .slider .slide {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.homepg .slideouter .slider .slide .text {
+  background: rgba(9, 9, 9, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #ffefd3;
+}
+@media (min-width: 960px) {
+  .homepg .slideouter .slider .slide .text {
+    right: auto;
+    background: rgba(9, 9, 9, 0.8);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+    float: left;
+  }
+}
+.homepg .slideouter .slider .slide .text .textinner {
+  padding: 1em;
+  text-align: center;
+}
+@media (min-width: 960px) {
+  .homepg .slideouter .slider .slide .text .textinner {
+    text-align: left;
+  }
+}
+.homepg .slideouter .slider .slide .text .textinner h3 {
+  font-family: "Great Vibes", cursive;
+  font-size: 4rem;
+}
+.homepg .slideouter .slider .slide .text .textinner p {
+  font-family: "Jacques Francois", serif;
+  font-size: 1.2rem;
+}
+@media (min-width: 960px) {
+  .homepg .slideouter .slider .slide .text .textinner p {
+    font-size: 2.2rem;
   }
 }
 .homepg .homemenu {
@@ -354,9 +528,11 @@ img {
   float: left;
   margin-left: 0.83333%;
   margin-right: 0.83333%;
+  display: block;
 }
 @media (min-width: 960px) {
   .homepg .homemenu {
+    display: none;
     position: absolute;
     top: 200px;
     width: 100%;
@@ -577,7 +753,7 @@ img {
   clear: both;
 }
 .locationspg #locationsoverlay .overlayinner h1 {
-  font-family: "Great Vibes", cursive;
+  font-family: "Jacques Francois", serif;
   line-height: 180%;
   font-size: 2rem;
   margin-bottom: 20px;
@@ -644,9 +820,9 @@ img {
   clear: both;
 }
 .aboutpg #aboutoverlay .overlayinner h3 {
-  font-size: 1.6875rem;
+  font-size: 2rem;
   line-height: 140%;
-  font-style: italic;
+  font-family: "Jacques Francois", serif;
   margin-bottom: 20px;
 }
 .aboutpg #aboutoverlay .overlayinner p {
@@ -758,6 +934,42 @@ img {
     margin-left: 16.66667%;
   }
 }
+.chocolatepg .heading h1 {
+  font-family: "Jacques Francois", serif;
+  font-size: 2rem;
+  color: #731c20;
+  margin-bottom: 1em;
+}
+.chocolatepg .heading p {
+  font-family: "ABeeZee", sans-serif;
+  font-size: 1em;
+  color: #731c20;
+  line-height: 160%;
+  margin-bottom: 1em;
+}
+.chocolatepg .constrainpage {
+  background: rgba(255, 255, 255, 0.8);
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  -moz-box-shadow: 6px -6px 10px rgba(9, 9, 9, 0.5);
+  -webkit-box-shadow: 6px -6px 10px rgba(9, 9, 9, 0.5);
+  box-shadow: 6px -6px 10px rgba(9, 9, 9, 0.5);
+  font-size: 1rem;
+  line-height: 140%;
+  font-family: "ABeeZee", sans-serif;
+  position: relative;
+}
+@media (min-width: 960px) {
+  .chocolatepg .constrainpage {
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 5px solid #731c20;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
 .chocolatepg .product {
   height: 250px;
   height: 30vh;
@@ -864,6 +1076,9 @@ img {
   max-width: 400px;
   margin-top: 20px;
   padding: 20px;
+  -moz-box-shadow: 3px 3px 5px rgba(9, 9, 9, 0.8);
+  -webkit-box-shadow: 3px 3px 5px rgba(9, 9, 9, 0.8);
+  box-shadow: 3px 3px 5px rgba(9, 9, 9, 0.8);
 }
 .loginpg #loginbox:after {
   content: " ";
@@ -953,6 +1168,9 @@ img {
     width: 33.33333%;
     float: left;
   }
+}
+.edible-logoarea .mainlogo {
+  background: rgba(115, 28, 32, 0.8);
 }
 @media (min-width: 960px) {
   .edible-logoarea .menubutton {
@@ -1124,17 +1342,38 @@ img {
   border-color: #fff;
 }
 
+#darkover {
+  position: fixed;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 98;
+  visibility: hidden;
+  opacity: 0;
+  -moz-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  -webkit-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+}
+#darkover.darken {
+  visibility: visible;
+  opacity: 1;
+}
+
 #popup {
-  -moz-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   float: left;
-  position: absolute;
+  position: fixed;
   top: 200px;
   left: 0;
   background: white;
@@ -1367,6 +1606,7 @@ img {
   padding: 10px;
   font-family: "ABeeZee", sans-serif;
   margin-top: 10px;
+  font-size: .875rem;
 }
 @media (min-width: 960px) {
   .cmspg.pageform input[type="submit"] {
@@ -1505,6 +1745,99 @@ img {
   box-sizing: border-box;
   width: 25%;
   float: left;
+}
+
+.dashboard-page h1 {
+  font-family: "Jacques Francois", serif;
+  font-size: 3rem;
+  color: #ffefd3;
+  margin-bottom: 2em;
+}
+.dashboard-page h2 {
+  font-size: 1.6rem;
+}
+.dashboard-page p {
+  font-family: "ABeeZee", sans-serif;
+  font-fize: 1rem;
+  line-height: 160%;
+  color: #ffefd3;
+}
+.dashboard-page .chart {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.dashboard-page .chartholder {
+  margin-bottom: 1em;
+}
+.dashboard-page .intro {
+  margin-bottom: 2em;
+}
+.dashboard-page .contentinner {
+  padding: 1em;
+}
+@media (min-width: 960px) {
+  .dashboard-page .visits {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+  }
+}
+@media (min-width: 960px) {
+  .dashboard-page .sessions {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+  }
+}
+@media (min-width: 960px) {
+  .dashboard-page .history {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 83.33333%;
+    float: left;
+    margin-left: 8.33333%;
+  }
+}
+
+.pageform .calc {
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  border: none;
+  outline: none;
+  background: #fff;
+  border: 1px dotted transparent;
+  color: #731c20;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  font-family: "ABeeZee", sans-serif;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: .875rem;
+}
+@media (min-width: 960px) {
+  .pageform .calc {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33.33333%;
+    float: left;
+    margin-left: 33.33333%;
+  }
+}
+.pageform .calc:hover {
+  background: #731c20;
+  color: #ffefd3;
+  border-color: #fff;
 }
 
 @media (min-width: 960px) {

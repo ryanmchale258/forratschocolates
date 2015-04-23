@@ -8,6 +8,7 @@ class Contact extends CI_Controller {
 	}
 	
 	public function index() {
+                $data['bodyclass'] = 'product-page';
 		$this->load->helper(array('form', 'url'));//remove any of these if they are in the autoload file
 		$this->load->library('form_validation');//remove any of these if they are in the autoload file
 
@@ -19,6 +20,7 @@ class Contact extends CI_Controller {
 		$data['pgTitle'] = 'Contact us';
 		$data['sidenav'] = $this->navigation_model->getNav();
 		$data['sidenavlogo'] = true;
+		$data['initialize'] = array('navScript', 'contactScript');
 		$this->load->view('template/head', $data);
 		$this->load->view('template/sidenav');
 		if ($this->form_validation->run() == FALSE)

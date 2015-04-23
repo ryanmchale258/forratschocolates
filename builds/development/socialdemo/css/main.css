@@ -1,0 +1,246 @@
+body{
+}
+
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+.twitter{
+	background-image: url(../img/bg.png);
+	background-position: left 0px;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-color: #C0DEED;
+	font-family: Arial,sans-serif;
+	min-height: 50vh;
+	position: relative;
+}
+
+.twitterExamples{
+	position: absolute;
+	top: 10;
+	left: 20;
+	z-index: 20;
+	max-width: 300px;
+}
+
+.facebookExamples{
+	position: absolute;
+	top: 10;
+	left: 10;
+	z-index: 21;
+	max-width: 300px;
+
+}
+
+
+.previous{
+	display: inline-block;
+	float: left;
+	margin-top:113px;
+	margin-right: 10px;
+}
+
+.next{
+	display: inline-block;
+	float: left;
+	margin-top:113px;
+	margin-left: 10px;
+}
+
+.centerConter{
+	width: 710px;
+	margin: 0 auto;
+	margin-top: 25px;
+}
+
+.twitterContainer{
+	width: 600px;
+	background: no-repeat scroll 0% 0% padding-box #fff;
+	min-height: 51px;
+	padding: 9px 12px;
+	border-left: 1px solid #E1E8Ed;
+	border-right: 1px solid #E1E8Ed;
+	float: left;
+}
+
+.tweetIcon{
+	background-color: grey;
+	width: 48px;
+	height: 48px;
+	border-radius: 5px;
+	float: left;
+}
+
+.tweetIcon img{
+	border-radius: 5px;
+}
+
+.tweetContent{
+	font-size: 14px;
+	margin-left: 58px;
+}
+
+.username{
+	font-weight: bold;
+}
+
+.postedAt{
+	color: #8899A6;
+}
+
+.postedTo{
+	color: #8899A6;
+}
+
+.postedTime{
+	color: #8899A6;
+}
+.tweetText{
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	margin: 0px;
+	font-size: 14px;
+	color: #292F33;
+}
+.tweetPicContainer{
+	display: block;
+	position: relative;
+	max-height: 253px;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	border-radius: 5px;
+	max-width: 100%;
+	vertical-align: top;
+	margin: 10px 0px 0px;
+}
+.tweetPic{
+	display: block;
+	vertical-align: top;
+	height: auto;
+	width: auto;
+}
+
+.facebook{
+	background-repeat: repeat-x;
+	background-size: auto auto;
+	background-position: 0px 0px;
+	background-color: #3A5795;
+	border-width: 0px 0px 1px;
+	border-style: none none solid;
+	border-color: -moz-use-text-color -moz-use-text-color #133783;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	box-shadow: 0px 2px 2px -2px rgba(0, 0, 0, 0.52);
+	min-height: 50vh;
+	position: relative;
+}
+
+.f_centerConter{
+	width: 606px;
+	margin: 0 auto;
+	margin-top: 25px;
+}
+
+.facebook_previous{
+	display: inline-block;
+	float: left;
+	margin-top:150px;
+	margin-right: 10px;
+}
+
+.facebook_next{
+	display: inline-block;
+	float: left;
+	margin-top:150px;
+	margin-left: 10px;
+}
+
+.facebookContainer{
+	width: 496px;
+	background: none repeat scroll 0% 0% #FFF;
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	border-color: #E5E6E9 #DFE0E4 #D0D1D5;
+	border-radius: 3px;
+	min-height: 300px;
+	float: left;
+	padding: 12px;
+}
+
+.facebookIcon{
+	background-color: grey;
+	width: 40px;
+	height: 40px;
+	float: left;
+	border: 1px solid #d1d1d1;
+	margin-right: 8px;
+}
+
+.postContent{
+	font-size: 14px;
+}
+
+.postText{
+	font-family: helvetica,arial,"lucida grande",sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+	padding-top: 12px;
+	color: #141823;
+	font-weight: normal;
+	line-height: 1.38;
+	word-wrap: break-word;
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+}
+
+.f_username{
+	font-size: 14px;
+	color: #3B5998;
+	font-weight: 700;
+	line-height: 19.3167px;
+	font-family: helvetica,arial,"lucida grande",sans-serif;
+
+}
+.f_postedTime{
+	color: #9197A3;
+	display: block;
+	font-size: 12px;
+	font-family: helvetica,arial,"lucida grande",sans-serif;
+}
+
+.postPicContainer{
+	display: block;
+	position: relative;
+	max-height: 247px;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	max-width: 100%;
+	vertical-align: top;
+}
+
+.postPic{
+	padding-bottom: 5px;
+}
+
+.f_lcs{
+	display: inline;
+	font-size: 12px;
+	color: #6D84B4;
+	line-height: 1.34;
+	word-wrap: break-word;
+	font-family: helvetica,arial,"lucida grande",sans-serif;
+}

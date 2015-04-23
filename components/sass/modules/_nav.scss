@@ -7,14 +7,9 @@
 		background: rgba($light, 1);
 	}
 	#navIcon{
-		width: 50px;
-		height: 50px;
-		background: $light;
 		cursor: pointer;
 		position: absolute;
 		top: 0;
-		right: -50px;
-		line-height: 50px;
 		text-decoration: none;
 		text-align: center;
 		a{
@@ -37,7 +32,7 @@
 		transform: translateX(0px) !important;
 		-webkit-transform: translateX(0px) !important;
 	}
-	.slimScrollDiv{
+	#navscroll{
 		margin-top: 150px;
 		.side-nav {
 			font-family: $serif;
@@ -88,7 +83,8 @@
 	}
 	.social {
 		font-family: $fontawesome;
-		margin-top: 50px;
+		position: absolute;
+		bottom: 20px;
 		width: 100%;
 		text-align: center;
 		a{
@@ -105,4 +101,90 @@
 	.side-nav li a {
 		border-color: transparent;
 	}
+}
+
+$button-size : 2.4rem; 
+$transition: .3s; // increase this to see the transformations in slow-motion
+
+.menu-toggle{
+	  position: absolute;
+	  top: 0;
+	  right: -($button-size + $button-size/2);
+	  text-align: center;
+}
+
+.lines-button {
+	float: right;
+	margin-top: 3px;
+  padding: $button-size/2 $button-size/4 1.6rem;
+  transition: .3s;
+  cursor: pointer;
+  user-select: none;
+  border-radius: $button-size/10;
+  background: rgba($dark, .8);
+  box-shadow: none;
+  border: none;
+ 
+  &:hover {
+    opacity: 1;
+    background: rgba($dark, .8);
+	  box-shadow: none;
+	  border: none;
+  }
+ 
+  &:active {
+    transition: 0;
+    background: rgba($dark, .8);
+    background: none;
+	box-shadow: none;
+	border: none;
+  }
+  &.close .lines{
+	 
+	    /*hide the middle line*/
+	    background: transparent;
+	 
+	    /*overlay the lines by setting both their top values to 0*/
+	    &:before, &:after{
+	      transform-origin: 50% 50%;
+	      top:0;
+	      width: $button-size;
+	    }
+	 
+	    // rotate the lines to form the x shape
+	    &:before{
+	      transform: rotate3d(0,0,1,45deg); 
+	    }
+	    &:after{
+	      transform: rotate3d(0,0,1,-45deg); 
+	    }
+	}
+}
+
+@mixin line {
+  display: inline-block;
+  width: $button-size;
+  height: $button-size/10;
+  background: #fff;
+  border-radius: $button-size/14; 
+  transition: $transition;
+}
+
+.lines {
+   
+  //create middle line
+  @include line;
+  position: relative; 
+ 
+  /*create the upper and lower lines as pseudo-elements of the middle line*/
+  &:before, &:after {
+   
+   @include line;
+    position: absolute;
+      left:0;
+    content: '';
+    transform-origin: $button-size/14 center;
+  }
+  &:before { top: $button-size/4; }
+  &:after { top: -$button-size/4; }
 }

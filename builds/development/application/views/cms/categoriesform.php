@@ -10,6 +10,7 @@
 
 		<div class="formset">
 			<label>Image</label>
+			<?php if($imgerror){ echo '<span class="formerror">' . $imgerror . '</span>'; } ?>
 			<div class="imguploadcontainer">
         	   <img src="<?php echo $imagesource; ?>" alt="Choose an Image" id="imageButton" type="file" name="image">
             <?php echo $img; ?>

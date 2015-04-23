@@ -27,7 +27,7 @@ class Addlocations extends CI_Controller {
 		if($this->form_validation->run() == FALSE){
 			$data['pgTitle'] = 'Add Location';
 			$data['bodyclass'] = 'addlocation-page';
-			$data['initialize'] = 'cmsScript';
+			$data['initialize'] = array('cmsScript', 'geoScript');
 			$data['formstart'] = form_open('addlocations/insert_record/addlocations');
 			$data['locationname'] = form_input(array(
 					            'name' => 'locationname',
@@ -117,7 +117,7 @@ class Addlocations extends CI_Controller {
 					$long = $locationdata->locations_long;
 				$data['pgTitle'] = 'Edit Location';
 				$data['bodyclass'] = 'editlocation-page';
-				$data['initialize'] = 'cmsScript';
+				$data['initialize'] = array('cmsScript', 'geoScript');
 				$data['formstart'] = form_open('addlocations/update_record/addlocations/' . $id);
 				$data['locationname'] = form_input(array(
 					            'name' => 'locationname',
@@ -176,7 +176,7 @@ class Addlocations extends CI_Controller {
 			}else{
 				$data['pgTitle'] = 'Edit Location';
 				$data['bodyclass'] = 'editlocation-page';
-				$data['initialize'] = 'cmsScript';
+				$data['initialize'] = array('cmsScript', 'geoScript');
 				$data['formstart'] = form_open('addlocations/update_record/addlocations' . $id);
 				$data['locationname'] = form_input(array(
 					            'name' => 'locationname',
@@ -236,6 +236,7 @@ class Addlocations extends CI_Controller {
 		}else{
 			$data['pgTitle'] = 'Edit Location';
 			$data['bodyclass'] = 'editlocation-page';
+			$data['initialize'] = 'cmsScript';
 			$data['items'] = $this->map_model->getEditList('tbl_locations');
 			$this->load->view('template/head', $data);
 			$this->load->view('cms/logoandmenu');

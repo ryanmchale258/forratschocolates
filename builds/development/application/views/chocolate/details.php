@@ -14,7 +14,7 @@
 		<?php foreach($options as $option): ?>
 		<div class="prod-option">
 			<h3><?php echo $option->products_name; ?></h3>
-			<img src="<?php echo base_url() . 'images/uploads/products/' . $pgdata->categories_slug . '/' . $option->products_image; ?>" alt="<?php echo $option->products_name ?>">
+			<img src="<?php echo base_url() . 'images/uploads/products/' . $pgdata->categories_id . '/' . $option->products_image; ?>" alt="<?php echo $option->products_name ?>">
 			<p><?php echo $option->products_desc; ?></p>
 		</div>
 		<?php endforeach; ?>

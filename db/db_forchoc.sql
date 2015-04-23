@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2015 at 12:19 PM
+-- Generation Time: Mar 24, 2015 at 12:45 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS tbl_admin (
 --
 
 INSERT INTO tbl_admin (admin_id, admin_username, admin_password, admin_firstname, admin_lastname, admin_email, admin_level, admin_lastsession) VALUES
-(1, 'ryanmchale', 'd66fcc742cc640480ace083585445fd5cb3ea224', 'Ryan', 'McHale', '', 0, 'ff3594eca49df838077316f4a6e9eb01');
+(1, 'ryanmchale', 'd66fcc742cc640480ace083585445fd5cb3ea224', 'Ryan', 'McHale', '', 0, 'b1f0571bff27136edc88651743abf2a8');
 
 -- --------------------------------------------------------
 
@@ -132,6 +132,29 @@ INSERT INTO tbl_locations (locations_id, locations_telephone, locations_title, l
 (1, '519-455-2285', 'Forrat''s Chocolates at Covent Garden Market', '42.982367', '-81.250959', '130 King Street', 'London', 'ON', 'N6A 1C5'),
 (2, '519-204-7904', 'Forrat''s Chocolates and Lounge', '42.960983', '-81.336608', '1304 Commissioners Road West, Unit 3', 'London', 'ON', 'N6K 1E1'),
 (3, '289-389-5700', 'Forrat''s Chocolates on Locke', '43.255485', '-79.885753', '184 Locke Street South', 'Hamilton', 'ON', 'L8P 4B3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'tbl_messages'
+--
+
+CREATE TABLE IF NOT EXISTS tbl_messages (
+  messages_id smallint(4) unsigned NOT NULL AUTO_INCREMENT,
+  messages_name varchar(100) NOT NULL,
+  messages_email varchar(100) NOT NULL,
+  messages_message text NOT NULL,
+  PRIMARY KEY (messages_id)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table 'tbl_messages'
+--
+
+INSERT INTO tbl_messages (messages_id, messages_name, messages_email, messages_message) VALUES
+(1, 'Test', 'Test@gmail.com', 'Test'),
+(2, 'Test', 'Test@gmail.com', 'Sweet'),
+(3, 'Test', 'Test@gmail.com', 'Gablaga');
 
 -- --------------------------------------------------------
 

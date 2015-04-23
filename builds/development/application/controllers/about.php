@@ -11,6 +11,7 @@ class About extends CI_Controller {
 		$data['sidenav'] = $this->navigation_model->getNav();
 		$data['sidenavlogo'] = true;
 		$data['pgTitle'] = "About";
+		$data['initialize'] = 'navScript';
 		$data['bodyclass'] = 'about-page';
 		
 		$this->load->view('template/head', $data);

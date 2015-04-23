@@ -1,27 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-
-
-window.google = window.google || {};
-google.maps = google.maps || {};
-(function() {
-  
-  function getScript(src) {
-    document.write('<' + 'script src="' + src + '"><' + '/script>');
-  }
-  
-  var modules = google.maps.modules = {};
-  google.maps.__gjsload__ = function(name, text) {
-    modules[name] = text;
-  };
-  
-  google.maps.Load = function(apiLoad) {
-    delete google.maps.Load;
-    apiLoad([0.009999999776482582,[[["https://mts0.googleapis.com/vt?lyrs=m@295000000\u0026src=api\u0026hl=en-US\u0026","https://mts1.googleapis.com/vt?lyrs=m@295000000\u0026src=api\u0026hl=en-US\u0026"],null,null,null,null,"m@295000000",["https://mts0.google.com/vt?lyrs=m@295000000\u0026src=api\u0026hl=en-US\u0026","https://mts1.google.com/vt?lyrs=m@295000000\u0026src=api\u0026hl=en-US\u0026"]],[["https://khms0.googleapis.com/kh?v=167\u0026hl=en-US\u0026","https://khms1.googleapis.com/kh?v=167\u0026hl=en-US\u0026"],null,null,null,1,"167",["https://khms0.google.com/kh?v=167\u0026hl=en-US\u0026","https://khms1.google.com/kh?v=167\u0026hl=en-US\u0026"]],[["https://mts0.googleapis.com/vt?lyrs=h@295000000\u0026src=api\u0026hl=en-US\u0026","https://mts1.googleapis.com/vt?lyrs=h@295000000\u0026src=api\u0026hl=en-US\u0026"],null,null,null,null,"h@295000000",["https://mts0.google.com/vt?lyrs=h@295000000\u0026src=api\u0026hl=en-US\u0026","https://mts1.google.com/vt?lyrs=h@295000000\u0026src=api\u0026hl=en-US\u0026"]],[["https://mts0.googleapis.com/vt?lyrs=t@132,r@295000000\u0026src=api\u0026hl=en-US\u0026","https://mts1.googleapis.com/vt?lyrs=t@132,r@295000000\u0026src=api\u0026hl=en-US\u0026"],null,null,null,null,"t@132,r@295000000",["https://mts0.google.com/vt?lyrs=t@132,r@295000000\u0026src=api\u0026hl=en-US\u0026","https://mts1.google.com/vt?lyrs=t@132,r@295000000\u0026src=api\u0026hl=en-US\u0026"]],null,null,[["https://cbks0.googleapis.com/cbk?","https://cbks1.googleapis.com/cbk?"]],[["https://khms0.googleapis.com/kh?v=85\u0026hl=en-US\u0026","https://khms1.googleapis.com/kh?v=85\u0026hl=en-US\u0026"],null,null,null,null,"85",["https://khms0.google.com/kh?v=85\u0026hl=en-US\u0026","https://khms1.google.com/kh?v=85\u0026hl=en-US\u0026"]],[["https://mts0.googleapis.com/mapslt?hl=en-US\u0026","https://mts1.googleapis.com/mapslt?hl=en-US\u0026"]],[["https://mts0.googleapis.com/mapslt/ft?hl=en-US\u0026","https://mts1.googleapis.com/mapslt/ft?hl=en-US\u0026"]],[["https://mts0.googleapis.com/vt?hl=en-US\u0026","https://mts1.googleapis.com/vt?hl=en-US\u0026"]],[["https://mts0.googleapis.com/mapslt/loom?hl=en-US\u0026","https://mts1.googleapis.com/mapslt/loom?hl=en-US\u0026"]],[["https://mts0.googleapis.com/mapslt?hl=en-US\u0026","https://mts1.googleapis.com/mapslt?hl=en-US\u0026"]],[["https://mts0.googleapis.com/mapslt/ft?hl=en-US\u0026","https://mts1.googleapis.com/mapslt/ft?hl=en-US\u0026"]],[["https://mts0.googleapis.com/mapslt/loom?hl=en-US\u0026","https://mts1.googleapis.com/mapslt/loom?hl=en-US\u0026"]]],["en-US","US",null,0,null,null,"https://maps.gstatic.com/mapfiles/","https://csi.gstatic.com","https://maps.googleapis.com","https://maps.googleapis.com",null,"https://maps.google.com","https://gg.google.com","https://maps.gstatic.com/maps-api-v3/api/images/","https://www.google.com/maps"],["https://maps.gstatic.com/maps-api-v3/api/js/20/4","3.20.4"],[133529007],1,null,null,null,null,null,"",null,null,1,"https://khms.googleapis.com/mz?v=167\u0026",null,"https://earthbuilder.googleapis.com","https://earthbuilder.googleapis.com",null,"https://mts.googleapis.com/vt/icon",[["https://mts0.googleapis.com/vt","https://mts1.googleapis.com/vt"],["https://mts0.googleapis.com/vt","https://mts1.googleapis.com/vt"],null,null,null,null,null,null,null,null,null,null,["https://mts0.google.com/vt","https://mts1.google.com/vt"],"/maps/vt",295000000,132],2,500,[null,"https://g0.gstatic.com/landmark/tour","https://g0.gstatic.com/landmark/config","","https://www.google.com/maps/preview/log204","","https://static.panoramio.com.storage.googleapis.com/photos/",["https://geo0.ggpht.com/cbk","https://geo1.ggpht.com/cbk","https://geo2.ggpht.com/cbk","https://geo3.ggpht.com/cbk"]],["https://www.google.com/maps/api/js/master?pb=!1m2!1u20!2s4!2sen-US!3sUS!4s20/4","https://www.google.com/maps/api/js/widget?pb=!1m2!1u20!2s4!2sen-US"],null,0,0,"/maps/api/js/ApplicationService.GetEntityDetails"], loadScriptTime);
-  };
-  var loadScriptTime = (new Date).getTime();
-  getScript("https://maps.gstatic.com/maps-api-v3/api/js/20/4/main.js");
-})();
-
 var $ = require('jquery');
 var jQuery = $;
 /*! Copyright (c) 2011 Piotr Rochala (http://rocha.la)
@@ -489,6 +466,347 @@ var jQuery = $;
 
 })(jQuery);
 
+analyticsScript = function(){
+  //authorize access
+  var clientId = '1010502107994-aj00bgva4l56fg32oo2ndb2mbs2r6ee9.apps.googleusercontent.com',
+  apiKey = 'AIzaSyAhLp11xqoJtrLvgvvaqvZBsTzwvy8S0F8',
+  scopes = 'https://www.googleapis.com/auth/analytics',
+  authButton = document.querySelector('#authorize-button'),
+  month1views = 0,
+  month2views = 0,
+  month3views = 0,
+  month4views = 0,
+  month1users = 0,
+  month2users = 0,
+  month3users = 0,
+  month4users = 0;
+
+
+  function clientLoad(){//declares API key and sets a failure timer
+    console.log("fired clientLoad");
+    gapi.client.setApiKey(apiKey);
+    window.setTimeout(checkAuth,1);
+    handleAuthClick();
+  }
+
+  function checkAuth(){//checks authorization
+    console.log("fired checkAuth");
+    gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
+  }
+
+  function handleAuthResult(authResult){//authorization handler
+    console.log("fired handleAuthResult");
+    if(authResult && !authResult.error){
+      loadLib();
+    }else{
+      console.log(authResult);
+      handleUnAuthorized();
+    }
+  }
+
+  function handleAuthorized(){//if authorized
+    console.log("fired handleAuthorized");
+    apiCallButton.onclick = makeApiCall;
+  }
+
+  function handleUnAuthorized(){//if unautorized
+    console.log("fired handleUnAuthorized");
+    authButton.onclick = handleAuthClick;
+  }
+
+  function handleAuthClick(event) {//if authorized buttin is clicked reinitiates the authorization flow
+    console.log("fired handleAuthClick");
+    gapi.auth.authorize({client_id: clientId, scope: scopes, immediate: false}, handleAuthResult);
+    return false;
+  }
+
+  //creating analytics service object
+  function loadLib() {//loads specified library
+    console.log("fired loadLib");
+    gapi.client.load('analytics', 'v3', makeApiCall);
+  }
+
+  function month1Lib(){
+     gapi.client.load('analytics', 'v3', fourMonthApiCall1);
+  }
+
+  function month2Lib(){
+     gapi.client.load('analytics', 'v3', fourMonthApiCall2);
+  }
+
+  function month3Lib(){
+     gapi.client.load('analytics', 'v3', fourMonthApiCall3);
+  }
+
+  function month4Lib(){
+     gapi.client.load('analytics', 'v3', fourMonthApiCall4);
+  }
+
+  function makeApiCall() {//makes api query with supplied information
+    console.log("fired makeApiCall");
+    var apiQuery = gapi.client.analytics.data.ga.get({
+      'ids': 'ga:101169415',
+      'start-date': '30daysAgo',
+      'end-date': 'yesterday', 
+      'metrics': 'ga:sessions,ga:pageviews,ga:users,ga:newUsers,ga:bounceRate'
+    });
+    apiQuery.execute(handleCoreReportingResults);
+  }
+
+  //core data request
+  function handleCoreReportingResults(results){
+    console.log("fired handleCoreReportingResults");
+    if(!results.error){
+      console.log("error free core report");
+      postColHeaders(results);
+      printRows(results);
+    }else{
+      console.log(results.message);
+    }
+  }
+
+  function postColHeaders(results){
+    console.log("fired postColHeaders");
+    var output = [];
+
+    for(var i = 0, header; header = results.columnHeaders[i]; ++i){
+      output.push(
+        'Name         =',header.name,'\n',
+        'Column Type  =',header.columnType,'\n',
+        'Data Type    =',header.dataType,'\n'
+      );
+    }
+    console.log(output.join(''));
+  }
+
+  function printRows(results) {
+    output = [];
+
+    for(var i=0, row; row = results.rows[i]; ++i){
+      output.push(
+        'Sessions     =',row[0],'\n',
+        'Pageviews    =',row[1],'\n',
+        'Users        =',row[2],'\n',
+        'New Users    =',row[3],'\n',
+        'Bounce Rate  =',row[4],'\n'
+      );
+
+      var totalUsers = row[2]; //this is the total users variable, not sure exactly what you had in mind, but I think an inner HTML swap would do.
+      //could be used in a function like declareTotalusers(totalUsers); then function declareTotalUsers(totalUsers){somecodethatusesthevariable}
+      console.log(totalUsers);
+
+      var userData = [
+        {
+          value: row[3],
+          color: "#616774",
+          highlight: "#4D5360",
+          label: "New users this month"
+        },
+        {
+          value: (row[2]-row[3]),
+          color:"A8B3C5",
+          highlight:"#949FB1",
+          label:"Returning users from previous months"
+        }
+      ];
+
+      var viewData = {
+        labels : ["Sessions, Pageviews & Bounce Rate"],
+        datasets : [
+          {
+            fillColor : "rgba(220,220,220,0.5)",
+            strokeColor : "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,220,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data : [row[0]]
+          },
+          {
+            fillColor : "rgba(151,187,205,0.5)",
+            strokeColor : "rgba(151,187,205,0.8)",
+            highlightFill: "rgba(151,187,205,0.75)",
+            highlightStroke: "rgba(151,187,205,1)",
+            data : [row[1]]
+          },
+          {
+            fillColor : "rgba(151,0,0,0.5)",
+            strokeColor : "rgba(151,0,0,0.8)",
+            highlightFill: "rgba(151,0,0,0.75)",
+            highlightStroke: "rgba(151,0,0,1)",
+            data : [row[4]]
+          }
+        ]
+      };
+
+      makeUserChart(userData);
+      makeViewChart(viewData);
+      month1Lib();
+    }
+
+    console.log(output.join(''));
+  }
+
+  function makeUserChart(userData){
+    var ctx = document.querySelector("#chart-area").getContext("2d");
+    window.myDoughnut = new Chart(ctx).Doughnut(userData, {responsive : true});
+  }
+
+  function makeViewChart(viewData){
+    var ctx = document.querySelector("#chart-area2").getContext("2d");
+    window.myBar = new Chart(ctx).Bar(viewData, {
+      responsive : true
+    });
+  }
+
+
+  function fourMonthApiCall1(){
+    console.log("fourMonthApiCall fired");
+    var apiQuery = gapi.client.analytics.data.ga.get({
+      'ids': 'ga:101169415',
+      'start-date': '2015-01-01',
+      'end-date': '2015-01-31',
+      'metrics': 'ga:pageviews,ga:users'
+    });
+    apiQuery.execute(month1);
+  }
+
+  function fourMonthApiCall2(){
+    console.log("fourMonthApiCall fired");
+    var apiQuery = gapi.client.analytics.data.ga.get({
+      'ids': 'ga:101169415',
+      'start-date': '2015-02-01',
+      'end-date': '2015-02-28',
+      'metrics': 'ga:pageviews,ga:users'
+    });
+    apiQuery.execute(month2);
+  }
+
+  function fourMonthApiCall3(){
+    console.log("fourMonthApiCall fired");
+    var apiQuery = gapi.client.analytics.data.ga.get({
+      'ids': 'ga:101169415',
+      'start-date': '2015-03-01',
+      'end-date': '2015-03-31',
+      'metrics': 'ga:pageviews,ga:users'
+    });
+    apiQuery.execute(month3);
+  }
+
+  function fourMonthApiCall4(){
+    console.log("fourMonthApiCall fired");
+    var apiQuery = gapi.client.analytics.data.ga.get({
+      'ids': 'ga:101169415',
+      'start-date': '2015-04-01',
+      'end-date': '2015-04-30',
+      'metrics': 'ga:pageviews,ga:users'
+    });
+    apiQuery.execute(month4);
+  }
+
+  function month1(results){
+    console.log("month 1 declaring");
+    if(!results.error){
+      declareData1(results);
+    }else{
+      console.log(results.message);
+    }
+  }
+
+  function month2(results){
+    console.log("month 2 declaring");
+    if(!results.error){
+      declareData2(results);
+    }else{
+      console.log(results.message);
+    }
+  }
+
+  function month3(results){
+    console.log("month 3 declaring");
+    if(!results.error){
+      declareData3(results);
+    }else{
+      console.log(results.message);
+    }
+  }
+
+  function month4(results){
+    console.log("month 4 declaring");
+    if(!results.error){
+      declareData4(results);
+    }else{
+      console.log(results.message);
+    }
+  }
+
+  function declareData1(results){
+    console.log(results.totalsForAllResults['ga:users']);
+    month1views = results.totalsForAllResults['ga:pageviews'];
+    month1users = results.totalsForAllResults['ga:users'];
+    month2Lib();
+  }
+
+  function declareData2(results){
+    console.log(results.totalsForAllResults['ga:users']);
+    month2views = results.totalsForAllResults['ga:pageviews'];
+    month2users = results.totalsForAllResults['ga:users'];
+    month3Lib();
+  }
+
+  function declareData3(results){
+    console.log(results.totalsForAllResults['ga:users']);
+    month3views = results.totalsForAllResults['ga:pageviews'];
+    month3users = results.totalsForAllResults['ga:users'];
+    month4Lib();
+  }
+
+  function declareData4(results){
+    console.log(results.totalsForAllResults['ga:users']);
+    month4views = results.totalsForAllResults['ga:pageviews'];
+    month4users = results.totalsForAllResults['ga:users'];
+    makeFourMonthGraph();
+  }
+
+  function makeFourMonthGraph(){
+    console.log("Month1:  ",month1users,"  ",month1views,"Month2:  ",month2users,"  ",month2views,"Month3:  ",month3users,"  ",month3views,"Month4:  ",month4users,"  ",month4views);
+    var lineChartData = {
+      labels : ["January","February","March","April"],
+      datasets :[
+        {
+        label: "Pageviews",
+          fillColor : "rgba(220,220,220,0.2)",
+          strokeColor : "#fff",
+          pointColor : "rgba(220,220,220,1)",
+          pointStrokeColor : "#fff",
+          pointHighlightFill : "#fff",
+          pointHighlightStroke : "rgba(220,220,220,1)",
+          data : [month1views,month2views,month3views,month4views]
+        },
+        {
+        label: "Users",
+          fillColor : "rgba(151,187,205,0.2)",
+          strokeColor : "blue",
+          pointColor : "rgba(151,187,205,1)",
+          pointStrokeColor : "#fff",
+          pointHighlightFill : "#fff",
+          pointHighlightStroke : "rgba(151,187,205,1)",
+          data : [month1users,month2users,month3users,month4users]
+        }
+      ]
+    }
+    createFourMonth(lineChartData);
+  }
+
+  function createFourMonth(lineChartData){
+    var ctx = document.getElementById("4month").getContext("2d");
+    window.myLine = new Chart(ctx).Line(lineChartData, {
+      responsive: true
+    });
+  }
+
+  window.addEventListener('load',clientLoad,false);
+
+};
+
 cmsScript = function(){
 	$('.menubutton').on("click", function(e){
 		e.preventDefault();
@@ -514,32 +832,50 @@ cmsScript = function(){
 		$('.pageform input[name="icontext"').attr('value', text);
 	});
 
-$('.calc').on('click', function(e){
-	e.preventDefault();
-	var address = $("input[name='streetaddress'").val() + ', ' + $("input[name='city'").val() + ', ' + $("input[name='prov'").val() + ', ' + $("input[name='postal'").val();
-	var geocoder = new google.maps.Geocoder();//defines geocoder
-	geocoder.geocode( { 'address': address}, function(results, status) {//calls the geocode function
-		if(status == google.maps.GeocoderStatus.OK){//if the passed address is valid as defined by the GMaps API
-			var latitude = results[0].geometry.location.lat();//defines latitude as the resulting latitude
-			var longitude = results[0].geometry.location.lng();//defines longitude as the resulting longitude
-
-			$("input[name='lat']").val(latitude);
-			$("input[name='long']").val(longitude);
-		}
-	});
-})
-
-
 }
 
-var base_url = 'http://localhost/forratschocolates/builds/development/';
-//var base_url = 'http://www.ryanmchale.ca/staging/forrats5/';
+contactScript = function(){
 
-var navScrollable = $(function(){
-    $('#navscroll').slimScroll({
-        height: '350px'
-    });
-});
+	function setSize(){
+		var inHeight = $('#loginbox').height(),
+			overall = $(window).height();
+			dif = (overall - inHeight - 100)/2;
+
+		var mOver960 = window.matchMedia( "(min-width: 960px)" );
+		var mUnder960 = window.matchMedia( "(max-width: 959px)" );
+
+		if(mOver960.matches){
+			$('#loginbox').css('margin-top', dif);
+		}else if(mUnder960.matches){
+			$('#loginbox').css('margin-top', '0');
+		}
+	}
+
+	setSize();
+
+	$(window).resize(function(){
+		setSize();
+	});
+
+};
+geoScript = function(){
+	$('.calc').on('click', function(e){
+		e.preventDefault();
+		var address = $("input[name='streetaddress'").val() + ', ' + $("input[name='city'").val() + ', ' + $("input[name='prov'").val() + ', ' + $("input[name='postal'").val();
+		var geocoder = new google.maps.Geocoder();//defines geocoder
+		geocoder.geocode( { 'address': address}, function(results, status) {//calls the geocode function
+			if(status == google.maps.GeocoderStatus.OK){//if the passed address is valid as defined by the GMaps API
+				var latitude = results[0].geometry.location.lat();//defines latitude as the resulting latitude
+				var longitude = results[0].geometry.location.lng();//defines longitude as the resulting longitude
+
+				$("input[name='lat']").val(latitude);
+				$("input[name='long']").val(longitude);
+			}
+		});
+	});
+}
+var base_url = 'http://localhost:3000/forrats/builds/development/';
+//var base_url = 'http://www.ryanmchale.ca/staging/forrats/';
 
 var navsWithKids = function(){
 
@@ -594,34 +930,110 @@ var navsWithKids = function(){
 
 	$('#navIcon').on('click', function(){
 		$('.sideNav').toggleClass('navout');
+		$('.menu-toggle').toggleClass('close');
 	});
 }();
 homeScript = function(){
 
-	$('.side-nav a').mouseenter(function(){
-		$('.logopanel').addClass('hideme');
-		$('.logopanel').removeClass('showme');
+	// var m400 = window.matchMedia( "(min-width: 400px)" );
+	// var m650 = window.matchMedia( "(min-width: 650px)" );
+	// var m960 = window.matchMedia( "(min-width: 960px)" );
+	// var m1140 = window.matchMedia( "(min-width: 1140px)" );
+	// var m1200 = window.matchMedia( "(min-width: 1200px)" );
 
-		$('.menuitem').addClass('hideme');
-		$('.menuitem').removeClass('showme');
-		$('.menuitem.' + this.id).removeClass('hideme');
-		$('.menuitem.' + this.id).addClass('showme');
-		if(this.id == 'home') {
-			$('.menuitem').addClass('hideme');
-			$('.menuitem').removeClass('showme');
+	this.slideWidth = '';
+	var count = 1;
+	var timer;
+	this.slidePush = 0;
 
-			$('.logopanel').removeClass('hideme');
-			$('.logopanel').addClass('showme');
+	function sizeSlider(){
+		var mOver960 = window.matchMedia( "(min-width: 960px)" );
+		var mUnder960 = window.matchMedia( "(max-width: 959px)" );
+
+		if(mOver960.matches){
+			console.log('big');
+			this.slideWidth = $(window).width() - $('.sideNav').width();
+			$('.textinner').css('margin-top', ($(window).height() - $('.textinner').outerHeight())/2);
+			slideWidth = this.slideWidth;
+			$('.homepg').height($(window).height());
+			$('.slider').css('width', (($(window).width() - $('.sideNav').width()) * $('.slide').length));
+			$('.slideouter').css('width',  slideWidth);
+			$('.slide').css({
+				'position' : 'relative',
+				'float' : 'left',
+				'width' : slideWidth,
+				'height' : $(window).height()
+			});
+		}else if(mUnder960.matches){
+			console.log('small');
+			this.slideWidth = $(window).width();
+			var height = ($(window).height() * .6);
+			$('.textinner').css('margin-top', '0');
+			slideWidth = this.slideWidth;
+			$('.homepg').height('');
+				$('.slide').css({
+				'position' : 'relative',
+				'float' : 'left',
+				'width' : '100%',
+				'height' : height
+			});
+			$('.slider').css('width', ($(window).width() * $('.slide').length));
+			$('.slideouter').css('width',  slideWidth);
+			$('.slide').css({
+				'position' : 'relative',
+				'float' : 'left',
+				'width' : slideWidth,
+				'height' : '100%'
+			});
+
+				var maxHeight = -1;
+
+			   $('.textinner').each(function() {
+			     maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+			   });
+
+			   $('.slideouter').height(maxHeight);
+
 		}
+	};
+
+	sizeSlider();
+
+	$(window).resize(function(){
+		sizeSlider();
 	});
 
-	$('.sideNav').mouseleave(function(){
-		$('.menuitem').addClass('hideme');
-		$('.menuitem').removeClass('showme');
+	function moveSlide(){
+		console.log(this.slideWidth);
+		if(count < $('.slide').length){
+			this.slidePush += this.slideWidth;
+			$('.slider').css('left', ('-' + this.slidePush + 'px'));
+			count++;
+			console.log(count);
+		}else{
+			this.slidePush = 0;
+			$('.slider').css('left', '0px');
+			count = 1;
+			console.log(count);
+		}
+	}
 
-		$('.logopanel').removeClass('hideme');
-		$('.logopanel').addClass('showme');
+	timer = setInterval(function(){
+		moveSlide();
+	}, 5000);
+
+	$('.slideouter').mouseenter(function(){
+		clearInterval(timer);
+		console.log('paused');
 	});
+
+	$('.slideouter').mouseleave(function(){
+		timer = setInterval(function(){
+			moveSlide();
+		}, 5000);
+		console.log('unpaused');
+	});
+
 
 };
 
@@ -654,7 +1066,7 @@ locationsScript = function(){
       streetViewControlOptions: {
           position: google.maps.ControlPosition.RIGHT_TOP
       },
-      styles: [{"featureType":"administrative","elementType":"labels.text","stylers":[{"color":"#b72025"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"saturation":"-100"},{"lightness":"100"},{"weight":"10.00"},{"visibility":"on"},{"hue":"#ff0000"},{"gamma":"0.00"}]},{"featureType":"landscape.natural","elementType":"geometry","stylers":[{"color":"#cac1c1"},{"lightness":33},{"visibility":"off"}]},{"featureType":"landscape.natural.landcover","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":"-100"},{"lightness":"-2"},{"hue":"#ff0000"},{"gamma":"5.72"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#ebe1e1"},{"visibility":"simplified"}]},{"featureType":"poi.sports_complex","elementType":"geometry","stylers":[{"saturation":-100},{"lightness":-100},{"visibility":"off"}]},{"featureType":"poi.sports_complex","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#b72025"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"on"},{"saturation":-100}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"lightness":-100},{"visibility":"on"},{"color":"#f3eaea"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#b72025"},{"visibility":"on"}]},{"featureType":"road.highway","elementType":"labels.text.fill","stylers":[{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels.text.stroke","stylers":[{"weight":0.1},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"labels.icon","stylers":[{"invert_lightness":true},{"lightness":-4},{"saturation":-90},{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"saturation":-100},{"lightness":-14}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"},{"saturation":-100},{"lightness":13}]},{"featureType":"road.local","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"labels.icon","stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#b72025"}]},{"featureType":"water","elementType":"geometry.stroke","stylers":[{"saturation":-100},{"lightness":-100},{"weight":0.2}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"saturation":-100},{"lightness":-100}]}]
+      styles: [{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"poi","elementType":"labels","stylers":[{"saturation":"-100"},{"lightness":"-24"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","elementType":"all","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]}]
       };
 
       // Creating the map
@@ -697,6 +1109,71 @@ locationsScript = function(){
       });
     }
   }
+
+};
+navScript = function(){
+
+	var navWrap = $('.sideNav'),
+		logo = $('.logoarea'),
+		listscroll = $('#navscroll'),
+		navlist = $('.side-nav'),
+		social = $('.social');
+
+		function setHeights(){
+			winHeight = $(window).height();
+			navWrap.height(winHeight);
+			centerH = winHeight - (logo.height() + social.height() + 20);
+			if(navlist.height() > centerH){
+				listscroll.height(centerH);
+				listscroll.css('margin-top', '0');
+				var navScrollable = $(function(){
+				    $('#navscroll').slimScroll({
+				        height: centerH
+				    });
+				});
+			}else{
+				if($('#navscroll').parent('.slimScrollDiv').size() > 0){
+					var scrollDestroy = $(function(){
+					    $('#navscroll').slimScroll({
+					        destroy: true
+					    });
+					});
+				}
+				topM = (centerH - navlist.height()) / 2;
+				listscroll.height(navlist.height());
+				listscroll.css('margin-top', topM);
+			}
+		}
+
+		setHeights();
+
+		$(window).resize(function(){
+			setHeights();
+		});
+
+};
+productsScript = function(){
+
+	function setSize(){
+		var inHeight = $('.overlayinner').height(),
+			overall = $(window).height();
+			dif = (overall - inHeight - 100)/2;
+
+		var mOver960 = window.matchMedia( "(min-width: 960px)" );
+		var mUnder960 = window.matchMedia( "(max-width: 959px)" );
+
+		if(mOver960.matches){
+			$('.overlayinner').css('margin-top', dif);
+		}else if(mUnder960.matches){
+			$('.overlayinner').css('margin-top', '0');
+		}
+	}
+
+	setSize();
+
+	$(window).resize(function(){
+		setSize();
+	});
 
 };
 },{"jquery":2}],2:[function(require,module,exports){

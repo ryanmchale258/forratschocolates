@@ -6,15 +6,17 @@ class Home extends CI_Controller {
 		parent::__construct();
 		$this->load->model('navigation_model');
 		$this->load->model('pages_model');
+		$this->load->model('slider_model');
 	}
 
 	public function index(){
 		$data['sidenav'] = $this->navigation_model->getNav();
 		$data['sidenavlogo'] = true;
 		$data['pages'] = $this->pages_model->getAllPages();
+		$data['slides'] = $this->slider_model->getAll();
 		$data['pgTitle'] = "Home";
 		$data['bodyclass'] = 'home-page';
-		$data['initialize'] = "homeScript";
+		$data['initialize'] = array('homeScript', 'navScript');
 		
 		$this->load->view('template/head', $data);
 		$this->load->view('template/sidenav');

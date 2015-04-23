@@ -23,6 +23,12 @@ class Products_model extends CI_Model {
 		return $products->result();
 	}
 
+	public function getOptionsEdit($id){
+		//$this->db->where('pages_navlvl', $level);
+		$product = $this->db->get_where('tbl_products', array('products_id' => $id));
+		return $product->row();
+	}
+
 	public function getToEdit($record){
 		$page = $this->db->get_where('tbl_categories', array('categories_id' => $record));
 		return $page->row();

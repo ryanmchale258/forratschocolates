@@ -992,7 +992,7 @@ homeScript = function(){
 			     maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
 			   });
 
-			   $('.slideouter').height(maxHeight);
+			   $('.slideouter').height(maxHeight + 20);
 
 		}
 	};

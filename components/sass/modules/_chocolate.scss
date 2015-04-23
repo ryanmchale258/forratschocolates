@@ -4,11 +4,17 @@
 		@include pre(2);
 	}
 	.heading{
+		padding-left: 1em;
+		padding-right: 1em;
 		h1{
 			font-family: $serif;
 			font-size: 2rem;
 			color: $darkred;
 			margin-bottom: 1em;
+			margin-top: 1em;
+			@include breakpoint($medium){
+				margin-top: 0;
+			}
 		}
 		p{
 			font-family: $paragraph;

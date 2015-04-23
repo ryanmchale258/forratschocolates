@@ -83,6 +83,10 @@ homeScript = function(){
 		}
 	}
 
+	$('.slide').on('click', function(){
+		moveSlide();
+	});
+
 	timer = setInterval(function(){
 		moveSlide();
 	}, 5000);

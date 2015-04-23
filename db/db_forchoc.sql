@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2015 at 12:45 PM
+-- Generation Time: Apr 23, 2015 at 08:01 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS tbl_admin (
 --
 
 INSERT INTO tbl_admin (admin_id, admin_username, admin_password, admin_firstname, admin_lastname, admin_email, admin_level, admin_lastsession) VALUES
-(1, 'ryanmchale', 'd66fcc742cc640480ace083585445fd5cb3ea224', 'Ryan', 'McHale', '', 0, 'b1f0571bff27136edc88651743abf2a8');
+(1, 'ryanmchale', 'd66fcc742cc640480ace083585445fd5cb3ea224', 'Ryan', 'McHale', '', 0, '3ce75f54793c521eb1a92847d7bd5415');
 
 -- --------------------------------------------------------
 
@@ -101,9 +101,9 @@ INSERT INTO tbl_categories (categories_id, categories_name, categories_slug, cat
 (4, 'Clusters', 'clusters', 'clusters.jpg', 'Fresh ingredients coated in rich luxurious chocolate.', 'We take the freshest local ingredients we can find and cover them with chocolate. What more could you ask for? These chocolate coated clusters are sure to please with their delightful crunch and silky chocolate taste.', 'Ryan', '20-03-15'),
 (5, 'Dipped Yummies', 'dipped-yummies', 'dippedyummies.jpg', 'What in this world isn''t improved by being dipped in chocolate?', 'We are so confident in our chocolate, we think it can improve anything we coat it in! Try this unique selection of dipped yummies. These interesting flavour combinations are something you have to try to believe!', 'Ryan', '20-03-15'),
 (6, 'Baskets', 'baskets', 'baskets.jpg', 'A box of delights awaits!', 'Try a selection of our signature treats for yourself with one of our basket collections. We offer a variety of packing options to fit any occasion. Great for gifts!', 'Ryan', '20-03-15'),
-(248, 'Gift Cards', 'giftcards', 'giftcards.jpg', 'Share the love with a Forrat''s Gift Card', 'These gift cards can be preloaded with any amount of money to ensure your special someone never has to go without their fix of Forrat''s delicious chocolates.', '', ''),
-(249, 'Bliss Box', 'blissbox', 'blissbox.jpg', 'A mystery box delivered to your door every month.', 'Can''t get enough Forrat''s? Try signing up for our monthly subscription box service. Every month we''ll send a grab bag of signature goodies and merchandise to your door. It''s different every month, and might just contain some exclusive treats not sold in store!', '', ''),
-(250, 'Bouquet', 'bouquet', 'bouquet.jpg', 'Flowers and chocolate for your loved one.', 'An oldie but a goodie, flowers and chocolate are an unbeatable combination when you need to show that special someone you care. We take the headaches out of the process by becoming your one stop shop. We''ve partnered with 1-800-FLOWERS so you can order some of our treats and a bouquet of flowers for delivery in one go.', '', '');
+(7, 'Gift Cards', 'giftcards', 'giftcards.jpg', 'Share the love with a Forrat''s Gift Card', 'These gift cards can be preloaded with any amount of money to ensure your special someone never has to go without their fix of Forrat''s delicious chocolates.', 'Ryan', '20-03-15'),
+(8, 'Bliss Box', 'blissbox', 'blissbox.jpg', 'A mystery box delivered to your door every month.', 'Can''t get enough Forrat''s? Try signing up for our monthly subscription box service. Every month we''ll send a grab bag of signature goodies and merchandise to your door. It''s different every month, and might just contain some exclusive treats not sold in store!', 'Ryan', '20-03-15'),
+(9, 'Bouquet', 'bouquet', 'bouquet.jpg', 'Flowers and chocolate for your loved one.', 'An oldie but a goodie, flowers and chocolate are an unbeatable combination when you need to show that special someone you care. We take the headaches out of the process by becoming your one stop shop. We''ve partnered with 1-800-FLOWERS so you can order some of our treats and a bouquet of flowers for delivery in one go.', 'Ryan', '20-03-15');
 
 -- --------------------------------------------------------
 
@@ -187,7 +187,7 @@ CREATE TABLE IF NOT EXISTS tbl_pages (
 INSERT INTO tbl_pages (pages_id, pages_slug, pages_icon, pages_title, pages_meta, pages_brief, pages_content, pages_navlvl, pages_haskids, pages_navprnt, pages_hascontroller, pages_weight, pages_createdby, pages_createddate) VALUES
 (1, 'home', '', 'Home', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'Fed by controller', 1, 0, NULL, 1, 99, '', ''),
 (2, 'about', '&#xf059;', 'About', '', 'Learn about Forrat''s Chocolate and Marc Forrat himself.', 'Fed by controller', 1, 0, NULL, 1, 85, '', ''),
-(3, 'chocolate', '&#xf042;', 'Chocolate', '', 'Browse our selection of delicious treats and bundles.', 'Fed by controller', 1, 0, NULL, 1, 60, '', ''),
+(3, 'shop', '&#xf07a;', 'Shop', '', 'Browse our selection of delicious treats and bundles.', 'Fed by controller', 1, 0, NULL, 1, 60, '', ''),
 (4, 'locations', '&#xf041;', 'Locations', '', 'Find a Forrat''s Chocolates location near you.', 'Fed by controller', 1, 0, NULL, 1, 45, '', ''),
 (70, 'contact', '&#xf0e0;', 'Contact Us', '', 'Drop us a line or let us know what you think of our products. We''re always happy to chat to fellow chocolate lovers.', '', 1, 0, NULL, 1, 20, 'Ryan', '20-03-15');
 
@@ -214,7 +214,6 @@ INSERT INTO tbl_products (products_id, products_category, products_name, product
 (1, 1, 'Butterscotch', 'A bestseller - the sweetness of butterscotch in a milk chocolate ganache - it''s a beautiful mélange.', 'butterscotch_chocolate_truffle_145x145.jpg'),
 (2, 1, 'Dark Champagne', 'Everybody celebrate! This is a festive truffle, good for any location. It doesn''t bubble, but it does satisfy.', 'champagne_chocolate_truffle_145x145.jpg'),
 (3, 1, 'Chili', 'By popular demand, Chili has been a best seller since its introduction. Imagine sweetness with a little kick - not too hot - available in milk or dark chocolate.', 'chili_chocolate_truffle_145x145.jpg'),
-(4, 1, 'Mint', 'Take those other mint chocolates you''ve had before and multiply the experience by 10. Now add ''creamy'' into the mix (available in milk or dark).', 'mint_chocolate_truffle_145x145.jpg'),
 (5, 1, 'Peanut Butter', 'Those other buttercups have nothing on the freshness of a Peanut Butter truffle. Once you try one, you won''t go back!', 'penutbutter_chocolate_truffle_145x145.jpg'),
 (6, 1, 'Raspberry Wine', 'Combines a sweet, yet savory raspberry wine with chocolate (available in milk or dark).', 'raspberry_chocolate_truffle_145x145.jpg'),
 (7, 3, 'Sea Salt', 'Luxurious chocolate coated with coarse sea salt. Comes in light, milk, and dark chocolate.', 'caramels.jpg'),
@@ -233,6 +232,29 @@ INSERT INTO tbl_products (products_id, products_category, products_name, product
 (21, 4, 'Cherries', 'Fresh cherry clusters covered in either dark chocolate, milk chocolate, or white chocolate.', 'clusters.jpg'),
 (22, 4, 'Marc''s (graham cookies, oats and nuts)', 'Try Marc''s favourite cluster combination of crunchy graham cookies, rolled oats, and fresh nuts.', 'clusters.jpg'),
 (23, 4, 'Honey Roasted Peanuts', 'Delicious and sweet clusters of honey roasted peanuts covered in chocolate.', 'clusters.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'tbl_slide'
+--
+
+CREATE TABLE IF NOT EXISTS tbl_slide (
+  slide_id tinyint(2) unsigned NOT NULL AUTO_INCREMENT,
+  slide_title varchar(75) NOT NULL,
+  slide_img varchar(100) NOT NULL,
+  slide_text text NOT NULL,
+  PRIMARY KEY (slide_id)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table 'tbl_slide'
+--
+
+INSERT INTO tbl_slide (slide_id, slide_title, slide_img, slide_text) VALUES
+(2, 'For All Occasions', 'slide1.jpg', 'What better way to show someone than you care with one of our special box bundles. Or, if you screw up on a regular basis, consider signing up for our monthly subscription service, Bliss Box.'),
+(3, 'Only The Finest', 'slide2.jpg', 'We at Forrat''s Chocolates pride ourselves on using nothing but the best quality chocolate, ensuring a luxurious taste you aren''t soon to forget.'),
+(4, 'For that Special Day', 'slide3.jpg', 'Are you planning a wedding? Consider Forrat''s Chocolates. We can supply that perfect sweet treat for gift bags or desserts on your special day.');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
